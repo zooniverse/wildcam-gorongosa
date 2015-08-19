@@ -1,6 +1,6 @@
 Reflux = require 'reflux'
 {client, api} = client = require '../api/client'
-projectConfig = require '../lib/project-config'
+projectConfig = require '../lib/config'
 userActions = require '../actions/user-actions'
 
 checkStatus = (response) ->

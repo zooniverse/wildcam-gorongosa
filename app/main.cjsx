@@ -2,7 +2,7 @@ React = require 'react/addons'
 Router = require 'react-router'
 {Route, RouteHandler, DefaultRoute, Link} = require 'react-router'
 Reflux = require 'reflux'
-projectConfig = require './lib/project-config'
+projectConfig = require './lib/config'
 {api} = client = require './api/client'
 
 projectStore = require './stores/project-store'

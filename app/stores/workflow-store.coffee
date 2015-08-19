@@ -1,12 +1,13 @@
 Reflux = require 'reflux'
+{api} = require '../api/client'
 config = require '../lib/config'
-workflowActions = require '../action/workflow-actions'
+workflowActions = require '../actions/workflow-actions'
 
 module.exports = Reflux.createStore
   listenables: workflowActions
   data: null
 
-  getWorkflow: ->
+  init: ->
     api.type('workflows').get config.workflowId
       .then (@data) =>
         @trigger @data

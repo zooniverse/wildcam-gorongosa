@@ -1,23 +1,32 @@
 React = require 'react/addons'
-
+Reflux = require 'reflux'
 counterpart = require 'counterpart'
 Translate = require 'react-translate-component'
+
 LoadingIndicator = require '../components/loading-indicator'
 SlideTutorial = require '../components/slide-tutorial'
+
+annotationsStore = require '../stores/annotations-store'
+classificationStore = require '../stores/classification-store'
+subjectStore = require '../stores/subject-store'
+
+classifierActions = require '../actions/classifier-actions'
+
 Task = require '../tasks/survey'
-
-Reflux = require 'reflux'
-classifyStore = require '../stores/classify-store'
-classifyActions = require '../actions/classify-actions'
-
 Summary = require '../partials/summary'
 
 module.exports = React.createClass
   displayName: "Classify"
-  mixins: [Reflux.listenTo(classifyStore, 'onClassificationData')]
+  mixins: [
+    Reflux.connect(classificationStore, 'classification')
+    Reflux.connect(annotationsStore, 'annotations')
+    Reflux.connect(subjectStore, 'subject')
+  ]
 
   getInitialState: ->
-    classificationData: classifyStore.data
+    annotations: annotationsStore.data
+    classification: classificationStore.data
+    subject: subjectStore.data
     tutorialIsOpen: false
     onSummary: false
 
@@ -38,20 +47,19 @@ module.exports = React.createClass
 
   onClassificationData: (data) ->
     @setState
-      classificationData: data
       onSummary: false
 
   onChangeTask: ->
     console.log arguments
 
   onClickFinish: ->
-    classifyActions.finishClassification()
+    classifierActions.finishClassification()
 
     @setState
       onSummary: true
 
   onClickNextImage: ->
-    classifyActions.getNextSubject()
+    classifierActions.moveToNextSubject()
 
   render: ->
     <div className="classify-page">
@@ -60,8 +68,8 @@ module.exports = React.createClass
 
       <div className="classification">
         <section className="subject">
-          {if @state.classificationData?.classification?
-            <img src={@state.classificationData.subject?.locations[0]['image/jpeg']} />
+          {if @state.subject
+            <img src={@state.subject.locations[0]['image/jpeg']} />
           else
             <div className="loading-indicator-container">
               <LoadingIndicator />
@@ -69,7 +77,7 @@ module.exports = React.createClass
         </section>
 
         <section className="task-container">
-          {if @state.classificationData
+          {if @state.subject and @state.classification and @state.annotations
             if @state.onSummary
               <div>
                 <Summary annotations={@state.classificationData.classification.annotations} />

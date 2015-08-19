@@ -1,16 +1,16 @@
-Reflux = require 'reflu'
+Reflux = require 'reflux'
+{api} = require '../api/client'
 config = require '../lib/config'
-subjectActions = require '../actions/subject-actions'
+classifierActions = require '../actions/classifier-actions'
 
 module.exports = Reflux.createStore
-  listenables: subjectActions
-
   data: null
 
   init: ->
-    @onNext()
+    @next()
+    @listenTo classifierActions.moveToNextSubject, @next
 
-  onNext: ->
+  next: ->
     query =
       workflow_id: config.workflowId
       sort: 'queued'

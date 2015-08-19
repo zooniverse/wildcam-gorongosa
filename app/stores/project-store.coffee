@@ -1,5 +1,5 @@
 Reflux = require 'reflux'
-projectConfig = require '../lib/project-config'
+projectConfig = require '../lib/config'
 userStore = require '../stores/user-store'
 {api} = require '../api/client'
 

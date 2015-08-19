@@ -1,46 +1,30 @@
 Reflux = require 'reflux'
 counterpart = require 'counterpart'
 {api} = require '../api/client'
-classificationActions = require '../actions/classification-actions'
-projectStore = require './project-store'
 config = require '../lib/config'
 
-module.exports = Reflux.createStore
-  listenables: classificationActions
+classifierActions = require '../actions/classifier-actions'
 
+projectStore = require './project-store'
+workflowStore = require './workflow-store'
+subjectStore = require './subject-store'
+
+module.exports = Reflux.createStore
   data: null
 
   init: ->
-    @listenTo projectStore, @getWorkflow
+    @listenTo classifierActions.finishClassification, @finish
+    @listenTo workflowStore, @onReceiveData
+    @listenTo subjectStore, @onReceiveData
 
-  # getWorkflow: (@project = null) ->
-  #   unless @project
-  #     return throw new Error 'cannot fetch workflows for project'
-  #
-  #   api.type('workflows').get projectConfig.workflowId
-  #     .then (@workflow) =>
-  #       @getNextSubject()
+  onReceiveData: ->
+    if workflowStore.data and subjectStore.data
+      @create()
 
-  # getNextSubject: ->
-  #   query =
-  #     workflow_id: @workflow.id
-  #     sort: 'queued'
-  #
-  #   api.type('subjects').get query
-  #     .then (subjects) =>
-  #       if subjects.length is 0
-  #         # handle empty subjects array
-  #         return
-  #
-  #       randomInt = Math.floor(Math.random() * subjects.length)
-  #       subject = subjects[randomInt]
-  #       @createNewClassification @workflow, subject
-
-  onCreate: (workflow, subject) ->
+  create: ->
     classification = api.type('classifications').create
-      annotations: []
       metadata:
-        workflow_version: workflow.version
+        workflow_version: workflowStore.data.version
         started_at: (new Date).toISOString()
         user_agent: navigator.userAgent
         user_language: counterpart.getLocale()
@@ -48,33 +32,25 @@ module.exports = Reflux.createStore
       links:
         project: config.projectId
         workflow: config.workflowId
-        subjects: [subject.id]
+        subjects: [subjectStore.data.id]
 
-    classification._workflow = workflow
-    classification._subjects = [subject]
-
-    @createStore(workflow, classification, subject)
-
-  createStore: (workflow, classification, subject) ->
-    @data =
-      workflow: workflow
-      subject: subject
-      classification: classification
+    # classification._workflow = workflowStore.data
+    # classification._subjects = [subjectStore.data]
 
     @trigger @data
 
-  finishClassification: ->
+  finish: ->
     upsert =
+      annotations: annotationsStore.data
       completed: true
       'metadata.finished_at': (new Date).toISOString()
       'metadata.viewport':
         width: innerWidth
         height: innerHeight
 
-    @data?.classification
-      .update upsert
+    @data.update upsert
       .save()
       .then (classification) ->
         classification.destroy()
       .catch (error) ->
-        console.error 'error saving c'
+        console.error 'error saving c', error
