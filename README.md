@@ -1,4 +1,4 @@
-# mammoth-bats
+# WildCam Gorongosa
 
 Built using:
 
