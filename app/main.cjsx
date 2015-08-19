@@ -33,6 +33,9 @@ routes =
     <DefaultRoute handler={require './pages/home'} />
     <Route name="classify" path="classify" handler={require './pages/classify'} />
     <Route name="about" path="about" handler={require './pages/about'} />
+    <Route name="field-guide" path="field-guide" handler={require './pages/field-guide'}>
+      <Route name="field-guide-entry" path=":entryName" handler={require './partials/field-guide-entry'} />
+    </Route>
   </Route>
 
 Router.run routes, (Handler) ->

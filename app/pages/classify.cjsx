@@ -52,7 +52,7 @@ module.exports = React.createClass
     @setState onSummary: false
 
   onChangeTask: ->
-    console.log arguments
+    console.log 'task changed', arguments
 
   onClickFinish: ->
     classifierActions.finishClassification()
