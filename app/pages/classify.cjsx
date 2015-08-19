@@ -11,10 +11,11 @@ classificationStore = require '../stores/classification-store'
 subjectStore = require '../stores/subject-store'
 workflowStore = require '../stores/workflow-store'
 
+annotationActions = require '../actions/annotation-actions'
 classifierActions = require '../actions/classifier-actions'
 
 Task = require '../tasks/survey'
-Summary = require '../partials/summary'
+Summary = require '../tasks/survey/summary'
 
 module.exports = React.createClass
   displayName: "Classify"
@@ -44,6 +45,10 @@ module.exports = React.createClass
     #   @toggleTutorial()
     # else if nextProps.user is null
     #   @toggleTutorial()
+
+  componentWillUpdate: (nextProps, nextState) ->
+    if nextState.subject isnt @state.subject
+      annotationActions.clear()
 
   toggleTutorial: ->
     @setState tutorialIsOpen: !@state.tutorialIsOpen
@@ -83,7 +88,7 @@ module.exports = React.createClass
           {if @state.subject && @state.classification && @state.annotations && @state.workflow
             if @state.onSummary
               <div>
-                <Summary annotations={@state.annotations} />
+                <Summary annotations={@state.annotations} task={@state.workflow.tasks['T1']} expanded={true} />
                 <div className="workflow-buttons-container">
                   <button type="button" className="action-button" onClick={@onClickNextImage}>Next Image</button>
                 </div>

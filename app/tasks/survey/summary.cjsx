@@ -22,10 +22,10 @@ module.exports = React.createClass
       </div>
       <div className="answers">
         <div className="answer">
-          {@props.annotation.value.length} identifications
+          {@props.annotations[0].value.length} identifications
         </div>
         {if @state.expanded
-          choiceSummaries = for identification in @props.annotation.value
+          choiceSummaries = for identification in @props.annotations[0].value
             choice = @props.task.choices[identification.choice]
             allAnswers = for questionID in @props.task.questionsOrder when questionID of identification.answers
               answerLabels = for answerID in [].concat identification.answers[questionID]
