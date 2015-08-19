@@ -1,0 +1,86 @@
+.classify-page
+  height: 100%
+  padding: 10em 1em
+
+  @media screen and (max-width: 900px)
+    padding: 10em 0
+
+  @media screen and (max-width: 400px)
+    padding: 6em 0 10em
+
+  .loading-indicator-container
+    align-items: center
+    display: flex
+    left: 0
+    justify-content: center
+    height: 100%
+    max-width: 800px
+    min-height: 100px
+    width: 100%
+    z-index: 1
+
+    .loading-indicator-icon
+      color: white
+      position: relative
+
+  .classification
+    align-items: stretch
+    display: flex
+    justify-content: center
+    margin: 0 auto
+    max-width: 1200px
+
+    @media screen and (max-width: 900px)
+      flex-wrap: wrap
+
+    .subject
+      max-width: 740px
+      min-width: 320px
+      padding: 0 1em
+      position: relative
+      width: 100%
+
+      img
+        max-width: 100%
+
+      @media screen and (max-width: 900px)
+        border-radius: 6px
+        height: 100%
+        min-height: 300px
+
+      @media screen and (max-width: 400px)
+        min-height: 33vh
+
+    .task-container
+      max-width: 400px
+      min-width: 320px
+      padding: 0 1em
+      position: relative
+      width: 100%
+
+      @media screen and (max-width: 900px)
+        border-radius: 0 0 6px 6px
+        box-sizing: border-box
+        height: 100%
+        max-width: 800px
+        min-height: 550px
+
+      .loading-indicator-icon
+        color: black
+
+.workflow-buttons-container
+  display: flex
+  justify-content: flex-end
+
+  .action-button
+    @extends $reset-button
+    background: rgba(88, 172, 130, 1)
+    border-radius: 4px
+    color: white
+    font-weight: 700
+    padding: 0.8em 0
+    text-align: center
+    width: 50%
+
+    @media screen and (max-width: 400px)
+      width: 100%

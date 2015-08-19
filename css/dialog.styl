@@ -1,0 +1,53 @@
+.dialog-container
+  position: relative
+  z-index: 1
+
+.dialog-underlay
+  background: rgba(black, 0.6)
+  color: white
+  height: 100%
+  left: 0
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 1
+
+.dialog
+  background: white
+  box-shadow: 0 1px 3px -1px black
+  color: black
+  display: flex
+  flex-direction: column
+  left: 50%
+  max-height: 90%
+  max-width: 100%
+  overflow: auto
+  position: absolute
+  top: 40%
+  transform: translate(-50%, -40%)
+
+.dialog-controls
+  height: 0
+  line-height: 1
+  position: relative
+  z-index: 1
+
+  > .wrapper
+    position: absolute
+    right: 0
+    top: 0
+
+  button
+    @extends $reset-button
+    font-size: 2em
+    opacity: 0.8
+    padding: 0 0.2em
+
+    &:hover
+      opacity: 1
+
+.dialog-content
+  overflow: auto
+
+  img
+    max-width: 100%

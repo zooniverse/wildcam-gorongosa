@@ -1,0 +1,193 @@
+.main-header
+  align-items: center
+  background-color: transparent
+  box-sizing: border-box
+  display: flex
+  justify-content: space-between
+  padding: 1em 3vw
+  position: absolute
+  width: 100%
+
+  @media screen and (max-width: 768px)
+    background-color: #3a4959
+
+    .main-header-title-container
+      text-align: center
+      width: 100%
+
+  .main-header-title-link
+    color: #f2f2f2
+    font-weight: 700
+    margin-right: 3em
+    position: relative
+    text-decoration: none
+    white-space: nowrap
+    z-index: 3
+
+    @media screen and (max-width: 768px)
+      margin: 0
+
+  .mobile-menu-button
+    @extends $reset-button
+    display: none
+    position: absolute
+    right: 1em
+    z-index: 2
+
+    @media screen and (max-width: 768px)
+      display: block
+
+      &.close-button
+        background-color: #2b3743
+        height: 50px
+        top: 0
+        right: 0
+        width: 50px
+
+    .menu-icon
+      width: 16px
+
+  .close-button-title
+    color: rgba(255,255,255,0.5)
+    display: none
+    font-size: 0.8em
+    font-style: italic
+    position: relative
+    right: 50px
+    z-index: 2
+
+  .main-header-nav
+    align-items: center
+    display: flex
+    flex: 1 1 auto
+
+    .main-header-nav-link-container
+      display: inline-flex
+      flex: 1 1 auto
+
+      @media screen and (max-width: 768px)
+        align-items: flex-start
+        flex-direction: column
+        justify-content: space-around
+        max-height: 300px
+        order: 2
+
+    .main-header-link
+      background-color: transparent
+      border-radius: 15px
+      color: #f2f2f2
+      margin-right: 3em
+      padding: 0.5em 1em
+      text-decoration: none
+
+      &.active
+        background-color: rgba(255, 255, 255, 0.1)
+
+      &:hover:not(.active)
+        background-color: rgba(255, 255, 255, 0.1)
+
+      &:visited
+        color: #f2f2f2
+
+      &:last-of-type
+        margin-right: 0
+
+      @media screen and (max-width: 768px)
+        color: white
+
+        &:visited
+          color: white
+
+    @media screen and (max-width: 768px)
+      align-items: flex-start
+      background-color: rgba(58, 73, 89, 0.95)
+      height: 0
+      left: 0
+      opacity: 0
+      padding: 0
+      position: absolute
+      transition: height .5s, opacity .25s ease-in-out
+      top: 0
+      width: 100%
+      z-index: 2
+
+      .main-header-link
+        display: none
+
+      &.show-menu
+        box-sizing: border-box
+        display: flex
+        flex-direction: column
+        height: 100vh
+        max-height: 625px
+        opacity: 1
+        padding: 80px 1em 0
+
+        .main-header-link
+          display: block
+          max-width: 100px
+          position: relative
+          text-align: center
+          z-index: 2
+
+        .login-bar, .account-bar
+          opacity: 1
+
+        .account-bar
+          display: flex
+
+        .login-bar
+          display: block
+
+  .login-bar, .account-bar
+    float: right
+
+    @media screen and (max-width: 768px)
+      float: none
+
+    a
+      @extends $reset-link
+
+      &:hover
+        color: darken(white, 20%)
+
+  .account-bar
+    align-items: center
+    color: white
+    display: flex
+
+    @media screen and (max-width: 768px)
+      display: none
+      justify-content: space-between
+      margin-bottom: 4em
+      order: 1
+      width: 100%
+
+      .sign-out-button
+        color: rgba(255,255,255,0.5)
+        font-size: 0.8em
+
+    .account-info
+      .display-name
+        line-height: 40px
+
+      .account-avatar
+        border-radius: 50%
+        margin: 0 1em
+        vertical-align: middle
+        width: 40px
+
+        @media screen and (max-width: 768px)
+          float: left
+
+  .login-bar
+    color: white
+    display: inline-block
+
+    @media screen and (max-width: 768px)
+      display: none
+      max-width: 100px
+      padding: 1em
+      position: relative
+      text-align: center
+      z-index: 2

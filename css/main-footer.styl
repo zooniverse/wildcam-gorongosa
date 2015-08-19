@@ -1,0 +1,97 @@
+.main-footer
+  .main-footer-zooniverse-info
+    align-items: center
+    background-color: #AA7139
+    color: rgba(240, 240, 240, 1)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 3em 3vw
+
+    .zooniverse-logo
+      font-size: 4em
+
+    .markdown
+      p
+        font-size: 1.2em
+        font-weight: 400
+        max-width: 41em
+        text-align: center
+
+    .footer-link-button
+      @extends $reset-button
+      border: solid 2px rgba(240, 240, 240, 1)
+      border-radius: 4px
+      color: inherit
+      font-size: 0.9em
+      padding: 1em 0
+      text-align: center
+      width: 215px
+
+      &:hover
+        background-color: lighten(#D49F6A, 10%)
+
+  .main-footer-projects-lists
+    background-color: #804A15
+    color: #D4B46A
+    display: flex
+    justify-content: center
+    min-height: 175px
+    padding: 1em 3vw
+
+    @media screen and (max-width: 900px)
+      flex-wrap: wrap
+      justify-content: flex-start
+
+    .project-list-container
+      padding: 0.5em 2em
+      white-space: nowrap
+
+      h5
+        margin: 0
+
+      .project-list
+        list-style: none
+        font-size: 0.8em
+        margin: 0
+        padding: 0
+
+        li > a
+          @extends $reset-link
+
+          &:hover
+            color: white
+
+  .main-footer-social-media
+    background-color: #552A00
+    box-sizing: border-box
+    color: #ccc
+    display: flex
+    font-size: 0.8em
+    justify-content: space-between
+    max-width: 2000px
+    padding: 0.25em 3vw
+    width: 100%
+
+    .markdown
+      align-items: center
+      display: flex
+
+      p
+        margin: 0.5em 0.5em 0.5em 0
+
+    .social-media-links
+      line-height: 50px
+      min-width: 150px
+
+      a
+        margin-left: 1.5em
+
+      span, i
+        vertical-align: middle
+
+    a
+      @extends $reset-link
+
+      &:hover
+        color: lighten(#ccc, 30%)
