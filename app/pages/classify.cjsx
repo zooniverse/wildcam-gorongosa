@@ -37,14 +37,14 @@ module.exports = React.createClass
   componentDidMount: ->
     # Check specifically for null because setting prop as null if no user is returned. Avoids loading tutorial for the split second the props are undefined.
     # For logged in users with zero classifications, they will have null userPrefs
-    # if !@props.user? || !@props.userPreferences
-    #   @toggleTutorial()
+    if @props.user is null || @props.userPreferences is null
+      @toggleTutorial()
 
   componentWillReceiveProps: (nextProps) ->
-    # if nextProps.userPreferences?.activity_count is 0 or nextProps.userPreferences is null
-    #   @toggleTutorial()
-    # else if nextProps.user is null
-    #   @toggleTutorial()
+    if nextProps.userPreferences?.activity_count is 0 or nextProps.userPreferences is null
+      @toggleTutorial()
+    else if nextProps.user is null
+      @toggleTutorial()
 
   componentWillUpdate: (nextProps, nextState) ->
     if nextState.subject isnt @state.subject
@@ -88,7 +88,7 @@ module.exports = React.createClass
           {if @state.subject && @state.classification && @state.annotations && @state.workflow
             if @state.onSummary
               <div>
-                <Summary annotations={@state.annotations} task={@state.workflow.tasks['T1']} expanded={true} />
+                <Summary annotations={@state.annotations} task={@state.workflow.tasks[@state.workflow.first_task]} expanded={true} />
                 <div className="workflow-buttons-container">
                   <button type="button" className="action-button" onClick={@onClickNextImage}>Next Image</button>
                 </div>
@@ -97,7 +97,7 @@ module.exports = React.createClass
               <div>
                 <Task
                   {...@props}
-                  task={@state.workflow.tasks['T1']}
+                  task={@state.workflow.tasks[@state.workflow.first_task]}
                   annotation={@state.annotations}
                   onChange={@onChangeTask}
                 />
