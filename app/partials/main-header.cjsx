@@ -8,10 +8,11 @@ counterpart = require 'counterpart'
 
 counterpart.registerTranslations 'en',
   mainHeader:
-    title: 'Wildcam Gorongosa'
+    title: 'WildCam Gorongosa'
     links:
       about: 'About'
       classify: 'Classify'
+      fieldGuide: 'Field Guide'
       talk: 'Talk'
       blog: 'Blog'
 
@@ -56,6 +57,7 @@ module.exports = React.createClass
         <div className="main-header-nav-link-container">
           <Link to="classify" className="main-header-link"><Translate content="mainHeader.links.classify" /></Link>
           <Link to="about" className="main-header-link"><Translate content="mainHeader.links.about" /></Link>
+          <Link to="field-guide" className="main-header-link"><Translate content="mainHeader.links.fieldGuide" /></Link>
           <a className="main-header-link" href="#" target="_blank"><Translate content="mainHeader.links.talk" /></a>
           <a className="main-header-link" href="#" target="_blank"><Translate content="mainHeader.links.blog" /></a>
         </div>
