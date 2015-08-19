@@ -1,6 +1,6 @@
 React = require 'react/addons'
 Router = require 'react-router'
-{Route, RouteHandler, DefaultRoute, Link} = require 'react-router'
+{Route, RouteHandler, DefaultRoute, NotFoundRoute, Link} = require 'react-router'
 Reflux = require 'reflux'
 projectConfig = require './lib/config'
 {api} = client = require './api/client'
@@ -36,10 +36,12 @@ routes =
     <Route name="field-guide" path="field-guide" handler={require './pages/field-guide'}>
       <Route name="field-guide-entry" path=":entryName" handler={require './partials/field-guide-entry'} />
     </Route>
+
+    <NotFoundRoute handler={require './pages/not-found'} />
   </Route>
 
-Router.run routes, (Handler) ->
-  React.render <Handler />, document.getElementById("app")
+Router.run routes, (Root) ->
+  React.render <Root />, document.getElementById("app")
 
 window.React = React
 window.api = api
