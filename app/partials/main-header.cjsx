@@ -51,7 +51,9 @@ module.exports = React.createClass
   render: ->
     <header className="main-header">
       <div className="main-header-title-container">
-        <Link className="main-header-title-link" to="root"><Translate content="mainHeader.title" /></Link>
+        <Link className="main-header-title-link" to="root">
+          <img className="main-header-logo" src="assets/small-logo.png" />
+        </Link>
       </div>
       <nav ref="mainHeaderNav" className="main-header-nav">
         <div className="main-header-nav-link-container">
