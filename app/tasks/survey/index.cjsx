@@ -63,8 +63,9 @@ module.exports = React.createClass
   handleAnnotation: (choice, answers, e) ->
     filters = JSON.parse JSON.stringify @state.filters
 
-    @props.annotation.value ?= []
-    @props.annotation.value.push {choice, answers, filters}
+    @props.annotation.push {task: @props.task.type, value: []}
+    @props.annotation[0].value ?= []
+    @props.annotation[0].value.push {choice, answers, filters}
     @props.onChange e
 
     @clearFilters()
