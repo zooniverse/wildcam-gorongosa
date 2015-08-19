@@ -5,9 +5,10 @@ config = require '../lib/config'
 
 classifierActions = require '../actions/classifier-actions'
 
+annotationsStore = require './annotations-store'
 projectStore = require './project-store'
-workflowStore = require './workflow-store'
 subjectStore = require './subject-store'
+workflowStore = require './workflow-store'
 
 module.exports = Reflux.createStore
   data: null
@@ -22,7 +23,7 @@ module.exports = Reflux.createStore
       @create()
 
   create: ->
-    classification = api.type('classifications').create
+    @data = api.type('classifications').create
       metadata:
         workflow_version: workflowStore.data.version
         started_at: (new Date).toISOString()
@@ -33,9 +34,6 @@ module.exports = Reflux.createStore
         project: config.projectId
         workflow: config.workflowId
         subjects: [subjectStore.data.id]
-
-    # classification._workflow = workflowStore.data
-    # classification._subjects = [subjectStore.data]
 
     @trigger @data
 

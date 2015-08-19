@@ -7,9 +7,9 @@ module.exports = Reflux.createStore
   data: []
 
   init: ->
-    # eh?
+    @create()
 
-  onCreate: ->
+  create: ->
     @data = []
     @trigger @data
 

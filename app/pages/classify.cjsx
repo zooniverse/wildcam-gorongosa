@@ -9,6 +9,7 @@ SlideTutorial = require '../components/slide-tutorial'
 annotationsStore = require '../stores/annotations-store'
 classificationStore = require '../stores/classification-store'
 subjectStore = require '../stores/subject-store'
+workflowStore = require '../stores/workflow-store'
 
 classifierActions = require '../actions/classifier-actions'
 
@@ -18,14 +19,16 @@ Summary = require '../partials/summary'
 module.exports = React.createClass
   displayName: "Classify"
   mixins: [
-    Reflux.connect(classificationStore, 'classification')
     Reflux.connect(annotationsStore, 'annotations')
+    Reflux.connect(classificationStore, 'classification')
     Reflux.connect(subjectStore, 'subject')
+    Reflux.connect workflowStore, 'workflow'
   ]
 
   getInitialState: ->
     annotations: annotationsStore.data
     classification: classificationStore.data
+    workflow: workflowStore.data
     subject: subjectStore.data
     tutorialIsOpen: false
     onSummary: false
@@ -46,8 +49,7 @@ module.exports = React.createClass
     @setState tutorialIsOpen: !@state.tutorialIsOpen
 
   onClassificationData: (data) ->
-    @setState
-      onSummary: false
+    @setState onSummary: false
 
   onChangeTask: ->
     console.log arguments
@@ -55,11 +57,12 @@ module.exports = React.createClass
   onClickFinish: ->
     classifierActions.finishClassification()
 
-    @setState
-      onSummary: true
+    @setState onSummary: true
 
   onClickNextImage: ->
     classifierActions.moveToNextSubject()
+
+    @setState onSummary: false
 
   render: ->
     <div className="classify-page">
@@ -77,10 +80,10 @@ module.exports = React.createClass
         </section>
 
         <section className="task-container">
-          {if @state.subject and @state.classification and @state.annotations
+          {if @state.subject && @state.classification && @state.annotations && @state.workflow
             if @state.onSummary
               <div>
-                <Summary annotations={@state.classificationData.classification.annotations} />
+                <Summary annotations={@state.annotations} />
                 <div className="workflow-buttons-container">
                   <button type="button" className="action-button" onClick={@onClickNextImage}>Next Image</button>
                 </div>
@@ -89,8 +92,8 @@ module.exports = React.createClass
               <div>
                 <Task
                   {...@props}
-                  task={@state.classificationData.workflow.tasks['T1']}
-                  annotation={@state.classificationData.classification.annotations}
+                  task={@state.workflow.tasks['T1']}
+                  annotation={@state.annotations}
                   onChange={@onChangeTask}
                 />
 
