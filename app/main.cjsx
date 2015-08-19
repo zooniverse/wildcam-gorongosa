@@ -20,7 +20,6 @@ Main = React.createClass
 
   render: ->
     user = unless @state.userData is null then @state.userData?.user else null
-    userPreferences = unless @state.userData is null then @state.userData?.projectPreferences else null
 
     <div className="main">
       <MainHeader user={user} />
