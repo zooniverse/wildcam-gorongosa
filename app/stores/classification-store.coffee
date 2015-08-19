@@ -1,44 +1,42 @@
 Reflux = require 'reflux'
-_ = require 'underscore'
 counterpart = require 'counterpart'
 {api} = require '../api/client'
-classifyActions = require '../actions/classify-actions'
+classificationActions = require '../actions/classification-actions'
 projectStore = require './project-store'
-projectConfig = require '../lib/project-config'
+config = require '../lib/config'
 
-ClassifyStore = Reflux.createStore
-  listenables: classifyActions
+module.exports = Reflux.createStore
+  listenables: classificationActions
+
+  data: null
 
   init: ->
     @listenTo projectStore, @getWorkflow
 
-  getInitialState: ->
-    @data
+  # getWorkflow: (@project = null) ->
+  #   unless @project
+  #     return throw new Error 'cannot fetch workflows for project'
+  #
+  #   api.type('workflows').get projectConfig.workflowId
+  #     .then (@workflow) =>
+  #       @getNextSubject()
 
-  getWorkflow: (@project = null) ->
-    unless @project
-      return throw new Error 'cannot fetch workflows for project'
+  # getNextSubject: ->
+  #   query =
+  #     workflow_id: @workflow.id
+  #     sort: 'queued'
+  #
+  #   api.type('subjects').get query
+  #     .then (subjects) =>
+  #       if subjects.length is 0
+  #         # handle empty subjects array
+  #         return
+  #
+  #       randomInt = Math.floor(Math.random() * subjects.length)
+  #       subject = subjects[randomInt]
+  #       @createNewClassification @workflow, subject
 
-    api.type('workflows').get projectConfig.workflowId
-      .then (@workflow) =>
-        @getNextSubject()
-
-  getNextSubject: ->
-    query =
-      workflow_id: @workflow.id
-      sort: 'queued'
-
-    api.type('subjects').get query
-      .then (subjects) =>
-        if subjects.length is 0
-          # handle empty subjects array
-          return
-
-        randomInt = Math.floor(Math.random() * subjects.length)
-        subject = subjects[randomInt]
-        @createNewClassification @workflow, subject
-
-  createNewClassification: (workflow, subject) ->
+  onCreate: (workflow, subject) ->
     classification = api.type('classifications').create
       annotations: []
       metadata:
@@ -48,8 +46,8 @@ ClassifyStore = Reflux.createStore
         user_language: counterpart.getLocale()
         utc_offset: ((new Date).getTimezoneOffset() * 60).toString()
       links:
-        project: @project.id
-        workflow: workflow.id
+        project: config.projectId
+        workflow: config.workflowId
         subjects: [subject.id]
 
     classification._workflow = workflow
@@ -80,5 +78,3 @@ ClassifyStore = Reflux.createStore
         classification.destroy()
       .catch (error) ->
         console.error 'error saving c'
-
-module.exports = ClassifyStore

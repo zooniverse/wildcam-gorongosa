@@ -6,7 +6,6 @@ client = new PanoptesClient
   host: config.host
 
 client.handleError = (request) ->
-  console.log 'api handle error', request
   if 'message' of request
     throw request
   else if 'responseText' of request

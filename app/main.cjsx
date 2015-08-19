@@ -31,7 +31,6 @@ Main = React.createClass
 routes =
   <Route name="root" path="/" handler={Main}>
     <DefaultRoute handler={require './pages/home'} />
-
     <Route name="classify" path="classify" handler={require './pages/classify'} />
     <Route name="about" path="about" handler={require './pages/about'} />
   </Route>

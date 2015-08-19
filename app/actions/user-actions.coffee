@@ -1,8 +1,6 @@
 Reflux = require 'reflux'
 
-UserActions = Reflux.createActions({
+module.exports = Reflux.createActions({
   signOut: 'signOut'
   getUserAvatar: 'getUserAvatar'
 })
-
-module.exports = UserActions
