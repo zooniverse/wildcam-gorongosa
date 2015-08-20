@@ -1,9 +1,12 @@
-.secondary-page
-  color: white
+.container
   margin: 0 auto
-  max-width: 880px
+  max-width: 900px
+  padding: 0 1em
+
+.secondary-page
+  background: #304d4d
+  color: white
   min-height: 100vh
-  padding: 100px 3vw
 
   a
     color: #D49F6A
@@ -11,10 +14,52 @@
     &:hover
       color: #FFD4AA
 
+  iframe
+    border: 1px solid black
+    display: block
+    margin: 0 auto
+    max-width: 100%
+
   img
     display: block
     margin: 0 auto
     max-width: 100%
+
+  .secondary-page-hero
+    background-position: center
+    background-size: cover
+    height: 500px
+    padding: 4em
+
+    .secondary-page-hero-title
+      font-family: 'Nunito', sans-serif
+      font-size: 3em
+      margin: 3em 0
+
+  .secondary-page-container
+    @extends .container
+    display: flex
+
+  $menu-green = #4c7452
+  .secondary-page-menu
+    background: $menu-green
+
+    a
+      background: lighten($menu-green, 10%)
+      color: white
+      font-size: 16px
+      font-weight: 700
+      padding: 1em 2em
+      text-decoration: none
+
+      &.active
+        background: lighten($menu-green, 15%)
+
+      &:hover
+        background: lighten($menu-green, 25%)
+
+  .secondary-page-content
+    padding: 3em 0
 
   .organizations
     display: flex
