@@ -10,4 +10,5 @@ module.exports = Reflux.createStore
   init: ->
     api.type('workflows').get config.workflowId
       .then (@data) =>
+        window.workflow = @data # for debugging purposes
         @trigger @data

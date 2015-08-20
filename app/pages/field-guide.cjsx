@@ -1,6 +1,9 @@
 React = require 'react'
 Reflux = require 'reflux'
-{Link, RouteHandler} = require 'react-router'
+{Link, Navigation, RouteHandler, State} = require 'react-router'
+RouterState = State
+_ = require 'lodash'
+
 workflowStore = require '../stores/workflow-store'
 
 module.exports = React.createClass
@@ -9,7 +12,7 @@ module.exports = React.createClass
 
   render: ->
     <div className="secondary-page">
-      <h1>starting the field guide</h1>
-      <Link to="field-guide-entry" params={{entryName: 'lion'}}>Test Link</Link>
+      <h1>Field Guide</h1>
+      <Link to="field-guide-entry" params={{entryName: 'honeybadger'}}>Test Honey Badger link</Link>
       <RouteHandler {...@props} />
     </div>
