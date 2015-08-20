@@ -6,10 +6,10 @@ module.exports =
         <h1>Papio cynocephalus</h1>
         <p>Yellow baboons are aptly named for the yellow-brown fur that covers most of their bodies. The underside of yellow baboons is white, and their face, ears, hands, feet, and posterior appear purplish-black in color and are free of fur. Like other baboons, yellow baboons have doglike noses, powerful jaws, and sharp canine teeth, and they lack a prehensile (gripping) tail. Yellow baboons are the largest baboon and are highly sexually dimorphic.</p>
 
-        <h2>Habitat
+        <h2>Habitat</h2>
         <p>Yellow baboons are found in savanna grassland, steppe, and rainforest habitats.</p>
 
-        <h2>Diet
+        <h2>Diet</h2>
         <p>Grasses, seeds, lichens, fruits, flowers, invertebrates, reptiles, birds, and other primates, such as vervet monkeys and bushbabies</p>
 
 

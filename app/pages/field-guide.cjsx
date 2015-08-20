@@ -13,6 +13,9 @@ module.exports = React.createClass
   render: ->
     <div className="secondary-page">
       <h1>Field Guide</h1>
-      <Link to="field-guide-entry" params={{entryName: 'honeybadger'}}>Test Honey Badger link</Link>
+      <nav>
+        <Link className="entry-link" to="field-guide-entry" params={{entryName: 'honeybadger'}}>Test Honey Badger link</Link>
+        <Link className="entry-link" to="field-guide-entry" params={{entryName: 'baboon'}}>Test Baboon link</Link>
+      </nav>
       <RouteHandler {...@props} />
     </div>
