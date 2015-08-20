@@ -69,6 +69,9 @@ module.exports = React.createClass
 
     @setState onSummary: false
 
+  onClickInfo: ->
+    console.log 'clicky'
+
   render: ->
     <div className="classify-page">
       {if @state.tutorialIsOpen
@@ -82,6 +85,9 @@ module.exports = React.createClass
             <div className="loading-indicator-container">
               <LoadingIndicator />
             </div>}
+          <div className="subject-toolbar">
+            <button type="button" onClick={@onClickInfo}><i className="fa fa-info"></i></button>
+          </div>
         </section>
 
         <section className="task-container">
