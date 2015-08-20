@@ -7,10 +7,18 @@ module.exports = React.createClass
   displayName: 'Chooser'
 
   getDefaultProps: ->
+    annotation: null
     task: null
     filters: {}
     onFilter: Function.prototype
     onChoose: Function.prototype
+
+  componentDidMount: ->
+
+    if @props.annotation
+      for annotation in @props.annotation
+        for value in annotation.value
+          React.findDOMNode(@).querySelectorAll("button[data-choice='#{value.choice}']")[0].classList.add 'selected-annotation'
 
   getFilteredChoices: ->
     for choiceID in @props.task.choicesOrder
@@ -84,7 +92,7 @@ module.exports = React.createClass
         else
           for choiceID, i in filteredChoices
             choice = @props.task.choices[choiceID]
-            <button key={choiceID + i} type="button" className="survey-task-chooser-choice" onClick={@props.onChoose.bind null, choiceID}>
+            <button key={choiceID + i} type="button" className="survey-task-chooser-choice" data-choice={choiceID} onClick={@props.onChoose.bind null, choiceID}>
               {unless choice.images.length is 0
                   <img src={@props.task.images[choice.images[0]]} className="survey-task-chooser-choice-thumbnail" />}
               <div className="survey-task-chooser-choice-label">{choice.label}</div>

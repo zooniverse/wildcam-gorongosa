@@ -31,6 +31,20 @@ $survey-task-pill-button
   > *
     flex-grow: 1
     margin: 0 2px 2px 0
+    
+  .dropdown-form-button
+    @extends $reset-button
+    border-radius: 25px
+    color: white
+    cursor: pointer
+    height: 25px
+    margin-bottom: 10px
+    text-transform: capitalize
+    width: 60px
+    
+    &:hover, &[data-is-open="true"]
+      background-color: rgba(48, 77, 77, 0.5)
+      
 
 .survey-task-chooser-characteristic
   display: block
@@ -66,7 +80,7 @@ $survey-task-pill-button
 
   &[data-breakpoint="5"] > *
     flex-basis: calc(100% - 2px)
-
+  
 .survey-task-chooser-choice
   @extends $reset-button
   background: rgba(64, 64, 64, 1)
@@ -79,6 +93,10 @@ $survey-task-pill-button
 
   > *
     margin: 0.3em 0.6em
+    
+  &.selected-annotation
+    background-color: #212121
+    color: rgba(247, 247, 247, 0.5)
 
 .survey-task-chooser-choice-thumbnail
   border-radius: 3px

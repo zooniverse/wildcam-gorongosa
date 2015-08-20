@@ -69,7 +69,7 @@ module.exports = React.createClass
 
     @setState onSummary: false
 
-  onClickInfo: ->
+  onClickMetadata: ->
     console.log 'clicky'
 
   render: ->
@@ -79,6 +79,7 @@ module.exports = React.createClass
 
       <div className="classification">
         <section className="subject">
+          <p className="classifier-tagline">You're now tracking the wildlife of Gorongosa National Park</p>
           {if @state.subject
             <img src={@state.subject.locations[0]['image/jpeg']} />
           else
@@ -86,7 +87,7 @@ module.exports = React.createClass
               <LoadingIndicator />
             </div>}
           <div className="subject-toolbar">
-            <button type="button" onClick={@onClickInfo}><i className="fa fa-info"></i></button>
+            <button className="metadata-button" type="button" onClick={@onClickMetadata}><i className="fa fa-info"></i></button>
           </div>
         </section>
 
@@ -100,7 +101,7 @@ module.exports = React.createClass
                 </div>
               </div>
             else
-              <div>
+              <div className="survey-task-container">
                 <Task
                   {...@props}
                   task={@state.workflow.tasks[@state.workflow.first_task]}
