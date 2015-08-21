@@ -79,20 +79,23 @@
 
     .main-header-link
       background-color: transparent
-      border-radius: 15px
-      color: #f2f2f2
+      border-radius: 6px
+      color: #f6f6f6
       margin-right: 3em
-      padding: 0.5em 1em
+      min-width: 70px
+      outline: none
+      padding: 0.5em 1em 0.6em
+      text-align: center
       text-decoration: none
 
       &.active
-        background-color: rgba(255, 255, 255, 0.1)
+        background-color: rgba(#304d4d, 0.7)
 
       &:hover:not(.active)
-        background-color: rgba(255, 255, 255, 0.1)
+        background-color: rgba(#304d4d, 0.7)
 
       &:visited
-        color: #f2f2f2
+        color: #f6f6f6
 
       &:last-of-type
         margin-right: 0
@@ -149,12 +152,6 @@
 
     @media screen and (max-width: 768px)
       float: none
-
-    a
-      @extends $reset-link
-
-      &:hover
-        color: darken(white, 20%)
 
   .account-bar
     align-items: center

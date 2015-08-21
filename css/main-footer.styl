@@ -1,14 +1,15 @@
 .main-footer
   .main-footer-zooniverse-info
     align-items: center
-    background-color: #AA7139
-    color: rgba(240, 240, 240, 1)
+    background-color: #2d2d2d
+    color: rgba(#999, 1)
     display: flex
     flex-direction: column
     justify-content: center
     padding: 3em 3vw
 
     .zooniverse-logo
+      color: #8a9d56
       font-size: 4em
 
     .markdown
@@ -20,20 +21,21 @@
 
     .footer-link-button
       @extends $reset-button
-      border: solid 2px rgba(240, 240, 240, 1)
+      border: solid 2px rgba(#8a9d56, 1)
       border-radius: 4px
-      color: inherit
+      color: #8a9d56
       font-size: 0.9em
       padding: 1em 0
       text-align: center
       width: 215px
 
       &:hover
-        background-color: lighten(#D49F6A, 10%)
+        background-color: darken(#8a9d56, 35%)
+        color: #f2f2f2
 
   .main-footer-projects-lists
-    background-color: #804A15
-    color: #D4B46A
+    background-color: #1f1f1f
+    color: #bbb
     display: flex
     justify-content: center
     min-height: 175px
@@ -48,6 +50,7 @@
       white-space: nowrap
 
       h5
+        color: #f2f2f2
         margin: 0
 
       .project-list
@@ -63,7 +66,7 @@
             color: white
 
   .main-footer-social-media
-    background-color: #552A00
+    background-color: #00181a
     box-sizing: border-box
     color: #ccc
     display: flex

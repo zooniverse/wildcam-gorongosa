@@ -4,8 +4,8 @@
   padding: 0 1em
 
 .secondary-page
-  background: #304d4d
-  color: white
+  background: #efefef
+  color: #222
   min-height: 100vh
 
   a
@@ -26,38 +26,39 @@
     max-width: 100%
 
   .secondary-page-hero
-    background-image: url('assets/about/cool-image-2.jpg')
+    background-image: url('assets/about/about-hero.jpg')
     background-position: center
     background-size: cover
-    height: 500px
+    height: 300px
     padding: 4em
 
     .secondary-page-hero-title
-      font-family: 'Nunito', sans-serif
+      color: white
       font-size: 3em
+      font-weight: 300
       margin: 3em 0
 
   .secondary-page-container
     @extends .container
     display: flex
+    flex-wrap: wrap
 
-  $menu-green = #4c7452
   .secondary-page-menu
-    background: $menu-green
+    background: #e2e2e2
 
     a
-      background: lighten($menu-green, 10%)
-      color: white
-      font-size: 16px
-      font-weight: 700
+      border: 4px solid transparent
+      color: #304d4d
+      font-size: 14px
       padding: 1em 2em
       text-decoration: none
 
       &.active
-        background: lighten($menu-green, 15%)
+        border-bottom-color: #8a9d56
 
-      &:hover
-        background: lighten($menu-green, 25%)
+      &:hover:not(.active)
+        background-color: #d4d4d4
+        border-color: #e2e2e2
 
   .secondary-page-content
     padding: 3em 0

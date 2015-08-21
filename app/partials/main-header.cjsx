@@ -11,7 +11,7 @@ counterpart.registerTranslations 'en',
     title: 'WildCam Gorongosa'
     links:
       about: 'About'
-      classify: 'Classify'
+      classify: 'Start'
       fieldGuide: 'Field Guide'
       talk: 'Talk'
       blog: 'Blog'
