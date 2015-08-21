@@ -42,12 +42,28 @@ $survey-task-pill-button
     text-transform: capitalize
     width: 60px
     
-    &:hover, &[data-is-open="true"]
+    &:hover
       background-color: rgba(48, 77, 77, 0.5)
       
+    &[data-is-open="true"]
+      background-color: #58ac82
+
+      &:before
+        border: solid
+        border-color: #58ac82 transparent
+        border-width: 0 .4em .4em .4em
+        top: -0.35em
+        content: ""
+        display: block
+        left: 2.65em
+        position: absolute
+        z-index: 1
 
 .survey-task-chooser-characteristic
   display: block
+  
+.survey-task-chooser-characteristic-menu
+  background-color: #58ac82
 
 .survey-task-chooser-characteristic-value
   @extends $reset-button
@@ -61,7 +77,8 @@ $survey-task-pill-button
 
 .survey-task-chooser-choices
   background: rgba(24, 24, 24, 1)
-  border-radius: 3px
+  border: solid 1px rgba(24, 24, 24, 1)
+  border-radius: 8px
   display: flex
   flex-wrap: wrap
   padding: 4px
@@ -153,40 +170,54 @@ $survey-task-pill-button
   width: 1em
 
 .survey-task-choice
-  background white
-  border-radius: 5px
-  color: black
+  background:  #f7f7f7
+  border-radius: 8px
+  color: #6b6a6a
   font-size: 14px
   padding: 1em
 
 .survey-task-choice-label
+  color: #3c3c3c
   font-weight: bold
   margin: 0.5em 0
 
 .survey-task-choice-description
-  margin: 0.5em 0
+  margin: 0.5em 0 1.75em
 
 .survey-task-choice-confusions
-  margin: 0.5em 0
+  font-size: 12px
+  margin: 0.5em 0 1.75em
 
-.survey-task-choice-confusion
-  @extends $survey-task-pill-button
+  .dropdown-form-button
+    @extends $reset-button
+    background: rgba(232, 232, 232, 1)
+    border-radius: 4px
+    cursor: pointer
+    font-size: 10px
+    margin: 0 3px 0 0
+    padding: 0.5em 0.75em
+    
+    &:hover
+      background: rgba(208, 208, 208, 1)
+      color: rgba(107, 107, 107, 1)
 
 .survey-task-choice-question
-  margin: 0.5em 0
+  margin: 0.5em 0 1.75em
 
   &:first-child
     display: block
 
 .survey-task-choice-question-label
-  margin: 0 0 3px 0
+  font-size: 12px
+  margin: 0 0 10px 0
 
 .survey-task-choice-answer
   background: rgba(232, 232, 232, 1)
-  border-radius: 3px
+  border-radius: 4px
   cursor: pointer
+  font-size: 10px
   margin: 0 3px 0 0
-  padding: 0.2em 0.5em
+  padding: 0.5em 0.75em
 
   &:hover
     background: rgba(208, 208, 208, 1)

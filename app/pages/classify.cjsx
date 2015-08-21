@@ -59,6 +59,11 @@ module.exports = React.createClass
   onChangeTask: ->
     console.log 'task changed', arguments
 
+    if @state.annotations._choiceInProgress? and @state.annotations._choiceInProgress is true
+      React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'none'
+    else
+      React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'flex'
+
   onClickFinish: ->
     classifierActions.finishClassification()
 
@@ -109,8 +114,8 @@ module.exports = React.createClass
                   onChange={@onChangeTask}
                 />
 
-                <div className="workflow-buttons-container">
-                  <button type="button" className="action-button" onClick={@onClickFinish}>Finish</button>
+                <div ref="workflowButtonsContainer" className="workflow-buttons-container">
+                  <button type="button" className="action-button" onClick={@onClickFinish}>Done</button>
                 </div>
               </div>
           else
@@ -118,5 +123,8 @@ module.exports = React.createClass
               <LoadingIndicator />
             </div>}
         </section>
+      </div>
+      <div className="metadata-container">
+        <p>metadata placeholder</p>
       </div>
     </div>
