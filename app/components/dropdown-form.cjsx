@@ -21,6 +21,7 @@ module.exports = React.createClass
   open: ->
     root = document.createElement 'div'
     root.classList.add 'dropdown-form-root'
+    root.classList.add @props.className
     document.body.appendChild root
 
     @setState {root}

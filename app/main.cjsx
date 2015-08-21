@@ -31,7 +31,11 @@ routes =
   <Route name="root" path="/" handler={Main}>
     <DefaultRoute handler={require './pages/home'} />
     <Route name="classify" path="classify" handler={require './pages/classify'} />
-    <Route name="about" path="about" handler={require './pages/about'} />
+    <Route name="about-page-controller" path="about" handler={require './pages/about'}>
+      <DefaultRoute name="about" handler={require './pages/about/default'} />
+      <Route name="team" path="team" handler={require './pages/about/team'} />
+      <Route name="organizations" path="organizations" handler={require './pages/about/organizations'} />
+    </Route>
     <Route name="field-guide" path="field-guide" handler={require './pages/field-guide'}>
       <Route name="field-guide-entry" path=":entryName" handler={require './partials/field-guide-entry'} />
     </Route>

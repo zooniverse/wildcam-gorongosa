@@ -13,6 +13,8 @@ module.exports = React.createClass
       if transition.path.charAt(transition.path.length - 1) == '/'
         newPath = transition.path.slice 0, transition.path.length - 1
         transition.redirect newPath, query, params
+      else if transition.path.indexOf('access_token') > -1 # Catches login token redirect
+        transition.redirect '/'
 
   render: ->
     <div className="secondary-page">
