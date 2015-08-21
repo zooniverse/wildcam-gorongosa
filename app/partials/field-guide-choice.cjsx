@@ -12,17 +12,17 @@ module.exports = React.createClass
     workflow: workflowStore.data
 
   # Flakey
-  getKeyFromUrlPath: (entryName) ->
-    entryName.replace(/[aeiouy]/g, '').toUpperCase()
+  getKeyFromUrlPath: (choice) ->
+    choice.replace(/[aeiouy]/g, '').toUpperCase()
 
   render: ->
     unless @state.workflow
       return <div></div>
 
     try
-      localChoice = require "../lib/field-guide-content/#{ @props.params.entryName }"
+      localChoice = require "../lib/field-guide-content/#{ @props.params.choice }"
 
-    key = @getKeyFromUrlPath @props.params.entryName
+    key = @getKeyFromUrlPath @props.params.choice
 
     task = @state.workflow.tasks[@state.workflow.first_task]
     choice = @state.workflow.tasks[@state.workflow.first_task].choices[key]

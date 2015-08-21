@@ -1,4 +1,6 @@
 React = require 'react'
+Router = {Link, Navigation} = require 'react-router'
+_ = require 'lodash'
 DropdownForm = require '../../components/dropdown-form'
 {Markdown} = require 'markdownz'
 
@@ -51,6 +53,7 @@ ImageFlipper = React.createClass
 
 module.exports = React.createClass
   displayName: 'Choice'
+  mixins: [Navigation]
 
   getDefaultProps: ->
     task: null
@@ -79,6 +82,17 @@ module.exports = React.createClass
 
       <div className="survey-task-choice-label">{choice.label}</div>
       <div className="survey-task-choice-description">{choice.description}</div>
+      <div className="survey-task-choice-field-guide-link">
+        <Link
+          to="field-guide-choice"
+          params={{choice: _.kebabCase choice.label}}
+          onClick={(e) =>
+            e.preventDefault()
+            window.open @makeHref('field-guide-choice', {choice: _.kebabCase choice.label})
+          }>
+          View Field Guide entry
+        </Link>
+      </div>
 
       {unless choice.confusionsOrder.length is 0
         <div className="survey-task-choice-confusions">

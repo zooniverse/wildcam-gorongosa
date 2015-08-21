@@ -37,7 +37,7 @@ routes =
       <Route name="organizations" path="organizations" handler={require './pages/about/organizations'} />
     </Route>
     <Route name="field-guide" path="field-guide" handler={require './pages/field-guide'}>
-      <Route name="field-guide-entry" path=":entryName" handler={require './partials/field-guide-entry'} />
+      <Route name="field-guide-choice" path=":choice" handler={require './partials/field-guide-choice'} />
     </Route>
 
     <NotFoundRoute handler={require './pages/not-found'} />
