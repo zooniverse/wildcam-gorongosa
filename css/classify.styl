@@ -1,12 +1,7 @@
 .classify-page
+  background: url(./assets/classifier-background.png) no-repeat center center
+  background-size: cover
   height: 100%
-  padding: 10em 1em
-
-  @media screen and (max-width: 900px)
-    padding: 10em 0
-
-  @media screen and (max-width: 400px)
-    padding: 6em 0 10em
 
   .loading-indicator-container
     align-items: center
@@ -28,19 +23,54 @@
     display: flex
     justify-content: center
     margin: 0 auto
-    max-width: 1200px
+    max-width: 1425px
+    padding: 10em 1em
 
     @media screen and (max-width: 900px)
       flex-wrap: wrap
+      padding: 10em 0
+      
+    @media screen and (max-width: 400px)
+      padding: 6em 0 10em
+      
+    .classifier-tagline
+      color: #efefef
+      font-size: 1.2em
+      margin: 0 0 10px
 
     .subject
-      max-width: 740px
+      max-width: 920px
       min-width: 320px
       padding: 0 1em
       position: relative
       width: 100%
+      
+      .subject-toolbar
+        align-items: center
+        background-color: #404040
+        border-bottom-left-radius: 6px
+        border-bottom-right-radius: 6px
+        display: flex
+        height: 50px
+        justify-content: flex-end
+        position: relative
+        top: -5px //not sure why there's a gap 
+        width: 100%
+        
+        .metadata-button
+          @extends $reset-button
+          background-color: transparent
+          border: solid 2px #f7f7f7
+          border-radius: 50%
+          color: #f7f7f7
+          font-size: 0.75em
+          height: 24px
+          margin: 0.5em 1.75em 0.5em 0.5em
+          width: 24px
 
       img
+        border-top-left-radius: 6px
+        border-top-right-radius: 6px
         max-width: 100%
 
       @media screen and (max-width: 900px)
@@ -52,7 +82,7 @@
         min-height: 33vh
 
     .task-container
-      max-width: 400px
+      max-width: 465px
       min-width: 320px
       padding: 0 1em
       position: relative
@@ -74,9 +104,9 @@
 
   .action-button
     @extends $reset-button
-    background: rgba(88, 172, 130, 1)
-    border-radius: 4px
-    color: white
+    background: #8a9d56
+    border-radius: 6px
+    color: #efefef
     font-weight: 700
     padding: 0.8em 0
     text-align: center
@@ -84,3 +114,22 @@
 
     @media screen and (max-width: 400px)
       width: 100%
+      
+.classification-task-summary
+  background: #f7f7f7
+  border-radius: 8px
+  color: #6b6a6a
+  display: flex
+  flex-direction: column
+  font-size: 14px
+  height: 100%
+  min-height: 515px
+  padding: 1em
+
+.metadata-container
+  background-color: #4c7452
+  height: 199px
+  width: 100%
+  
+  p
+    text-align: center

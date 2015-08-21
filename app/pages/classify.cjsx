@@ -58,6 +58,10 @@ module.exports = React.createClass
 
   onChangeTask: ->
     console.log 'task changed', arguments
+    if @state.annotations._choiceInProgress? and @state.annotations._choiceInProgress is true
+      React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'none'
+    else
+      React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'flex'
 
   onClickFinish: ->
     classifierActions.finishClassification()
@@ -69,6 +73,9 @@ module.exports = React.createClass
 
     @setState onSummary: false
 
+  onClickMetadata: ->
+    console.log 'clicky'
+
   render: ->
     <div className="classify-page">
       {if @state.tutorialIsOpen
@@ -76,12 +83,16 @@ module.exports = React.createClass
 
       <div className="classification">
         <section className="subject">
+          <p className="classifier-tagline">You're now tracking the wildlife of Gorongosa National Park</p>
           {if @state.subject
             <img src={@state.subject.locations[0]['image/jpeg']} />
           else
             <div className="loading-indicator-container">
               <LoadingIndicator />
             </div>}
+          <div className="subject-toolbar">
+            <button className="metadata-button" type="button" onClick={@onClickMetadata}><i className="fa fa-info"></i></button>
+          </div>
         </section>
 
         <section className="task-container">
@@ -94,7 +105,7 @@ module.exports = React.createClass
                 </div>
               </div>
             else
-              <div>
+              <div className="survey-task-container">
                 <Task
                   {...@props}
                   task={@state.workflow.tasks[@state.workflow.first_task]}
@@ -102,8 +113,8 @@ module.exports = React.createClass
                   onChange={@onChangeTask}
                 />
 
-                <div className="workflow-buttons-container">
-                  <button type="button" className="action-button" onClick={@onClickFinish}>Finish</button>
+                <div ref="workflowButtonsContainer" className="workflow-buttons-container">
+                  <button type="button" className="action-button" onClick={@onClickFinish}>Done</button>
                 </div>
               </div>
           else
@@ -111,5 +122,8 @@ module.exports = React.createClass
               <LoadingIndicator />
             </div>}
         </section>
+      </div>
+      <div className="metadata-container">
+        <p>metadata placeholder</p>
       </div>
     </div>
