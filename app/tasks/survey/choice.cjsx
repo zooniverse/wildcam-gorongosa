@@ -87,17 +87,17 @@ module.exports = React.createClass
           {for otherChoiceID in choice.confusionsOrder
             otherChoice = @props.task.choices[otherChoiceID]
             <span key={otherChoiceID}>
-              <DropdownForm label={
+              <DropdownForm className="survey-task-confusions-modal" label={
                 <span className="survey-task-choice-confusion">
                   {otherChoice.label}
                 </span>
               } style={maxWidth: '60ch'}>
                 <ImageFlipper images={@props.task.images[filename] for filename in otherChoice.images} />
                 <Markdown content={choice.confusions[otherChoiceID]} />
-                <div style={textAlign: 'center'}>
-                  <button type="button" className="standard-button" onClick={@props.onSwitch.bind null, otherChoiceID}>I think it’s this</button>
+                <div className="survey-task-choice-confusion-buttons" style={textAlign: 'center'}>
+                  <button type="submit" className="major-button cancel">Dismiss</button>
                   {' '}
-                  <button type="submit" className="major-button">Dismiss</button>
+                  <button type="button" className="standard-button identify" onClick={@props.onSwitch.bind null, otherChoiceID}>I think it’s this</button>
                 </div>
               </DropdownForm>
               {' '}

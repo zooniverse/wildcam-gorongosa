@@ -65,10 +65,45 @@ $survey-task-pill-button
 .survey-task-chooser-characteristic-menu
   .dropdown-form
     background-color: #58ac82
+    border-radius: 6px
+    padding: 0.4em
 
 .survey-task-chooser-characteristic-value
   @extends $reset-button
-  margin: 0 0.6em
+  background-color: darken(#58ac82, 10%)
+  border-radius: 4px
+  height: 48px
+  margin: 0 0.2em 0.75em 0
+  width: 48px
+  
+  &:disabled
+    opacity: 1
+    
+  &[data-selected="true"]:after
+    border: solid
+    border-color: #418462 transparent
+    border-width: 0 .4em .4em .4em
+    bottom: -0.75em
+    content: ""
+    display: block
+    left: 1.25em
+    position: absolute
+    z-index: 1
+  
+.survey-task-chooser-characteristic-value-label
+  background-color: #418462
+  border-bottom-left-radius: 6px
+  border-bottom-right-radius: 6px
+  color: white
+  font-size: 0.8em
+  font-weight: 700
+  height: 30px
+  left: 0
+  line-height: 30px
+  position: absolute
+  text-align: center
+  text-transform: capitalize
+  width: 100%
 
 .survey-task-chooser-characteristic-value-icon
   border-radius: 3px
@@ -202,6 +237,35 @@ $survey-task-pill-button
       background: rgba(208, 208, 208, 1)
       color: rgba(107, 107, 107, 1)
 
+.survey-task-confusions-modal
+  .dropdown-form-underlay
+    background-color: rgba(0,0,0,0.5)
+    
+  .dropdown-form
+    background: #f7f7f7
+    border-radius: 6px
+    color: #6b6a6a
+    padding: 1em
+    
+    img
+      border-radius: 8px
+     
+    .survey-task-choice-confusion-buttons  
+      button
+        @extends $reset-button
+        border-radius: 4px
+        color: #fff
+        font-weight: 700
+        padding: 0.8em 0
+        text-align: center
+        width: 48%
+        
+        &.cancel
+          background-color: #404040
+          
+        &.identify
+          background-color: #4caa81
+          
 .survey-task-choice-question
   margin: 0.5em 0 1.75em
 
@@ -257,3 +321,6 @@ hr
 
     &.identify
       background: rgba(76, 170, 129, 1)
+      
+
+    
