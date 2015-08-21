@@ -14,12 +14,18 @@ module.exports = React.createClass
     onChoose: Function.prototype
 
   componentDidMount: ->
-
     if @props.annotation
       for annotation in @props.annotation
         for value in annotation.value
           React.findDOMNode(@).querySelectorAll("button[data-choice='#{value.choice}']")[0].classList.add 'selected-annotation'
 
+  componentWillReceiveProps: (nextProps) ->
+    buttons = React.findDOMNode(@).querySelectorAll("button.survey-task-chooser-choice")
+
+    if !nextProps.annotations?
+      for button in buttons
+        button.classList.remove 'selected-annotation' if button.classList.contains 'selected-annotation'
+  
   getFilteredChoices: ->
     for choiceID in @props.task.choicesOrder
       choice = @props.task.choices[choiceID]

@@ -58,7 +58,6 @@ module.exports = React.createClass
 
   onChangeTask: ->
     console.log 'task changed', arguments
-
     if @state.annotations._choiceInProgress? and @state.annotations._choiceInProgress is true
       React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'none'
     else
