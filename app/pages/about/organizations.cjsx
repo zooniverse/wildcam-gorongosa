@@ -5,8 +5,6 @@ module.exports = React.createClass
 
   render: ->
     <div>
-      <h1>Organizations</h1>
-
       <p>WildCam Gorongosa is a collaboration between the Gorongosa Restoration Project, Howard Hughes Medical Institute’s BioInteractive, and the Zooniverse.</p>
 
       <div className="organizations">
