@@ -46,10 +46,6 @@ module.exports = React.createClass
     else if nextProps.user is null
       @toggleTutorial()
 
-  componentWillUpdate: (nextProps, nextState) ->
-    if nextState.subject isnt @state.subject
-      annotationActions.clear()
-
   toggleTutorial: ->
     @setState tutorialIsOpen: !@state.tutorialIsOpen
 
@@ -57,7 +53,6 @@ module.exports = React.createClass
     @setState onSummary: false
 
   onChangeTask: ->
-    console.log 'task changed', arguments
     if @state.annotations._choiceInProgress? and @state.annotations._choiceInProgress is true
       React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'none'
     else

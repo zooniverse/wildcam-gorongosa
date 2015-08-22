@@ -1,26 +1,14 @@
 Reflux = require 'reflux'
-annotationActions = require '../actions/annotation-actions'
+classifierActions = require '../actions/classifier-actions'
 
 module.exports = Reflux.createStore
-  listenables: annotationActions
+  listenables: classifierActions
 
   data: []
 
-  init: ->
-    @create()
+  onMoveToNextSubject: ->
+    @_clear()
 
-  create: ->
-    @data = []
-    @trigger @data
-
-  update: (key) ->
-    for annotation, i in @data
-      if annotation.key is key
-        @data[i] = annotation
-        break
-
-    @trigger @data
-
-  clear: ->
+  _clear: ->
     @data = []
     @trigger @data
