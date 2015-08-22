@@ -5,8 +5,12 @@ Router = require 'react-router'
 Main = require './main'
 routes = require './routes'
 
-Router.run routes, (Root) ->
-  React.render <Root />, document.getElementById("app")
+appActions = require './actions/app-actions'
+require './stores/app-store' # Needs to be required somewhere
+
+Router.run routes, (Root, state) ->
+  appActions.routeChange state
+  React.render <Root />, document.getElementById('app')
 
 window.React = React
 window.api = api
