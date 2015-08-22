@@ -2,7 +2,7 @@ module.exports = {
   watch: true,
   context: __dirname + '/app',
   entry: {
-    main: './main.cjsx'
+    app: './app.cjsx'
   },
   output: {
     path: __dirname + '/public/build',

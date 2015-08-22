@@ -5,7 +5,7 @@ module.exports = {
   watch: false,
   context: __dirname + '/app',
   entry: {
-    main: './main.cjsx'
+    app: './app.cjsx'
   },
   output: {
     path: path.join(__dirname, '/public/build'),
