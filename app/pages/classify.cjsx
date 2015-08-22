@@ -7,11 +7,10 @@ LoadingIndicator = require '../components/loading-indicator'
 SlideTutorial = require '../components/slide-tutorial'
 
 annotationsStore = require '../stores/annotations-store'
-classificationStore = require '../stores/classification-store'
+classifierStore = require '../stores/classifier-store'
 subjectStore = require '../stores/subject-store'
 workflowStore = require '../stores/workflow-store'
 
-annotationActions = require '../actions/annotation-actions'
 classifierActions = require '../actions/classifier-actions'
 
 Task = require '../tasks/survey'
@@ -20,19 +19,18 @@ Summary = require '../tasks/survey/summary'
 module.exports = React.createClass
   displayName: "Classify"
   mixins: [
-    Reflux.connect(annotationsStore, 'annotations')
-    Reflux.connect(classificationStore, 'classification')
-    Reflux.connect(subjectStore, 'subject')
+    Reflux.connect annotationsStore, 'annotations'
+    Reflux.connect classifierStore
+    Reflux.connect subjectStore, 'subject'
     Reflux.connect workflowStore, 'workflow'
   ]
 
   getInitialState: ->
     annotations: annotationsStore.data
-    classification: classificationStore.data
     workflow: workflowStore.data
     subject: subjectStore.data
+    showingSummary: classifierStore.data.showingSummary
     tutorialIsOpen: false
-    onSummary: false
 
   componentDidMount: ->
     # Check specifically for null because setting prop as null if no user is returned. Avoids loading tutorial for the split second the props are undefined.
@@ -49,9 +47,6 @@ module.exports = React.createClass
   toggleTutorial: ->
     @setState tutorialIsOpen: !@state.tutorialIsOpen
 
-  onClassificationData: (data) ->
-    @setState onSummary: false
-
   onChangeTask: ->
     if @state.annotations._choiceInProgress? and @state.annotations._choiceInProgress is true
       React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'none'
@@ -61,12 +56,8 @@ module.exports = React.createClass
   onClickFinish: ->
     classifierActions.finishClassification()
 
-    @setState onSummary: true
-
   onClickNextImage: ->
     classifierActions.moveToNextSubject()
-
-    @setState onSummary: false
 
   onClickMetadata: ->
     console.log 'clicky'
@@ -91,8 +82,8 @@ module.exports = React.createClass
         </section>
 
         <section className="task-container">
-          {if @state.subject && @state.classification && @state.annotations && @state.workflow
-            if @state.onSummary
+          {if @state.subject and @state.annotations and @state.workflow
+            if @state.showingSummary
               <div>
                 <Summary annotations={@state.annotations} task={@state.workflow.tasks[@state.workflow.first_task]} expanded={true} />
                 <div className="workflow-buttons-container">
