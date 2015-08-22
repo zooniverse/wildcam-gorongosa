@@ -25,14 +25,6 @@ module.exports = React.createClass
     Reflux.connect workflowStore, 'workflow'
   ]
 
-  getInitialState: ->
-    annotations: annotationsStore.data
-    workflow: workflowStore.data
-    subject: subjectStore.data
-    showingSummary: classifierStore.data.showingSummary
-    shownTutorial: classifierStore.data.shownTutorial
-    tutorialIsOpen: classifierStore.data.tutorialIsOpen
-
   componentDidMount: ->
     # Check specifically for null because setting prop as null if no user is returned. Avoids loading tutorial for the split second the props are undefined.
     # For logged in users with zero classifications, they will have null userPrefs

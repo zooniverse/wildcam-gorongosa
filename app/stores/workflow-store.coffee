@@ -8,3 +8,6 @@ module.exports = Reflux.createStore
   init: ->
     api.type('workflows').get(config.workflowId).then (@data) =>
       @trigger @data
+
+  getInitialState: ->
+    @data

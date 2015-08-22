@@ -6,6 +6,9 @@ module.exports = Reflux.createStore
 
   data: []
 
+  getInitialState: ->
+    @data
+
   onMoveToNextSubject: ->
     @_clear()
 

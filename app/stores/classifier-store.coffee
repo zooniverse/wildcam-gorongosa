@@ -8,6 +8,9 @@ module.exports = Reflux.createStore
     shownTutorial: false
     tutorialIsOpen: false
 
+  getInitialState: ->
+    @data
+
   onDisplayTutorial: ->
     @data.tutorialIsOpen = true
     @trigger @data
