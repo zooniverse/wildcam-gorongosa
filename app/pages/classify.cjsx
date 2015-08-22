@@ -30,22 +30,22 @@ module.exports = React.createClass
     workflow: workflowStore.data
     subject: subjectStore.data
     showingSummary: classifierStore.data.showingSummary
-    tutorialIsOpen: false
+    tutorialIsOpen: classifierStore.data.tutorialIsOpen
 
   componentDidMount: ->
     # Check specifically for null because setting prop as null if no user is returned. Avoids loading tutorial for the split second the props are undefined.
     # For logged in users with zero classifications, they will have null userPrefs
     if @props.user is null || @props.userPreferences is null
-      @toggleTutorial()
+      classifierActions.displayTutorial()
 
   componentWillReceiveProps: (nextProps) ->
     if nextProps.userPreferences?.activity_count is 0 or nextProps.userPreferences is null
-      @toggleTutorial()
+      classifierActions.displayTutorial()
     else if nextProps.user is null
-      @toggleTutorial()
+      classifierActions.displayTutorial()
 
-  toggleTutorial: ->
-    @setState tutorialIsOpen: !@state.tutorialIsOpen
+  closeTutorial: ->
+    classifierActions.closeTutorial()
 
   onChangeTask: ->
     if @state.annotations._choiceInProgress? and @state.annotations._choiceInProgress is true
@@ -64,8 +64,8 @@ module.exports = React.createClass
 
   render: ->
     <div className="classify-page">
-      {if @state.tutorialIsOpen
-        <SlideTutorial closeTutorial={@toggleTutorial} tutorialIsOpen={@state.tutorialIsOpen} />}
+      {if @state.tutorialIsOpen and not @state.shownTutorial
+        <SlideTutorial closeTutorial={@closeTutorial} tutorialIsOpen={@state.tutorialIsOpen} />}
 
       <div className="classification">
         <section className="subject">

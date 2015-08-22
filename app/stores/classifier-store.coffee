@@ -6,6 +6,16 @@ module.exports = Reflux.createStore
   data:
     showingSummary: false
     shownTutorial: false
+    tutorialIsOpen: false
+
+  onDisplayTutorial: ->
+    @data.tutorialIsOpen = true
+    @trigger @data
+
+  onCloseTutorial: ->
+    @data.tutorialIsOpen = false
+    @data.shownTutorial = true
+    @trigger @data
 
   onFinishClassification: ->
     @data.showingSummary = true
