@@ -30,6 +30,7 @@ module.exports = React.createClass
     workflow: workflowStore.data
     subject: subjectStore.data
     showingSummary: classifierStore.data.showingSummary
+    shownTutorial: classifierStore.data.shownTutorial
     tutorialIsOpen: classifierStore.data.tutorialIsOpen
 
   componentDidMount: ->
