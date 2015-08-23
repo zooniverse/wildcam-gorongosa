@@ -1,6 +1,6 @@
 React = require 'react'
 
-module.exports = React.creatClass
+module.exports = React.createClass
   displayName: 'FAQ'
 
   render: ->
