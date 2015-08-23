@@ -47,7 +47,7 @@ module.exports = React.createClass
       <div className="field-guide-entry-content">
         <div className="columns">
           <div className="column">
-            <img src={choice.featuredImage} alt={choice.label} />
+            <img src={featuredImage} alt={choice.label} />
           </div>
           <div className="column">
             <table cellSpacing="0" cellPadding="0">
@@ -76,7 +76,7 @@ module.exports = React.createClass
 
       <h3>Trail Camera Images</h3>
       <div className="field-guide-entry-gallery">
-        {images.map (src) ->
+        {images.map (src, i) ->
           <div key={i} className="field-guide-entry-gallery-image"><img src={src} alt={choice.label} /></div>}
       </div>
     </div>
