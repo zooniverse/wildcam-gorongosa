@@ -8,9 +8,6 @@ module.exports = React.createClass
   displayName: 'FieldGuideEntry'
   mixins: [Reflux.connect(workflowStore, 'workflow')]
 
-  getInitialState: ->
-    workflow: workflowStore.data
-
   # Flakey
   getKeyFromUrlPath: (choice) ->
     choice.replace(/[aeiouy]/g, '').toUpperCase()

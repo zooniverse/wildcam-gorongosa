@@ -51,9 +51,6 @@ module.exports = React.createClass
   onClickMetadata: ->
     console.log 'clicky'
 
-  handleAnnotation: (choice, answers) ->
-    classifierActions.annotate choice, answers
-
   render: ->
     <div className="classify-page">
       {if @state.tutorialIsOpen and not @state.shownTutorial
