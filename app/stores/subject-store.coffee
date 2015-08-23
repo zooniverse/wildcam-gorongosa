@@ -10,6 +10,9 @@ module.exports = Reflux.createStore
     @next()
     @listenTo classifierActions.moveToNextSubject, @next
 
+  getInitialState: ->
+    @data
+
   next: ->
     query =
       workflow_id: config.workflowId

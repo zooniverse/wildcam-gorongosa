@@ -83,15 +83,7 @@ module.exports = React.createClass
       <div className="survey-task-choice-label">{choice.label}</div>
       <div className="survey-task-choice-description">{choice.description}</div>
       <div className="survey-task-choice-field-guide-link">
-        <Link
-          to="field-guide-choice"
-          params={{choice: _.kebabCase choice.label}}
-          onClick={(e) =>
-            e.preventDefault()
-            window.open @makeHref('field-guide-choice', {choice: _.kebabCase choice.label})
-          }>
-          View Field Guide entry
-        </Link>
+        <Link to="field-guide-choice" params={{choice: _.kebabCase choice.label}}>View Field Guide</Link>
       </div>
 
       {unless choice.confusionsOrder.length is 0

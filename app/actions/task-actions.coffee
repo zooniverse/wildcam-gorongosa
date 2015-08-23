@@ -1,5 +1,8 @@
 Reflux = require 'reflux'
 
 module.exports = Reflux.createActions [
-  'next'
+  'addFilter'
+  'removeFilter'
+  'selectChoice'
+  'clearSelection'
 ]

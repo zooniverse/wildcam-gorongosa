@@ -5,7 +5,7 @@ module.exports = React.createClass
 
   getDefaultProps: ->
     task: null
-    annotation: null
+    annotations: []
     expanded: false
 
   getInitialState: ->
@@ -22,9 +22,9 @@ module.exports = React.createClass
       </div>
       <div className="answers">
         <div className="answer">
-          {@props.annotations[0].value.length} identifications
+          {@props.annotations.length} identifications
         </div>
-        {if @state.expanded
+        {if @state.expanded and @props.annotations[0]?.value
           choiceSummaries = for identification in @props.annotations[0].value
             choice = @props.task.choices[identification.choice]
             allAnswers = for questionID in @props.task.questionsOrder when questionID of identification.answers
