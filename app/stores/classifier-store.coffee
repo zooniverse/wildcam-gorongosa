@@ -1,12 +1,16 @@
 Reflux = require 'reflux'
 
 module.exports = Reflux.createStore
-  listenables: require '../actions/classifier-actions'
+  listenables: [
+    require '../actions/classifier-actions'
+    require '../actions/task-actions'
+  ]
 
   data:
     showingSummary: false
     shownTutorial: false
     tutorialIsOpen: false
+    choiceInProgress: false
 
   getInitialState: ->
     @data

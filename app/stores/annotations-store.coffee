@@ -9,6 +9,10 @@ module.exports = Reflux.createStore
   getInitialState: ->
     @data
 
+  onAnnotate: (annotation) ->
+    @data.push annotation
+    @trigger @data
+
   onMoveToNextSubject: ->
     @_clear()
 

@@ -38,8 +38,12 @@ module.exports = Reflux.createStore
     @trigger @data
 
   finish: ->
+    annotations = _.map annotationsStore.data, (annotation) ->
+      task: 'survey'
+      value: annotation
+
     upsert =
-      annotations: annotationsStore.data
+      annotations: annotations
       completed: true
       'metadata.finished_at': (new Date).toISOString()
       'metadata.viewport':

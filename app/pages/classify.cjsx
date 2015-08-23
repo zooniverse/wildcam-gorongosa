@@ -10,6 +10,7 @@ annotationsStore = require '../stores/annotations-store'
 classifierStore = require '../stores/classifier-store'
 subjectStore = require '../stores/subject-store'
 workflowStore = require '../stores/workflow-store'
+taskStore = require '../stores/task-store'
 
 classifierActions = require '../actions/classifier-actions'
 
@@ -21,6 +22,7 @@ module.exports = React.createClass
   mixins: [
     Reflux.connect annotationsStore, 'annotations'
     Reflux.connect classifierStore
+    Reflux.connect taskStore
     Reflux.connect subjectStore, 'subject'
     Reflux.connect workflowStore, 'workflow'
   ]
@@ -40,12 +42,6 @@ module.exports = React.createClass
   closeTutorial: ->
     classifierActions.closeTutorial()
 
-  onChangeTask: ->
-    if @state.annotations._choiceInProgress? and @state.annotations._choiceInProgress is true
-      React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'none'
-    else
-      React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'flex'
-
   onClickFinish: ->
     classifierActions.finishClassification()
 
@@ -54,6 +50,9 @@ module.exports = React.createClass
 
   onClickMetadata: ->
     console.log 'clicky'
+
+  handleAnnotation: (choice, answers) ->
+    classifierActions.annotate choice, answers
 
   render: ->
     <div className="classify-page">
@@ -88,13 +87,15 @@ module.exports = React.createClass
                 <Task
                   {...@props}
                   task={@state.workflow.tasks[@state.workflow.first_task]}
-                  annotation={@state.annotations}
-                  onChange={@onChangeTask}
+                  annotations={@state.annotations}
+                  filters={@state.filters}
+                  choice={@state.choice}
                 />
 
-                <div ref="workflowButtonsContainer" className="workflow-buttons-container">
-                  <button type="button" className="action-button" onClick={@onClickFinish}>Done</button>
-                </div>
+                {if @state.choice is ''
+                  <div ref="workflowButtonsContainer" className="workflow-buttons-container">
+                    <button type="button" className="action-button" onClick={@onClickFinish}>Done</button>
+                  </div>}
               </div>
           else
             <div className="loading-indicator-container">
