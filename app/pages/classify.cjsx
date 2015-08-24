@@ -7,11 +7,11 @@ LoadingIndicator = require '../components/loading-indicator'
 SlideTutorial = require '../components/slide-tutorial'
 
 annotationsStore = require '../stores/annotations-store'
-classificationStore = require '../stores/classification-store'
+classifierStore = require '../stores/classifier-store'
 subjectStore = require '../stores/subject-store'
 workflowStore = require '../stores/workflow-store'
+taskStore = require '../stores/task-store'
 
-annotationActions = require '../actions/annotation-actions'
 classifierActions = require '../actions/classifier-actions'
 
 Task = require '../tasks/survey'
@@ -20,66 +20,41 @@ Summary = require '../tasks/survey/summary'
 module.exports = React.createClass
   displayName: "Classify"
   mixins: [
-    Reflux.connect(annotationsStore, 'annotations')
-    Reflux.connect(classificationStore, 'classification')
-    Reflux.connect(subjectStore, 'subject')
+    Reflux.connect annotationsStore, 'annotations'
+    Reflux.connect classifierStore
+    Reflux.connect taskStore
+    Reflux.connect subjectStore, 'subject'
     Reflux.connect workflowStore, 'workflow'
   ]
-
-  getInitialState: ->
-    annotations: annotationsStore.data
-    classification: classificationStore.data
-    workflow: workflowStore.data
-    subject: subjectStore.data
-    tutorialIsOpen: false
-    onSummary: false
 
   componentDidMount: ->
     # Check specifically for null because setting prop as null if no user is returned. Avoids loading tutorial for the split second the props are undefined.
     # For logged in users with zero classifications, they will have null userPrefs
     if @props.user is null || @props.userPreferences is null
-      @toggleTutorial()
+      classifierActions.displayTutorial()
 
   componentWillReceiveProps: (nextProps) ->
     if nextProps.userPreferences?.activity_count is 0 or nextProps.userPreferences is null
-      @toggleTutorial()
+      classifierActions.displayTutorial()
     else if nextProps.user is null
-      @toggleTutorial()
+      classifierActions.displayTutorial()
 
-  componentWillUpdate: (nextProps, nextState) ->
-    if nextState.subject isnt @state.subject
-      annotationActions.clear()
-
-  toggleTutorial: ->
-    @setState tutorialIsOpen: !@state.tutorialIsOpen
-
-  onClassificationData: (data) ->
-    @setState onSummary: false
-
-  onChangeTask: ->
-    console.log 'task changed', arguments
-    if @state.annotations._choiceInProgress? and @state.annotations._choiceInProgress is true
-      React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'none'
-    else
-      React.findDOMNode(@refs.workflowButtonsContainer).style.display = 'flex'
+  closeTutorial: ->
+    classifierActions.closeTutorial()
 
   onClickFinish: ->
     classifierActions.finishClassification()
 
-    @setState onSummary: true
-
   onClickNextImage: ->
     classifierActions.moveToNextSubject()
-
-    @setState onSummary: false
 
   onClickMetadata: ->
     console.log 'clicky'
 
   render: ->
     <div className="classify-page">
-      {if @state.tutorialIsOpen
-        <SlideTutorial closeTutorial={@toggleTutorial} tutorialIsOpen={@state.tutorialIsOpen} />}
+      {if @state.tutorialIsOpen and not @state.shownTutorial
+        <SlideTutorial closeTutorial={@closeTutorial} tutorialIsOpen={@state.tutorialIsOpen} />}
 
       <div className="classification">
         <section className="subject">
@@ -96,8 +71,8 @@ module.exports = React.createClass
         </section>
 
         <section className="task-container">
-          {if @state.subject && @state.classification && @state.annotations && @state.workflow
-            if @state.onSummary
+          {if @state.subject and @state.annotations and @state.workflow
+            if @state.showingSummary
               <div>
                 <Summary annotations={@state.annotations} task={@state.workflow.tasks[@state.workflow.first_task]} expanded={true} />
                 <div className="workflow-buttons-container">
@@ -109,13 +84,15 @@ module.exports = React.createClass
                 <Task
                   {...@props}
                   task={@state.workflow.tasks[@state.workflow.first_task]}
-                  annotation={@state.annotations}
-                  onChange={@onChangeTask}
+                  annotations={@state.annotations}
+                  filters={@state.filters}
+                  choice={@state.choice}
                 />
 
-                <div ref="workflowButtonsContainer" className="workflow-buttons-container">
-                  <button type="button" className="action-button" onClick={@onClickFinish}>Done</button>
-                </div>
+                {if @state.choice is ''
+                  <div ref="workflowButtonsContainer" className="workflow-buttons-container">
+                    <button type="button" className="action-button" onClick={@onClickFinish}>Done</button>
+                  </div>}
               </div>
           else
             <div className="loading-indicator-container">

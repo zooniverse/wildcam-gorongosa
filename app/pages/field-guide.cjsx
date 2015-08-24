@@ -6,6 +6,9 @@ _ = require 'lodash'
 
 workflowStore = require '../stores/workflow-store'
 
+fieldGuideContent = require '../lib/field-guide-content'
+CATEGORIES = ['all'].concat _.keys fieldGuideContent
+
 module.exports = React.createClass
   displayName: 'FieldGuide'
   mixins: [Reflux.connect(workflowStore, 'workflow')]
@@ -17,14 +20,15 @@ module.exports = React.createClass
           <div className="secondary-page-hero-title">Field Guide</div>
         </div>
       </div>
+      <div className="secondary-page-menu">
+        <div className="secondary-page-container">
+          {for category, i in CATEGORIES
+            <Link key={i} to="field-guide" query={{filter: category}}>{_.capitalize category}</Link>}
+        </div>
+      </div>
       <div className="secondary-page-content">
         <div className="secondary-page-container">
-          <nav>
-            <Link className="entry-link" to="field-guide-choice" params={{choice: 'honeybadger'}}>Test Honey Badger link</Link>
-            <Link className="entry-link" to="field-guide-choice" params={{choice: 'baboon'}}>Test Baboon link</Link>
-          </nav>
-
-          <RouteHandler {...@props} />
+          <RouteHandler {...@props} workflow={@state.workflow} />
         </div>
       </div>
     </div>

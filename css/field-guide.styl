@@ -1,4 +1,5 @@
 .field-guide-entry
+  color: #444
 
   .field-guide-entry-gallery
     display: flex
@@ -9,29 +10,59 @@
       padding: 1em
       width: 33%
 
+  .field-guide-entry-scientific-name
+    color: #666
+    font-size: 1.5em
+    font-style: italic
+    font-weight: 300
+
   // Generic styles for use specifically in FG entry pages
   .field-guide-entry-content
 
+    table
+      width: 100%
+
+      td:last-child
+        text-align: right
+
+      td, th
+        padding: 5px 14px
+
+      th
+        font-size: 20px
+        font-weight: 300
+        text-align: left
+
+      tr
+        border-radius: 3px
+        overflow: hidden
+
+      tr:nth-child(2n)
+        background-color: #e2e2e2
+
     .columns
       display: flex
-      justify-content: space-between
+      justify-content: space-around
 
       .column
         flex: 0 0 48%
         margin: 1em 0
+        padding: 1em
 
-    .fun-box
-      width:50%
-      background: #654
+  .field-guide-entry-sections
+    column-count: 2
+    column-width: auto
+
+    .field-guide-entry-section
+      display: inline-block
       padding: 1em
 
-    .deets-box
-      width: 50%
-      background: #652
-      padding: 1em
+    .focus-box
+      background: #008790
+      color: white
 
-    .deets-box span
-      font-size: 20px
+    .field-guide-entry-section-content
+      @extends p
 
 .entry-link
   margin: 0 0.5em

@@ -17,11 +17,11 @@ counterpart.registerTranslations 'en',
           src: 'http://placehold.it/291x291/c5c5c5'
           alt: ''
         content: '''
-          ## See the bats. Track the bats.
+          ## Header 1
 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-          [Learn more about bat behaviors](#)
+          [Learn more about the project](#/about)
         '''
       two:
         image:
@@ -31,7 +31,7 @@ counterpart.registerTranslations 'en',
           ## Header 2
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-          [Why are bats so scary?](#)
+          [Learn more about something](#)
         '''
       three:
         image:

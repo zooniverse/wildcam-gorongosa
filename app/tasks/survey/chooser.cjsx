@@ -1,5 +1,7 @@
 React = require 'react'
 DropdownForm = require '../../components/dropdown-form'
+_ = require 'lodash'
+classNames = require 'classnames'
 
 THUMBNAIL_BREAKPOINTS = [Infinity, 40, 20, 10, 5, 0]
 
@@ -7,25 +9,12 @@ module.exports = React.createClass
   displayName: 'Chooser'
 
   getDefaultProps: ->
-    annotation: null
+    annotations: []
     task: null
     filters: {}
     onFilter: Function.prototype
     onChoose: Function.prototype
 
-  componentDidMount: ->
-    if @props.annotation
-      for annotation in @props.annotation
-        for value in annotation.value
-          React.findDOMNode(@).querySelectorAll("button[data-choice='#{value.choice}']")[0].classList.add 'selected-annotation'
-
-  componentWillReceiveProps: (nextProps) ->
-    buttons = React.findDOMNode(@).querySelectorAll("button.survey-task-chooser-choice")
-
-    if !nextProps.annotations?
-      for button in buttons
-        button.classList.remove 'selected-annotation' if button.classList.contains 'selected-annotation'
-  
   getFilteredChoices: ->
     for choiceID in @props.task.choicesOrder
       choice = @props.task.choices[choiceID]
@@ -108,7 +97,13 @@ module.exports = React.createClass
         else
           for choiceID, i in filteredChoices
             choice = @props.task.choices[choiceID]
-            <button key={choiceID + i} type="button" className="survey-task-chooser-choice" data-choice={choiceID} onClick={@props.onChoose.bind null, choiceID}>
+
+            classes = classNames [
+              'survey-task-chooser-choice'
+              'selected-annotation': _.some @props.annotations, 'choice', choiceID
+              ]
+
+            <button key={choiceID + i} type="button" className={classes} data-choice={choiceID} onClick={@props.onChoose.bind null, choiceID}>
               {unless choice.images.length is 0
                   <img src={@props.task.images[choice.images[0]]} className="survey-task-chooser-choice-thumbnail" />}
               <div className="survey-task-chooser-choice-label">{choice.label}</div>
