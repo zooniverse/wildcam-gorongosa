@@ -110,7 +110,7 @@ module.exports = React.createClass
                 <div className="survey-task-chooser-choice-label">{choice.label}</div>
               </button>
               {if chosen
-                <button key={choiceID + i + "delete"} type="button" className="survey-task-chooser-choice-remover-button" onClick={@props.onRemoveChoice.bind null, choiceID}>x</button>}
+                <button type="button" className="survey-task-chooser-choice-remover-button" onClick={@props.onRemoveChoice.bind null, choiceID}>x</button>}
             </div>
       }</div>
       <div style={textAlign: 'center'}>
