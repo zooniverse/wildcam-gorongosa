@@ -56,6 +56,9 @@ module.exports = React.createClass
   handleChoice: (choiceID) ->
     taskActions.selectChoice choiceID
 
+  removeChoice: (choiceID) ->
+    classifierActions.removeAnnotation choiceID
+
   clearFilters: ->
     taskActions.clearFilters()
 
@@ -69,7 +72,7 @@ module.exports = React.createClass
   render: ->
     <div className="survey-task">
       {if @state.choice is ''
-        <Chooser task={@props.task} filters={@state.filters} onFilter={@handleFilter} onChoose={@handleChoice} annotations={@props.annotations} />
+        <Chooser task={@props.task} filters={@state.filters} onFilter={@handleFilter} onChoose={@handleChoice} onRemoveChoice={@removeChoice} annotations={@props.annotations} />
       else
         <Choice task={@props.task} choiceID={@state.choice} onSwitch={@handleChoice} onCancel={@clearSelection} onConfirm={@handleAnnotation} />}
     </div>
