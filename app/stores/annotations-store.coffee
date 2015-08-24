@@ -1,4 +1,6 @@
 Reflux = require 'reflux'
+_ = require 'lodash'
+
 classifierActions = require '../actions/classifier-actions'
 
 module.exports = Reflux.createStore
@@ -12,6 +14,13 @@ module.exports = Reflux.createStore
   onAnnotate: (annotation) ->
     @data.push annotation
     @trigger @data
+
+  onRemoveAnnotation: (choiceID) ->
+    removeAnnotationIndex = _.findIndex @data, 'choice': choiceID
+
+    @data.splice removeAnnotationIndex, 1
+    @trigger @data
+
 
   onMoveToNextSubject: ->
     @_clear()

@@ -14,6 +14,7 @@ module.exports = React.createClass
     filters: {}
     onFilter: Function.prototype
     onChoose: Function.prototype
+    onRemoveChoice: Function.prototype
 
   getFilteredChoices: ->
     for choiceID in @props.task.choicesOrder
@@ -97,18 +98,21 @@ module.exports = React.createClass
         else
           for choiceID, i in filteredChoices
             choice = @props.task.choices[choiceID]
-
+            chosen = _.some @props.annotations, 'choice', choiceID
             classes = classNames [
               'survey-task-chooser-choice'
-              'selected-annotation': _.some @props.annotations, 'choice', choiceID
+              'selected-annotation': chosen
               ]
-
-            <button key={choiceID + i} type="button" className={classes} data-choice={choiceID} onClick={@props.onChoose.bind null, choiceID}>
-              {unless choice.images.length is 0
-                  <img src={@props.task.images[choice.images[0]]} className="survey-task-chooser-choice-thumbnail" />}
-              <div className="survey-task-chooser-choice-label">{choice.label}</div>
-            </button>}
-      </div>
+            <div key={choiceID + i}>
+              <button type="button" className={classes} onClick={@props.onChoose.bind null, choiceID}>
+                {unless choice.images.length is 0
+                    <img src={@props.task.images[choice.images[0]]} className="survey-task-chooser-choice-thumbnail" />}
+                <div className="survey-task-chooser-choice-label">{choice.label}</div>
+              </button>
+              {if chosen
+                <button type="button" className="survey-task-chooser-choice-remover-button" onClick={@props.onRemoveChoice.bind null, choiceID}>x</button>}
+            </div>
+      }</div>
       <div style={textAlign: 'center'}>
         Showing {filteredChoices.length} of {@props.task.choicesOrder.length}.
         &ensp;

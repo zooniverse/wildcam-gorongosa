@@ -122,6 +122,7 @@ $survey-task-pill-button
   > *
     flex-grow: 0
     margin: 0 2px 2px 0
+    position: relative
 
   &[data-breakpoint="Infinity"] > *,
   &[data-breakpoint="40"] > *
@@ -140,6 +141,7 @@ $survey-task-pill-button
   color: white
   display: flex
   justify-content: center
+  width: 100%
 
   &:hover
     background: rgba(102, 102, 102, 1)
@@ -149,7 +151,7 @@ $survey-task-pill-button
     
   &.selected-annotation
     background-color: #212121
-    color: rgba(247, 247, 247, 0.5)
+    color: #8a9d56
 
 .survey-task-chooser-choice-thumbnail
   border-radius: 3px
@@ -174,6 +176,13 @@ $survey-task-pill-button
 
   [data-breakpoint="5"] &
     font-size: 1.5em
+
+.survey-task-chooser-choice-remover-button
+  @extends $reset-button
+  color: rgba(247,247,247,0.5)
+  position: absolute
+  right: 5%
+  top: 15%
 
 .survey-task-chooser-characteristic-clear-button
   @extends $reset-button
