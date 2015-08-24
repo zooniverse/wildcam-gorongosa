@@ -19,6 +19,11 @@ module.exports = Reflux.createStore
     @data.tutorialIsOpen = true
     @trigger @data
 
+  onReviewTutorial: ->
+    @data.tutorialIsOpen = true
+    @data.shownTutorial = false
+    @trigger @data
+
   onCloseTutorial: ->
     @data.tutorialIsOpen = false
     @data.shownTutorial = true
