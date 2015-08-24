@@ -5,6 +5,7 @@ Translate = require 'react-translate-component'
 
 LoadingIndicator = require '../components/loading-indicator'
 SlideTutorial = require '../components/slide-tutorial'
+FavoritesButton = require '../components/favorites-button'
 
 annotationsStore = require '../stores/annotations-store'
 classifierStore = require '../stores/classifier-store'
@@ -66,6 +67,7 @@ module.exports = React.createClass
               <LoadingIndicator />
             </div>}
           <div className="subject-toolbar">
+            <FavoritesButton user={@props.user} />
             <button className="metadata-button" type="button" onClick={@onClickMetadata}><i className="fa fa-info"></i></button>
           </div>
         </section>

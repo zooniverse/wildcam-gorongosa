@@ -17,11 +17,16 @@ module.exports = React.createClass
     )
 
   render: ->
-    disabledCondition = if @props.user? then false else true
+    disabledCondition = !@props.user?
+    title = if disabledCondition
+      "Sign in to add to favorites"
+    else
+      if @state.favorited then 'Unfavorite' else 'Favorite'
+
     favoriteBtnClasses = classnames
       'favorite-button': true
       favorited: @state.favorited is true
 
-    <button ref="favoriteBtn" className={favoriteBtnClasses} type="button" onClick={@onClick} disabled={disabledCondition}>
+    <button ref="favoriteBtn" className={favoriteBtnClasses} type="button" title={title} onClick={@onClick} disabled={disabledCondition}>
       <i className="fa fa-heart#{unless @state.favorited then '-o' else ''} fa-2x"></i>
     </button>
