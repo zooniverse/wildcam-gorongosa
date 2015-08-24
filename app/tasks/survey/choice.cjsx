@@ -66,12 +66,13 @@ module.exports = React.createClass
     answers: {}
 
   allFilledIn: ->
-    for questionID in @props.task.questionsOrder
-      question = @props.task.questions[questionID]
-      if question.required
-        answer = @state.answers[questionID]
-        if (not answer?) or (question.multiple and answer.length is 0)
-          return false
+    unless @props.task.choices[@props.choiceID].noQuestions
+      for questionID in @props.task.questionsOrder
+        question = @props.task.questions[questionID]
+        if question.required
+          answer = @state.answers[questionID]
+          if (not answer?) or (question.multiple and answer.length is 0)
+            return false
     true
 
   render: ->
@@ -112,28 +113,29 @@ module.exports = React.createClass
 
       <hr />
 
-      {for questionID in @props.task.questionsOrder
-        question = @props.task.questions[questionID]
-        inputType = if question.multiple
-          'checkbox'
-        else
-          'radio'
-        <div key={questionID} className="survey-task-choice-question" data-multiple={question.multiple || null}>
-          <div className="survey-task-choice-question-label">{question.label}</div>
-          {for answerID in question.answersOrder
-            answer = question.answers[answerID]
-            isChecked = if question.multiple
-              answerID in (@state.answers[questionID] ? [])
-            else
-              answerID is @state.answers[questionID]
-            <label key={answerID} className="survey-task-choice-answer" data-checked={isChecked || null}>
-              <input type={inputType} checked={isChecked} onChange={@handleAnswer.bind this, questionID, answerID} />
-              {answer.label}
-            </label>}
+      {unless choice.noQuestions
+        for questionID in @props.task.questionsOrder
+          question = @props.task.questions[questionID]
+          inputType = if question.multiple
+            'checkbox'
+          else
+            'radio'
+          <div key={questionID} className="survey-task-choice-question" data-multiple={question.multiple || null}>
+            <div className="survey-task-choice-question-label">{question.label}</div>
+            {for answerID in question.answersOrder
+              answer = question.answers[answerID]
+              isChecked = if question.multiple
+                answerID in (@state.answers[questionID] ? [])
+              else
+                answerID is @state.answers[questionID]
+              <label key={answerID} className="survey-task-choice-answer" data-checked={isChecked || null}>
+                <input type={inputType} checked={isChecked} onChange={@handleAnswer.bind this, questionID, answerID} />
+                {answer.label}
+              </label>}
         </div>}
 
-      {unless @props.task.questionsOrder.lengths is 0
-        <hr />}
+        {unless choice.noQuestions or @props.task.questionsOrder.lengths is 0
+          <hr />}
 
       <div style={textAlign: 'center'} className="task-buttons-container">
         <button type="button" className="minor-button cancel" onClick={@props.onCancel}>Cancel</button>

@@ -64,6 +64,7 @@ module.exports = React.createClass
 
   handleAnnotation: (choice, answers, e) ->
     filters = JSON.parse JSON.stringify @state.filters
+
     classifierActions.annotate {choice, answers, filters}
 
   render: ->
