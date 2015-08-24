@@ -50,6 +50,7 @@
         background-color: #404040
         border-bottom-left-radius: 6px
         border-bottom-right-radius: 6px
+        cursor: pointer
         display: flex
         height: 50px
         justify-content: flex-end
@@ -57,6 +58,11 @@
         top: -5px //not sure why there's a gap 
         width: 100%
         
+        .favorite-button
+          @extends $reset-button
+          color: #f7f7f7
+          margin: 0.5em
+            
         .metadata-button
           @extends $reset-button
           background-color: transparent
