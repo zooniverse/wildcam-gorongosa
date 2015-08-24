@@ -52,6 +52,9 @@ module.exports = React.createClass
   onClickMetadata: ->
     console.log 'clicky'
 
+  onClickTutorial: ->
+    classifierActions.reviewTutorial()
+
   render: ->
     <div className="classify-page">
       {if @state.tutorialIsOpen and not @state.shownTutorial
@@ -68,6 +71,7 @@ module.exports = React.createClass
             </div>}
           <div className="subject-toolbar">
             <FavoritesButton user={@props.user} />
+            <button className="tutorial-button" type="button" onClick={@onClickTutorial}><i className="fa fa-question"></i></button>
             <button className="metadata-button" type="button" onClick={@onClickMetadata}><i className="fa fa-info"></i></button>
           </div>
         </section>

@@ -58,17 +58,26 @@
         top: -5px //not sure why there's a gap 
         width: 100%
         
-        .favorite-button
+        .favorite-button, .tutorial-button, .metadata-button
           @extends $reset-button
           color: #f7f7f7
+          
+        .favorite-button
           margin: 0.5em
-            
-        .metadata-button
-          @extends $reset-button
+
+        .tutorial-button
           background-color: transparent
           border: solid 2px #f7f7f7
           border-radius: 50%
-          color: #f7f7f7
+          font-size: 0.75em
+          height: 24px
+          margin: 0.5em
+          width: 24px
+          
+        .metadata-button
+          background-color: transparent
+          border: solid 2px #f7f7f7
+          border-radius: 50%
           font-size: 0.75em
           height: 24px
           margin: 0.5em 1.75em 0.5em 0.5em
