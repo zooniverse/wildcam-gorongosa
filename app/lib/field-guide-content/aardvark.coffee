@@ -25,7 +25,7 @@ module.exports =
   }, {
     title: 'Behavior'
     content: '''
-      Yellow baboons are highly social, living in groups known as troops, which can contain dozens or even hundreds of individuals of both sexes. Baboons sleep, feed, travel, and socialize within troops. Male baboons compete for dominance, with high-ranking males having an advantage when it comes to mating, food, water, and territory. Troops spend the majority of the day on the ground foraging for a wide variety of foods with intermittent periods of socialization. Baboons groom one another to remove insects and dead skin and use barklike vocalizations. Yellow baboons also exhibit other behaviors such as branch-shaking, teeth displays, ground-slapping, and yawning as forms of communication.
+      aarie
     '''
   }]
 
