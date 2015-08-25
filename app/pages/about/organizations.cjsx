@@ -1,4 +1,5 @@
 React = require 'react'
+ZooniverseLogo = require '../../partials/zooniverse-logo'
 
 module.exports = React.createClass
   displayName: 'Organizations'
@@ -25,7 +26,7 @@ module.exports = React.createClass
         <div className="organization">
           <h3>Zooniverse</h3>
           <div className="organization-content">
-            <div className="organization-logo"><img src="https://panoptes-uploads.zooniverse.org/production/project_attached_image/adafceb0-0143-4f17-b977-05798160deca.jpeg" /></div>
+            <div className="organization-logo"><ZooniverseLogo width="100%" height="100%" /></div>
             <p>The Zooniverse and the suite of projects it contains is produced, maintained, and developed by the Citizen Science Alliance (CSA). The member institutions of the CSA work with many academic and other partners around the world to produce projects that use the efforts and ability of volunteers to help scientists and researchers deal with the flood of data that confronts them.</p>
           </div>
         </div>
