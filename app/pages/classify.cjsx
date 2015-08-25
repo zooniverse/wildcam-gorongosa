@@ -2,7 +2,10 @@ React = require 'react/addons'
 Reflux = require 'reflux'
 counterpart = require 'counterpart'
 Translate = require 'react-translate-component'
+{Markdown} = require 'markdownz'
+alert = require '../lib/alert'
 
+ProjectMetadata = require '../partials/project-metadata'
 LoadingIndicator = require '../components/loading-indicator'
 SlideTutorial = require '../components/slide-tutorial'
 FavoritesButton = require '../components/favorites-button'
@@ -50,7 +53,17 @@ module.exports = React.createClass
     classifierActions.moveToNextSubject()
 
   onClickMetadata: ->
-    console.log 'clicky'
+    alert <div className="metadata-dialog-container">
+      <header className="metadata-dialog-label" style={textAlign: 'center'}>Subject metadata</header>
+      <hr />
+      <table className="standard-table">
+        {for key, value of @state.subject?.metadata
+          <tr key={key}>
+            <th>{key}</th>
+            <Markdown tag="td" content={value} inline />
+          </tr>}
+      </table>
+    </div>
 
   onClickTutorial: ->
     classifierActions.reviewTutorial()
@@ -106,7 +119,5 @@ module.exports = React.createClass
             </div>}
         </section>
       </div>
-      <div className="metadata-container">
-        <p>metadata placeholder</p>
-      </div>
+      <ProjectMetadata />
     </div>

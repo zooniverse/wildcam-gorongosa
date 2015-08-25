@@ -9,6 +9,9 @@ module.exports = Reflux.createStore
   init: ->
     @listenTo userStore, @getProject
 
+  getInitialState: ->
+    @data
+
   getProject: ->
     api.type('projects').get(projectConfig.projectId)
       .then (@data) =>
