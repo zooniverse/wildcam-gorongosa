@@ -54,7 +54,7 @@ module.exports = React.createClass
 
   onClickMetadata: ->
     alert <div className="metadata-dialog-container">
-      <header className="form-label" style={textAlign: 'center'}>Subject metadata</header>
+      <header className="metadata-dialog-label" style={textAlign: 'center'}>Subject metadata</header>
       <hr />
       <table className="standard-table">
         {for key, value of @state.subject?.metadata
