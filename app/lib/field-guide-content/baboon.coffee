@@ -4,7 +4,7 @@ module.exports =
   '''
 
   scientificName: 'Papio cynocephalus'
-  mainImage: 'http://placehold.it/400x300'
+  mainImage: 'assets/fieldguide-content/mammals/baboon/baboon-feature.jpg'
 
   information: [{
     label: 'Length'
@@ -58,4 +58,7 @@ module.exports =
         <li>Yellow baboons are the largest species of baboon</li>
       </ol>
     '''
+  },{
+    title: 'Distribution'
+    content: '<img src="assets/fieldguide-content/mammals/baboon/baboon-map.jpg"/>'
   }]
