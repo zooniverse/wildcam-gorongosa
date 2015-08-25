@@ -4,11 +4,7 @@ module.exports =
   '''
 
   scientificName: '(Tragelaphus scriptus)'
-<<<<<<< HEAD
   mainImage: 'assets/fieldguide-content/bushbuck/bushbuck-feature.jpg'
-=======
-  mainImage: '<img src="assets/fieldguide-content/bushbuck-feature.jpg"/>'
->>>>>>> start adding field guide pages
 
   information: [{
     label: 'Length'

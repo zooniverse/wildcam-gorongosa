@@ -1,5 +1,4 @@
 module.exports =
-
   label: 'African Buffalo' # taken from task choice if not provided
   description: '''
     A massive animal, the African buffalo is Africa’s only wild cattle species and is recognized as one of the “Big Five” mammals by safari goers. It is an imposing animal with its oxlike barrel shape, broad chest, bulky limbs, sizable head, and thick horns. African buffalo can vary greatly in coloring, but generally are dark gray or black to reddish-brown. Soft hairs fringe the large ears and the long tail, which ends in a tuft of hairs.
