@@ -2,6 +2,8 @@ React = require 'react'
 Router = {Link, RouteHandler} = require 'react-router'
 _ = require 'lodash'
 
+ProjectMetadata = require '../../partials/project-metadata'
+
 module.exports = React.createClass
   displayName: 'AboutPageController'
   mixins: [Router.State]
@@ -36,4 +38,5 @@ module.exports = React.createClass
           <RouteHandler {...@props} />
         </div>
       </div>
+      <ProjectMetadata />
     </div>

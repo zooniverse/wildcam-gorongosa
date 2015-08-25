@@ -4,6 +4,8 @@ Reflux = require 'reflux'
 RouterState = State
 _ = require 'lodash'
 
+ProjectMetadata = require '../partials/project-metadata'
+
 workflowStore = require '../stores/workflow-store'
 
 fieldGuideContent = require '../lib/field-guide-content'
@@ -31,4 +33,5 @@ module.exports = React.createClass
           <RouteHandler {...@props} workflow={@state.workflow} />
         </div>
       </div>
+      <ProjectMetadata />
     </div>
