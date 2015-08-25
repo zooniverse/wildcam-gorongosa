@@ -14,6 +14,17 @@
     &:hover
       color: #FFD4AA
 
+  button
+    @extends $reset-button
+    background: #8a9d56
+    border-radius: 4px
+    color: white
+    line-height: 50px
+    text-align: center
+    width: 250px
+
+    &:hover
+      background: lighten(#8a9d56, 15%)
   iframe
     border: 1px solid black
     display: block
@@ -81,3 +92,27 @@
       .organization-logo
         padding: 0 3rem
         width: 20%
+
+  .about-section
+    clearfix()
+
+    img
+      &.float-left
+        float: left
+        margin: 0 2em 2em 0
+
+      &.float-right
+        float: right
+        margin: 0 0 2em 2em
+
+  .call-to-action
+    border-bottom: 1px solid #e0e0e0
+    border-top: 1px solid #e0e0e0
+    margin: 2em 0
+    padding: 2em 0
+    text-align: center
+
+
+    .call
+      font-weight: 700
+      margin: 0 0 1em 0
