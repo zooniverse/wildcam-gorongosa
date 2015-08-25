@@ -7,43 +7,12 @@ Translate = require 'react-translate-component'
 counterpart.registerTranslations 'en',
   homePage:
     hero:
-      tagline: 'Identify animals in trail camera images from Gorongosa National Park!'
-      presentedBy: 'Presented By'
-    getStarted: 'Get Started!'
+      tagline: 'Help contribute to an amazing wildlife comeback story!'
+      overview: '''
+        Gorongosa National Park in Mozambique, one of the world’s most diverse ecosystems, was once devastated by decades of civil war. Now, thanks to an international effort, the park is finally coming back to life—and we need you to help document this incredible recovery. Join us in exploring photos of exotic, endangered, and beautiful African wildlife to help save Gorongosa for good!
+      '''
     learnMore: 'Learn More'
-    promoSections:
-      one:
-        image:
-          src: 'http://placehold.it/291x291/c5c5c5'
-          alt: ''
-        content: '''
-          ## Header 1
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-          [Learn more about the project](#/about)
-        '''
-      two:
-        image:
-          src: 'http://placehold.it/291x291/c5c5c5'
-          alt: ''
-        content: '''
-          ## Header 2
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-          [Learn more about something](#)
-        '''
-      three:
-        image:
-          src: 'http://placehold.it/291x291/c5c5c5'
-          alt: ''
-        content: '''
-          ## Header 3
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-          [Learn more about citizen science](#)
-        '''
+    getStarted: 'Get Started!'
     callToAction:
       header: '''Ready to get involved?'''
       button: '''Get Started'''
@@ -52,27 +21,16 @@ module.exports = React.createClass
   displayName: "Home"
 
   render: ->
-    pitchSections = counterpart 'homePage.promoSections'
     <div className="home-page">
       <section className="home-hero">
+        <div className="home-hero-background" />
         <div className="home-content-container">
-          <div className="title">WildCam Gorongosa</div>
-          <Translate component="h1" content="homePage.hero.tagline" />
+          <img src="assets/logo-white.png" className="logo" alt="WildCam Gorongosa" />
+          <Translate component="div" className="tagline" content="homePage.hero.tagline" />
+          <Translate component="div" className="overview" content="homePage.hero.overview" />
+
           <Link to="classify" className="home-call-to-action-button"><Translate content="homePage.getStarted" /></Link>
           <Link to="about" className="home-call-to-action-button ghost-button"><Translate content="homePage.learnMore" /></Link>
         </div>
-      </section>
-      {for key, section of pitchSections
-        <section key={key} className="home-promo">
-          <div className="home-content-container">
-            <img src={section.image.src} alt={section.image.alt} />
-            <Markdown>{section.content}</Markdown>
-          </div>
-        </section>}
-      <section className="home-call-to-action">
-        <Translate component="h2" content="homePage.callToAction.header" />
-        <Link to="classify" className="home-call-to-action-button">
-          <Translate content="homePage.getStarted" />
-        </Link>
       </section>
     </div>
