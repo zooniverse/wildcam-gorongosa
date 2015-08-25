@@ -144,13 +144,13 @@ gulp.task("webpack:build", function(callback) {
     );
 
     // write the hashed main.js to /public/build/index.html
-    var jsFilename = stats.toJson().assetsByChunkName['main'];
+    var jsFilename = stats.toJson().assetsByChunkName['app'];
 
     return gulp.src('./public/build/index.html')
       .on('error', handleErrors)
       .pipe(through2.obj(function (file, enc, tCb) {
         file.contents = new Buffer(String(file.contents)
-          .replace('main.js', jsFilename));
+          .replace('app.js', jsFilename));
         this.push(file);
         tCb();
       }))
