@@ -1,5 +1,4 @@
 React = require 'react'
-Reflux = require 'reflux'
 Translate = require 'react-translate-component'
 counterpart = require 'counterpart'
 {Link} = require 'react-router'

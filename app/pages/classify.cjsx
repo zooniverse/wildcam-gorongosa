@@ -2,7 +2,7 @@ React = require 'react/addons'
 Reflux = require 'reflux'
 counterpart = require 'counterpart'
 Translate = require 'react-translate-component'
-Markdown = require 'markdownz'
+{Markdown} = require 'markdownz'
 alert = require '../lib/alert'
 
 ProjectMetadata = require '../partials/project-metadata'
@@ -60,7 +60,7 @@ module.exports = React.createClass
         {for key, value of @state.subject?.metadata
           <tr key={key}>
             <th>{key}</th>
-            <td>{value}</td>
+            <Markdown tag="td" content={value} inline />
           </tr>}
       </table>
     </div>
