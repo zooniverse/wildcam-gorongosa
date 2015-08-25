@@ -1,3 +1,39 @@
+.field-guide-choice-list
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+
+  a
+    text-decoration: none
+
+  .field-guide-choice
+    border: 1px solid #ccc
+    border-radius: 3px
+    font-weight: 700
+    margin: 1em 0
+    text-align: center
+    width: calc(20% - 1em)
+
+    @media screen and (max-width: 820px)
+      width: calc(33% - 1em)
+
+    @media screen and (max-width: 520px)
+      width: calc(50% - 1em)
+
+    .field-guide-choice-background
+      background-position: center
+      background-size: cover
+      height: 150px
+
+    .field-guide-choice-label
+      border-radius: 3px
+      color: #304d4d
+      margin: 4px 8px
+      line-height: 2.5em
+
+    &:hover .field-guide-choice-label
+      background: #e2e2e2
+
 .field-guide-entry
   color: #444
 

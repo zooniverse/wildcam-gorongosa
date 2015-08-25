@@ -39,9 +39,9 @@ $survey-task-pill-button
     cursor: pointer
     height: 25px
     margin-bottom: 10px
+    min-width: 60px
     text-transform: capitalize
-    width: 60px
-    
+        
     &:hover
       background-color: rgba(48, 77, 77, 0.5)
       
@@ -72,6 +72,7 @@ $survey-task-pill-button
   @extends $reset-button
   background-color: darken(#58ac82, 10%)
   border-radius: 4px
+  cursor: pointer
   height: 48px
   margin: 0 0.2em 0.75em 0
   width: 48px
@@ -134,6 +135,14 @@ $survey-task-pill-button
 
   &[data-breakpoint="5"] > *
     flex-basis: calc(100% - 2px)
+    
+  &[data-breakpoint="40"], 
+  &[data-breakpoint="20"],
+  &[data-breakpoint="10"],
+  &[data-breakpoint="5"]
+    .survey-task-chooser-choice
+      align-items: center
+      justify-content: flex-start
   
 .survey-task-chooser-choice
   @extends $reset-button
@@ -186,6 +195,16 @@ $survey-task-pill-button
 
 .survey-task-chooser-characteristic-clear-button
   @extends $reset-button
+  background-color: transparent
+  border-radius: 4px
+  height: 48px
+  position: relative
+  width: 48px
+  
+  .survey-task-chooser-characteristic-clear-icon
+    left: 25%
+    position: absolute
+    top: 30%
 
 .survey-task-image-flipper
   display: block
@@ -227,7 +246,17 @@ $survey-task-pill-button
   margin: 0.5em 0
 
 .survey-task-choice-description
-  margin: 0.5em 0 1.75em
+  margin: 0.5em 0
+  
+.survey-task-choice-field-guide-link
+  margin-bottom: 1.75em
+  a
+    @extends $reset-link
+    font-size: 0.85em
+    font-weight: 700
+    
+    &:hover
+      color: lighten(#6b6a6a, 40%) 
 
 .survey-task-choice-confusions
   font-size: 12px

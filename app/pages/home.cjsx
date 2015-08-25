@@ -4,6 +4,8 @@ Translate = require 'react-translate-component'
 {Markdown} = require 'markdownz'
 {Link} = require 'react-router'
 
+ProjectMetadata = require '../partials/project-metadata'
+
 counterpart.registerTranslations 'en',
   homePage:
     hero:
@@ -33,4 +35,5 @@ module.exports = React.createClass
           <Link to="about" className="home-call-to-action-button ghost-button"><Translate content="homePage.learnMore" /></Link>
         </div>
       </section>
+      <ProjectMetadata />
     </div>

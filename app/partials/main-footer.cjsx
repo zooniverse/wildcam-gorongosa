@@ -103,9 +103,9 @@ module.exports = React.createClass
         <Markdown>{counterpart "footer.social.content"}</Markdown>
         <div className="social-media-links">
           <Translate component="span" content="footer.social.callToAction" />
-          <a href="#"><i className="fa fa-twitter fa-2x"></i></a>
-          <a href="#"><i className="fa fa-facebook-official fa-2x"></i></a>
-          <a href="#"><i className="fa fa-google-plus-square fa-2x"></i></a>
+          <a href="https://www.facebook.com/wildcamgorongosa?fref=ts" target="_blank"><i className="fa fa-twitter fa-2x"></i></a>
+          <a href="https://twitter.com/WildCamGNP" target="_blank"><i className="fa fa-facebook-official fa-2x"></i></a>
+          <a href="https://instagram.com/wildcamgorongosa/" target="_blank"><i className="fa fa-instagram fa-2x"></i></a>
         </div>
       </section>
     </footer>

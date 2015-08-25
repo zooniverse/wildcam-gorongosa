@@ -69,13 +69,12 @@ module.exports = React.createClass
                 <span key={valueID}>
                   <button type="submit" title={value.label} className="survey-task-chooser-characteristic-value" disabled={disabled} autoFocus={autoFocus} data-selected={selected} onClick={@handleFilter.bind this, characteristicID, valueID}>
                     {if value.image?
-                      <img src={@props.task.images[value.image]} className="survey-task-chooser-characteristic-value-icon" />}
+                      <img src={@props.task.images[value.image]} alt={value.label} className="survey-task-chooser-characteristic-value-icon" />}
                   </button>
                 </span>}
 
-              &ensp;
-              <button type="submit" className="survey-task-chooser-characteristic-clear-button" disabled={characteristicID not of @props.filters} autoFocus={not hasBeenAutoFocused} onClick={@handleFilter.bind this, characteristicID, undefined}>
-                <i className="fa fa-ban"></i> Any
+              <button type="submit" title="Clear filters" className="survey-task-chooser-characteristic-clear-button" disabled={characteristicID not of @props.filters} autoFocus={not hasBeenAutoFocused} onClick={@handleFilter.bind this, characteristicID, undefined}>
+                <img className="survey-task-chooser-characteristic-clear-icon" src={@props.task.images["nothing-icon.svg"]} alt="Clear filters" />
               </button>
             </div>
             <div className="survey-task-chooser-characteristic-value-label">
