@@ -5,6 +5,7 @@ counterpart = require 'counterpart'
 ZooniverseLogo = require './zooniverse-logo'
 {Markdown} = require 'markdownz'
 LoadingIndicator = require '../components/loading-indicator'
+FooterLogo = require './footer-logo'
 
 ProjectStore = require '../stores/project-store'
 
@@ -75,7 +76,10 @@ module.exports = React.createClass
     projectsLists = counterpart 'footer.projectsLists'
     <footer className="main-footer">
       <section className="main-footer-zooniverse-info">
-        <img src="assets/zoo-logo.png" className="zooniverse-logo" />
+        <div className="zooniverse-logo">
+          <img src="assets/footer-logo-bg.jpg"/>
+          <FooterLogo />
+        </div>
         <Markdown>{counterpart "footer.info.content"}</Markdown>
         <a className="footer-link-button" href="https://www.zooniverse.org/" target="_blank">
           <Translate content="footer.info.callToAction" />

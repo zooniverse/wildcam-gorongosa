@@ -9,7 +9,35 @@
     padding: 3em 3vw
 
     .zooniverse-logo
-      max-width: 75px
+      position: relative
+      width: 75px
+      height: 75px
+      transition: transform .5s ease-in-out
+
+      svg
+        transform: translate(-50%, -50%)
+        position: absolute
+        left: 50%
+        top: 50%
+        path
+          transition: fill .5s ease-in-out
+
+      img
+        border: 5px solid transparent
+        border-bottom: 12.5px solid transparent
+        border-radius: 4px
+        opacity: 0
+        transition all 0.5s ease-in-out
+
+      &:hover
+        transform: rotate(-15deg)
+
+        svg
+          path
+            fill: #EFD59C
+        img
+          border-color: white 
+          opacity: 1
 
     .markdown
       p
