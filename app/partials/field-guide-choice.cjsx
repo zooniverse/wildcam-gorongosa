@@ -21,10 +21,10 @@ module.exports = React.createClass
 
     task = @props.workflow.tasks[@props.workflow.first_task]
     task.images = _.mapKeys task.images, (value, key) -> key.toLowerCase()
-    choice = task.choices[key]
+    sourceChoice = task.choices[key]
 
-    if localChoice && choice
-      Object.assign choice, localChoice
+    if localChoice && sourceChoice
+      choice = Object.assign {}, sourceChoice, localChoice
     else
       return <div></div>
 
