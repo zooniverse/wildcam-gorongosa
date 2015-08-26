@@ -75,5 +75,6 @@ module.exports = React.createClass
       {if @state.choice is ''
         <Chooser task={@props.task} filters={@state.filters} onFilter={@handleFilter} onChoose={@handleChoice} onRemoveChoice={@removeChoice} annotations={@props.annotations} />
       else
-        <Choice task={@props.task} choiceID={@state.choice} onSwitch={@handleChoice} onCancel={@clearSelection} onConfirm={@handleAnnotation} />}
+        existingAnnotation = _.find(@props.annotations, 'choice', @state.choice) || {}
+        <Choice task={@props.task} choiceID={@state.choice} onSwitch={@handleChoice} onCancel={@clearSelection} onConfirm={@handleAnnotation} annotation={existingAnnotation} />}
     </div>
