@@ -63,7 +63,7 @@ module.exports = React.createClass
     onCancel: Function.prototype
 
   getInitialState: ->
-    answers: {}
+    answers: @props.annotation?.answers || {}
 
   allFilledIn: ->
     unless @props.task.choices[@props.choiceID].noQuestions

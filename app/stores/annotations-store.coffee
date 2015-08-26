@@ -12,7 +12,13 @@ module.exports = Reflux.createStore
     @data
 
   onAnnotate: (annotation) ->
-    @data.push annotation
+    annotationIndex = _.findIndex @data, 'choice': annotation.choice
+
+    if @data[annotationIndex]
+      @data[annotationIndex] = annotation
+    else
+      @data.push annotation
+
     @trigger @data
 
   onRemoveAnnotation: (choiceID) ->
