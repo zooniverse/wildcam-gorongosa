@@ -4,7 +4,7 @@ module.exports =
   '''
 
   scientificName: 'Papio cynocephalus'
-  mainImage: 'http://placehold.it/400x300'
+  mainImage: 'assets/fieldguide-content/mammals/baboon/baboon-feature.jpg'
 
   information: [{
     label: 'Length'
@@ -45,7 +45,7 @@ module.exports =
       <p>Yellow baboons move on all fours over the ground with their tail raised in the air at an angle. Like other Old World Monkeys, they lack a prehensile (gripping) tail but are still able to climb trees with ease to eat, sleep, and play.<p>
     '''
   }, {
-    title: 'Mating'
+    title: 'Breeding'
     content: '''
       Mating is polygynandrous, with both males and females mating with multiple partners. Females reach sexual maturity at around five years of age. After a gestation period of about six months, yellow baboons typically give birth to one young. Weaning occurs sometime around one year of age. Females generally reproduce every two years and will continue to reproduce consistently until old age. Most parental behavior is performed by the female; females nurse, groom, and play with their offspring.
     '''
@@ -58,4 +58,7 @@ module.exports =
         <li>Yellow baboons are the largest species of baboon</li>
       </ol>
     '''
+  },{
+    title: 'Distribution'
+    content: '<img src="assets/fieldguide-content/mammals/baboon/baboon-map.jpg"/>'
   }]

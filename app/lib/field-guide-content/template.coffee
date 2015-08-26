@@ -3,7 +3,7 @@ module.exports =
   description: 'some description' # taken from task choice if not provided
 
   scientificName: 'scientificus namius'
-  mainImage: 'http://placehold.it/400'
+  mainImage: 'assets/fieldguide-content/name/name-feature.jpg'
 
   information: [{
     label: 'Length'
@@ -13,11 +13,14 @@ module.exports =
     value: '1cm-5in.'
   }]
 
-  conservationStatus: 'low' # valid options: low, medium, high. Or you can exclude it
+  conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 
   sections: [{
-    title: 'Some Tittle'
+    title: 'Some Title'
     content: '''
       some <b>html</b> content
     '''
-  }]
+    },{
+      title: 'Distribution'
+      content: '<img src="assets/fieldguide-content/mammals/baboon/baboon-map.jpg"/>'
+    }]
