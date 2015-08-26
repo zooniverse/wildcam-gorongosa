@@ -75,7 +75,7 @@ module.exports = React.createClass
     projectsLists = counterpart 'footer.projectsLists'
     <footer className="main-footer">
       <section className="main-footer-zooniverse-info">
-        <ZooniverseLogo />
+        <img src="assets/zoo-logo.png" className="zooniverse-logo" />
         <Markdown>{counterpart "footer.info.content"}</Markdown>
         <a className="footer-link-button" href="https://www.zooniverse.org/" target="_blank">
           <Translate content="footer.info.callToAction" />
