@@ -31,7 +31,7 @@ $survey-task-pill-button
   > *
     flex-grow: 1
     margin: 0 2px 2px 0
-    
+
   .dropdown-form-button
     @extends $reset-button
     border-radius: 25px
@@ -41,10 +41,10 @@ $survey-task-pill-button
     margin-bottom: 10px
     min-width: 60px
     text-transform: capitalize
-        
+
     &:hover
       background-color: rgba(48, 77, 77, 0.5)
-      
+
     &[data-is-open="true"]
       background-color: #58ac82
 
@@ -61,7 +61,7 @@ $survey-task-pill-button
 
 .survey-task-chooser-characteristic
   display: block
-  
+
 .survey-task-chooser-characteristic-menu
   .dropdown-form
     background-color: #58ac82
@@ -76,10 +76,10 @@ $survey-task-pill-button
   height: 48px
   margin: 0 0.2em 0.75em 0
   width: 48px
-  
+
   &:disabled
     opacity: 1
-    
+
   &[data-selected="true"]:after
     border: solid
     border-color: #418462 transparent
@@ -90,7 +90,7 @@ $survey-task-pill-button
     left: 1.25em
     position: absolute
     z-index: 1
-  
+
 .survey-task-chooser-characteristic-value-label
   background-color: #418462
   border-bottom-left-radius: 6px
@@ -135,15 +135,15 @@ $survey-task-pill-button
 
   &[data-breakpoint="5"] > *
     flex-basis: calc(100% - 2px)
-    
-  &[data-breakpoint="40"], 
+
+  &[data-breakpoint="40"],
   &[data-breakpoint="20"],
   &[data-breakpoint="10"],
   &[data-breakpoint="5"]
     .survey-task-chooser-choice
       align-items: center
       justify-content: flex-start
-  
+
 .survey-task-chooser-choice
   @extends $reset-button
   background: rgba(64, 64, 64, 1)
@@ -157,7 +157,7 @@ $survey-task-pill-button
 
   > *
     margin: 0.3em 0.6em
-    
+
   &.selected-annotation
     background-color: #212121
     color: #8a9d56
@@ -200,7 +200,7 @@ $survey-task-pill-button
   height: 48px
   position: relative
   width: 48px
-  
+
   .survey-task-chooser-characteristic-clear-icon
     left: 25%
     position: absolute
@@ -216,7 +216,7 @@ $survey-task-pill-button
   width: 100%
 
 .survey-task-image-flipper-pips
-  bottom: 0
+  bottom: 2px
   left: 50%
   line-height: 1
   position: absolute
@@ -227,11 +227,15 @@ $survey-task-pill-button
   background: black
   border: 2px solid
   border-radius: 50%
-  color: white
+  display: inline-block
   height: 1em
+  margin: 0 2px
   overflow: hidden
   text-indent: 1em
   width: 1em
+
+  &.active
+    background: white
 
 .survey-task-choice
   background:  #f7f7f7
@@ -247,16 +251,16 @@ $survey-task-pill-button
 
 .survey-task-choice-description
   margin: 0.5em 0
-  
+
 .survey-task-choice-field-guide-link
   margin-bottom: 1.75em
   a
     @extends $reset-link
     font-size: 0.85em
     font-weight: 700
-    
+
     &:hover
-      color: lighten(#6b6a6a, 40%) 
+      color: lighten(#6b6a6a, 40%)
 
 .survey-task-choice-confusions
   font-size: 12px
@@ -270,7 +274,7 @@ $survey-task-pill-button
     font-size: 10px
     margin: 0 3px 0 0
     padding: 0.5em 0.75em
-    
+
     &:hover
       background: rgba(208, 208, 208, 1)
       color: rgba(107, 107, 107, 1)
@@ -278,17 +282,17 @@ $survey-task-pill-button
 .survey-task-confusions-modal
   .dropdown-form-underlay
     background-color: rgba(0,0,0,0.5)
-    
+
   .dropdown-form
     background: #f7f7f7
     border-radius: 6px
     color: #6b6a6a
     padding: 1em
-    
+
     img
       border-radius: 8px
-     
-    .survey-task-choice-confusion-buttons  
+
+    .survey-task-choice-confusion-buttons
       button
         @extends $reset-button
         border-radius: 4px
@@ -297,13 +301,13 @@ $survey-task-pill-button
         padding: 0.8em 0
         text-align: center
         width: 48%
-        
+
         &.cancel
           background-color: #404040
-          
+
         &.identify
           background-color: #4caa81
-          
+
 .survey-task-choice-question
   margin: 0.5em 0 1.75em
 
@@ -359,6 +363,3 @@ hr
 
     &.identify
       background: rgba(76, 170, 129, 1)
-      
-
-    
