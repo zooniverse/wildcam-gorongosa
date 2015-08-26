@@ -3,6 +3,7 @@ Router = {Link, Navigation} = require 'react-router'
 _ = require 'lodash'
 DropdownForm = require '../../components/dropdown-form'
 {Markdown} = require 'markdownz'
+classNames = require 'classnames'
 
 ImageFlipper = React.createClass
   displayName: 'ImageFlipper'
@@ -27,20 +28,21 @@ ImageFlipper = React.createClass
       backgroundSize: 'cover'
       height: 170
 
-    <span className="survey-task-image-flipper">
+    <div className="survey-task-image-flipper">
       {@renderPreload()}
 
       <div style={style} className="survey-task-image-flipper-image" />
 
-      <span className="survey-task-image-flipper-pips">
+      <div className="survey-task-image-flipper-pips">
         {unless @props.images.length is 1
           for index in [0...@props.images.length]
-            <span key={@props.images[index]}>
-              <button type="button" className="survey-task-image-flipper-pip" disabled={index is @state.frame} onClick={@handleFrameChange.bind this, index}>{index + 1}</button>
-              {' '}
-            </span>}
-      </span>
-    </span>
+            classes = classNames [
+              'survey-task-image-flipper-pip'
+              {'active': index is @state.frame}
+            ]
+            <button key={@props.images[index]} className={classes} type="button" onClick={@handleFrameChange.bind this, index}>{index + 1}</button>}
+      </div>
+    </div>
 
   renderPreload: ->
     <div style={@PRELOAD_STYLE}>
