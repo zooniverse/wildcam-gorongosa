@@ -1,7 +1,11 @@
 React = require 'react'
+Reflux = require 'reflux'
+
+ProjectStore = require '../../stores/project-store'
 
 module.exports = React.createClass
   displayName: 'SurveySummary'
+  mixins: [Reflux.connect(ProjectStore, 'projectData')]
 
   getDefaultProps: ->
     task: null
@@ -39,4 +43,7 @@ module.exports = React.createClass
               {choiceSummary}
             </div>}
       </div>
+      <a href="https://www.zooniverse.org/#/#{@state.projectData.slug}/talk/subjects/#{@props.subject.id}" className="discuss-link" target="_blank">
+        Discuss
+      </a>
     </div>

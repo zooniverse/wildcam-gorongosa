@@ -112,7 +112,7 @@ module.exports = React.createClass
                 <button type="button" className="survey-task-chooser-choice-remover-button" onClick={@props.onRemoveChoice.bind null, choiceID}>x</button>}
             </div>
       }</div>
-      <div style={textAlign: 'center'}>
+      <div className="survey-task-characteristic-filter-summary">
         Showing {filteredChoices.length} of {@props.task.choicesOrder.length}.
         &ensp;
         <button type="button" className="survey-task-chooser-characteristic-clear-button" disabled={Object.keys(@props.filters).length is 0} onClick={@handleClearFilters}>
