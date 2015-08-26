@@ -19,7 +19,7 @@ taskStore = require '../stores/task-store'
 classifierActions = require '../actions/classifier-actions'
 
 Task = require '../tasks/survey'
-Summary = require '../tasks/survey/summary'
+Summary = require '../partials/summary'
 
 module.exports = React.createClass
   displayName: "Classify"
@@ -93,7 +93,7 @@ module.exports = React.createClass
           {if @state.subject and @state.annotations and @state.workflow
             if @state.showingSummary
               <div>
-                <Summary annotations={@state.annotations} task={@state.workflow.tasks[@state.workflow.first_task]} expanded={true} />
+                <Summary subject={@state.subject} />
                 <div className="workflow-buttons-container">
                   <button type="button" className="action-button" onClick={@onClickNextImage}>Next Image</button>
                 </div>

@@ -116,6 +116,7 @@
 .workflow-buttons-container
   display: flex
   justify-content: flex-end
+  margin-top: 1em
 
   .action-button
     @extends $reset-button
@@ -140,6 +141,22 @@
   height: 100%
   min-height: 515px
   padding: 1em
+  
+  .discuss-link
+    @extends $reset-link
+    background: #4c7452
+    border-radius: 4px
+    color: white
+    font-size: 0.85em
+    font-weight: 700
+    max-width: 5em
+    padding: 3px 8px
+    
+    &:hover
+      background: lighten(#4c7452, 15%)
+      
+    &:active, &:visited
+      color: white
     
 .metadata-dialog-container
   border-radius: 6px

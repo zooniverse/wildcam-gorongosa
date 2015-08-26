@@ -67,6 +67,19 @@ $survey-task-pill-button
     background-color: #58ac82
     border-radius: 6px
     padding: 0.4em
+    
+  .survey-task-chooser-characteristic-clear-button
+    @extends $reset-button
+    background-color: transparent
+    border-radius: 4px
+    height: 48px
+    position: relative
+    width: 48px
+
+    .survey-task-chooser-characteristic-clear-icon
+      left: 25%
+      position: absolute
+      top: 30%
 
 .survey-task-chooser-characteristic-value
   @extends $reset-button
@@ -193,19 +206,13 @@ $survey-task-pill-button
   right: 5%
   top: 15%
 
-.survey-task-chooser-characteristic-clear-button
-  @extends $reset-button
-  background-color: transparent
-  border-radius: 4px
-  height: 48px
-  position: relative
-  width: 48px
-
-  .survey-task-chooser-characteristic-clear-icon
-    left: 25%
-    position: absolute
-    top: 30%
-
+.survey-task-characteristic-filter-summary
+  color: white
+  text-align: center
+  
+  .survey-task-chooser-characteristic-clear-button
+    @extends $reset-button
+    
 .survey-task-image-flipper
   display: block
   position: relative
