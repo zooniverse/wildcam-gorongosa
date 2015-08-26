@@ -4,7 +4,7 @@ module.exports =
   '''
 
   scientificName: '(Tragelaphus scriptus)'
-  mainImage: 'assets/fieldguide-content/bushbuck/bushbuck-feature.jpg'
+  mainImage: 'assets/fieldguide-content/mammals/bushbuck/bushbuck-feature.jpg'
 
   information: [{
     label: 'Length'
