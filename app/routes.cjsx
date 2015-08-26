@@ -2,10 +2,10 @@ React = require 'react'
 Router = {DefaultRoute, Route, NotFoundRoute} = require 'react-router'
 
 module.exports =
-  <Route name="root" path="/" handler={require './main'} ignoreScrollBehavior>
-    <DefaultRoute handler={require './pages/home'} />
-    <Route name="classify" path="classify" handler={require './pages/classify'} />
-    <Route name="about-page-controller" path="about" handler={require './pages/about'}>
+  <Route name="root" path="/" handler={require './main'} >
+    <DefaultRoute handler={require './pages/home'} ignoreScrollBehavior/>
+    <Route name="classify" path="classify" handler={require './pages/classify'} ignoreScrollBehavior/>
+    <Route name="about-page-controller" path="about" handler={require './pages/about'} ignoreScrollBehavior>
       <DefaultRoute name="about" handler={require './pages/about/default'} />
       <Route name="team" path="team" handler={require './pages/about/team'} />
       <Route name="organizations" path="organizations" handler={require './pages/about/organizations'} />
@@ -17,5 +17,5 @@ module.exports =
       <DefaultRoute name="field-guide-list" handler={require './partials/field-guide-list'} />
     </Route>
 
-    <NotFoundRoute handler={require './pages/not-found'} />
+    <NotFoundRoute handler={require './pages/not-found'} ignoreScrollBehavior/>
   </Route>
