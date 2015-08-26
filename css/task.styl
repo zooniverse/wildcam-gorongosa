@@ -241,8 +241,16 @@ $survey-task-pill-button
   background:  #f7f7f7
   border-radius: 8px
   color: #6b6a6a
+  display: flex
+  flex-direction: column
   font-size: 14px
+  height: 600px
+  justify-content: space-between
   padding: 1em
+
+.survey-task-choice-content
+  flex-grow: 100 // arbitrarily large number
+  position: relative
 
 .survey-task-choice-label
   color: #3c3c3c
@@ -253,14 +261,19 @@ $survey-task-pill-button
   margin: 0.5em 0
 
 .survey-task-choice-field-guide-link
-  margin-bottom: 1.75em
-  a
-    @extends $reset-link
-    font-size: 0.85em
-    font-weight: 700
+  background: #4c7452
+  border-radius: 3px
+  color: white
+  font-size: 0.85em
+  font-weight: 700
+  padding: 3px 8px
+  position: absolute
+  right: 0
+  text-decoration: none
+  top: 0.5em
 
-    &:hover
-      color: lighten(#6b6a6a, 40%)
+  &:hover
+    background: lighten(#4c7452, 15%)
 
 .survey-task-choice-confusions
   font-size: 12px
@@ -309,14 +322,14 @@ $survey-task-pill-button
           background-color: #4caa81
 
 .survey-task-choice-question
-  margin: 0.5em 0 1.75em
+  margin: 0.4em 0 1.3em
 
   &:first-child
     display: block
 
 .survey-task-choice-question-label
   font-size: 12px
-  margin: 0 0 10px 0
+  margin: 0 0 6px 0
 
 .survey-task-choice-answer
   background: rgba(232, 232, 232, 1)
