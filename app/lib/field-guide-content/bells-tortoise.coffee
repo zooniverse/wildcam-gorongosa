@@ -43,13 +43,4 @@ module.exports =
     content: '''
         Breeding is thought to occur during the wetter months. Females will dig a hole to lay up to 10 elongated, brittle-shelled eggs. Laying can occur at 40-day intervals. After an incubation period that generally lasts between 90 and 110 days, but can be up to a year, the hatchlings emerge.
     '''
-  }, {
-    title: 'Fun Facts'
-    style: 'focus-box'
-    content: '''
-      <ol>
-        <li></li>
-        <li></li>
-      </ol>
-    '''
   }]
