@@ -1,5 +1,7 @@
 Reflux = require 'reflux'
 
+classificationStore = require '../stores/classification-store'
+
 module.exports = Reflux.createStore
   listenables: [
     require '../actions/classifier-actions'
@@ -30,6 +32,7 @@ module.exports = Reflux.createStore
     @trigger @data
 
   onFinishClassification: ->
+    classificationStore.finish()
     @data.showingSummary = true
     @trigger @data
 

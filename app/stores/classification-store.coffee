@@ -14,7 +14,6 @@ module.exports = Reflux.createStore
   data: null
 
   init: ->
-    @listenTo classifierActions.finishClassification, @finish
     @listenTo workflowStore, @onReceiveData
     @listenTo subjectStore, @onReceiveData
 
@@ -53,6 +52,7 @@ module.exports = Reflux.createStore
     @data.update upsert
       .save()
       .then (classification) ->
+        console.log 'classification saved', classification
         classification.destroy()
       .catch (error) ->
         console.error 'error saving c', error
