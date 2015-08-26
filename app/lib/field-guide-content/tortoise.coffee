@@ -5,7 +5,7 @@ module.exports =
   '''
 
   scientificName: '(Kinixys belliana)'
-  mainImage: 'assets/fieldguide-content/mammals/bells-tortoise/bells-tortoise-feature.jpg'
+  mainImage: 'assets/fieldguide-content/reptiles/tortoise/bells-tortoise-feature.jpg'
 
   information: [{
     label: 'Length'

@@ -4,7 +4,7 @@ module.exports =
   '''
 
   scientificName: ''
-  mainImage: 'assets/fieldguide-content/mammals/'
+  mainImage: 'assets/fieldguide-content/mammals/bushpig/bushpig-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 
