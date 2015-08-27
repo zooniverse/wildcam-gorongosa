@@ -17,5 +17,3 @@ module.exports =
   reptiles:
     crocodile: require './crocodile'
     tortoise: require './tortoise'
-  ecology:
-    fire: require './fire'
