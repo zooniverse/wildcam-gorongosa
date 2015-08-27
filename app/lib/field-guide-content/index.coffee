@@ -12,10 +12,14 @@ module.exports =
     elephant: require './elephant'
     genet: require './genet'
     hare: require './hare'
+    hartebeest: require './hartebeest'
+    hippopotamus: require './hippopotamus'
+    honeybadger: require './honeybadger'
+    hyena: require './hyena'
+    impala: require './impala'
+
   birds:
     crane: require './crane'
   reptiles:
     crocodile: require './crocodile'
     tortoise: require './tortoise'
-  ecology:
-    fire: require './fire'

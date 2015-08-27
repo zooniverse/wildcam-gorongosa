@@ -60,6 +60,6 @@ module.exports =
   }, {
     title: 'Distribution'
     content: '''
-    <img src="assets/fieldguide-content/baboon-map.jpg"
+    <img src="assets/fieldguide-content/mammals/buffalo/buffalo-map.jpg"
     '''
     }]
