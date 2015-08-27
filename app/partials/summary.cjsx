@@ -9,10 +9,10 @@ module.exports = React.createClass
 
   render: ->
     task = @props.workflow.tasks[@props.workflow.first_task]
-    <div className="classification-task-summary">
-      <div className="classification-task-summary-annotations">
-        <h3>Species Identified</h3>
-        <ul className="classification-task-summary-annotations-list">
+    <div className="task-summary">
+      <div className="task-summary-annotations">
+        <h3 className="task-summary-header">Your Classification Summary</h3>
+        <ul className="task-summary-annotations-list">
           {for annotation in @props.annotations
             species = task.choices[annotation.choice].label
             plural = 
@@ -29,16 +29,20 @@ module.exports = React.createClass
                     "#{species}s"
               else
                 species
-            <li>
-              {annotation.answers["HWMN"]} {plural}:
-              <ul className="classification-task-summary-annotations-behaviors-list">
-                {for behaviorKey, behavior  of annotation.answers["WHTBHVRSDS"]
-                  <li>{task.questions["WHTBHVRSDS"].answers[behavior].label}</li>
-              }</ul>
+            <li className="task-summary-annotations-list-item">
+              <span className="item-species">{plural}</span><span className="item-number">{annotation.answers["HWMN"]}</span>
             </li>
         }</ul>
       </div>
-      <a href="https://www.zooniverse.org/#/projects/#{@state.projectData.slug}/talk/subjects/#{@props.subject.id}" className="discuss-link" target="_blank">
-        Discuss
-      </a>
+      <div className="task-summary-call-to-action">
+        <p className="call-to-action">
+          Want to discuss this with other volunteers?
+        </p>
+        <a href="https://www.zooniverse.org/#/projects/#{@state.projectData.slug}/talk/subjects/#{@props.subject.id}" className="discuss-link" target="_blank">
+          Discuss on Talk
+        </a>
+      </div>
+      <div className="task-summary-tip">
+        <p>Ready to move on?</p>
+      </div>
     </div>

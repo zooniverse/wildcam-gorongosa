@@ -116,7 +116,7 @@
 .workflow-buttons-container
   display: flex
   justify-content: flex-end
-  margin-top: 1em
+  margin-top: 5px
 
   .action-button
     @extends $reset-button
@@ -131,44 +131,88 @@
     @media screen and (max-width: 400px)
       width: 100%
       
-.classification-task-summary
-  background: #f7f7f7
+.task-summary
+  background: rgba(0, 0, 0, 0.7)
   border-radius: 8px
-  color: #6b6a6a
+  color: #efefef
   display: flex
   flex-direction: column
-  font-size: 14px
+  font-size: 0.9em
   justify-content: space-between
-  height: 591px
-  padding: 1em
+  height: 520px
+  padding: 1em 1em 0
+  text-align: center
   
-  .classification-task-summary-annotations
+  .task-summary-header
+    font-size: 1.25em
+    font-weight: 400
+  
+  .task-summary-tip
+    color: rgba(239, 239, 239, 0.5)
+    
+    p
+      float: right
+      position: relative
+      width: 200px
+    
+      &::after
+        border: solid
+        border-color: rgba(239, 239, 239, 0.5) transparent
+        border-width: 0.4em 0.4em 0 0.4em
+        bottom: -0.45em
+        content: ""
+        display: block
+        left: 50%
+        position: absolute
+        z-index: 1
+      
+      @media screen and (max-width: 400px)
+        float: none
+        width: 100%
+      
+  .task-summary-annotations
     overflow: auto
     
-    .classification-task-summary-annotations-list
+    .task-summary-annotations-list
       @extends $reset-unordered-list
       
-      li
+      .task-summary-annotations-list-item
+        align-items: center
+        background-color: #212121
+        border-radius: 4px
+        display: flex
+        height: 35px
+        justify-content: space-between
         margin-bottom: 1em
-      
-      .classification-task-summary-annotations-behaviors-list
-        @extends $reset-unordered-list
-  
-  .discuss-link
-    @extends $reset-link
-    background: #4c7452
-    border-radius: 4px
-    color: white
-    font-size: 0.85em
-    font-weight: 700
-    max-width: 5em
-    padding: 3px 8px
+        padding: 0 1em
+        width: 100%
+        
+        .item-species
+          font-weight: 700
+          
+  .task-summary-call-to-action
+    align-items: center
+    display: flex
+    flex-direction: column
     
-    &:hover
-      background: lighten(#4c7452, 15%)
-      
-    &:active, &:visited
-      color: white
+    .discuss-link
+      @extends $reset-link
+      background: transparent
+      border: solid 2px #8a9d56
+      border-radius: 4px
+      color: #efefef
+      font-size: 0.9em
+      font-weight: 700
+      line-height: 45px
+      max-width: 225px
+      text-align: center
+      width: 100%
+
+      &:hover
+        background-color: lighten(#8a9d56, 10%)
+        
+      &:active, &:visited
+        color: #efefef
     
 .metadata-dialog-container
   border-radius: 6px
