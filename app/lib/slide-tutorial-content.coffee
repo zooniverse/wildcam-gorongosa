@@ -1,12 +1,12 @@
 module.exports = [
   {image: 'http://placehold.it/400x275'
   title: 'Welcome to Gorongosa National Park!',
-  content: '''In WildCam Gorongosa, you’ll be exploring photos from camera traps in a Mozambique wildlife refuge. By marking the animals that you see in the photos, you’ll help track the recovery of species populations from damage caused by a long civil war. Read on for instructions on how you can help!''',
+  content: '''In WildCam Gorongosa, you’ll be exploring photos from camera traps in a national park in Mozambique. By identifying the animals that you see in the photos, you’ll help track their continued recovery. Read on for instructions on how you can help!''',
   button: 'Next'},
 
   {image: 'http://placehold.it/400x275'
   title: 'Select all animals you see in each photo',
-  content: '''Use the buttons to the right of the photo to pick any animal that you see in the photo; then, select the appropriate number and behavior of the animals. You can add multiple classifications per species if there are several of the same animal doing different things. Keep adding classifications until you have described every animal in the image.''',
+  content: '''Use the buttons to the right of the photo to pick any animal that you see in the photo; then, select the appropriate number and behavior of the animals. Mark all behaviors that you see any animal of that species engaging in. Keep adding classifications until you have described every animal in the image.''',
   button: 'Next'},
 
   {image: 'http://placehold.it/400x275'
