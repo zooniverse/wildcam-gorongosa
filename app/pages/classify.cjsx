@@ -109,8 +109,9 @@ module.exports = React.createClass
                 />
 
                 {if @state.choice is ''
+                  finishDisabledCondition = @state.annotations.length is 0
                   <div ref="workflowButtonsContainer" className="workflow-buttons-container">
-                    <button type="button" className="action-button" onClick={@onClickFinish}>Done</button>
+                    <button type="button" className="action-button" disabled={finishDisabledCondition} onClick={@onClickFinish}>Done</button>
                   </div>}
               </div>
           else
