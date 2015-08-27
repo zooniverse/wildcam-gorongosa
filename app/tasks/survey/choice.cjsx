@@ -5,6 +5,8 @@ DropdownForm = require '../../components/dropdown-form'
 {Markdown} = require 'markdownz'
 classNames = require 'classnames'
 
+speciesWithHorns = require '../../lib/species-with-horns'
+
 ImageFlipper = React.createClass
   displayName: 'ImageFlipper'
 
@@ -86,7 +88,12 @@ module.exports = React.createClass
       <div className="survey-task-choice-content">
         <div className="survey-task-choice-label">{choice.label}</div>
         <div className="survey-task-choice-description">{choice.description}</div>
-        <Link to="field-guide-choice" params={{choice: _.kebabCase choice.label}} className="survey-task-choice-field-guide-link">View Field Guide</Link>
+        <Link to="field-guide-choice" params={{choice: _.kebabCase choice.label}} target="_blank" onClick={(event) =>
+          event.preventDefault();
+          window.open(@makeHref("field-guide-choice", choice: _.kebabCase choice.label));
+        } className="survey-task-choice-field-guide-link">
+            View Field Guide
+        </Link>
 
         {unless choice.confusionsOrder.length is 0
           <div className="survey-task-choice-confusions">
@@ -121,19 +128,35 @@ module.exports = React.createClass
               'checkbox'
             else
               'radio'
-            <div key={questionID} className="survey-task-choice-question" data-multiple={question.multiple || null}>
-              <div className="survey-task-choice-question-label">{question.label}</div>
-              {for answerID in question.answersOrder
-                answer = question.answers[answerID]
-                isChecked = if question.multiple
-                  answerID in (@state.answers[questionID] ? [])
-                else
-                  answerID is @state.answers[questionID]
-                <label key={answerID} className="survey-task-choice-answer" data-checked={isChecked || null}>
-                  <input type={inputType} checked={isChecked} onChange={@handleAnswer.bind this, questionID, answerID} />
-                  {answer.label}
-                </label>}
-          </div>}
+            if speciesWithHorns.indexOf(@props.choiceID) > -1
+              <div key={questionID} className="survey-task-choice-question" data-multiple={question.multiple || null}>
+                <div className="survey-task-choice-question-label">{question.label}</div>
+                {for answerID in question.answersOrder
+                  answer = question.answers[answerID]
+                  isChecked = if question.multiple
+                    answerID in (@state.answers[questionID] ? [])
+                  else
+                    answerID is @state.answers[questionID]
+                  <label key={answerID} className="survey-task-choice-answer" data-checked={isChecked || null}>
+                    <input type={inputType} checked={isChecked} onChange={@handleAnswer.bind this, questionID, answerID} />
+                    {answer.label}
+                  </label>}
+              </div>
+            else
+              unless questionID is "DSNHRNS"
+                <div key={questionID} className="survey-task-choice-question" data-multiple={question.multiple || null}>
+                  <div className="survey-task-choice-question-label">{question.label}</div>
+                  {for answerID in question.answersOrder
+                    answer = question.answers[answerID]
+                    isChecked = if question.multiple
+                      answerID in (@state.answers[questionID] ? [])
+                    else
+                      answerID is @state.answers[questionID]
+                    <label key={answerID} className="survey-task-choice-answer" data-checked={isChecked || null}>
+                      <input type={inputType} checked={isChecked} onChange={@handleAnswer.bind this, questionID, answerID} />
+                      {answer.label}
+                    </label>}
+                </div>}
 
           {unless choice.noQuestions or @props.task.questionsOrder.lengths is 0
             <hr />}
