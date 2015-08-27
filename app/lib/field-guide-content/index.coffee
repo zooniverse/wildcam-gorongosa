@@ -12,6 +12,7 @@ module.exports =
     elephant: require './elephant'
     genet: require './genet'
     hare: require './hare'
+    hartebeest: require './hartebeest'
   birds:
     crane: require './crane'
   reptiles:

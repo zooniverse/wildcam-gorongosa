@@ -57,6 +57,6 @@ module.exports =
   },{
     title: 'Distribution'
     content:'''
-      <img src="assets/fieldguide-content/bushbuck-map.jpg"/>
+      <img src="assets/fieldguide-content/mammals/bushbuck/bushbuck-map.jpg"/>
     '''
   }]

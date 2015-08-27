@@ -59,5 +59,5 @@ module.exports =
     '''
   },{
     title: 'Distribution'
-    content: '<img src="assets/fieldguide-content/mammals/"/>'
+    content: '<img src="assets/fieldguide-content/mammals/civet/civet-map.jpg"/>'
   }]
