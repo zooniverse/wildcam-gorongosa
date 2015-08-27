@@ -60,7 +60,7 @@ module.exports = React.createClass
           <Link to="classify" className="main-header-link"><Translate content="mainHeader.links.classify" /></Link>
           <Link to="about" className="main-header-link"><Translate content="mainHeader.links.about" /></Link>
           <Link to="field-guide" className="main-header-link"><Translate content="mainHeader.links.fieldGuide" /></Link>
-          <a className="main-header-link" href="#" target="_blank"><Translate content="mainHeader.links.talk" /></a>
+          <a className="main-header-link" href="https://www.zooniverse.org/#/projects/zooniverse/wildcam-gorongosa/talk" target="_blank"><Translate content="mainHeader.links.talk" /></a>
           <a className="main-header-link" href="http://blog.wildcamgorongosa.org" target="_blank"><Translate content="mainHeader.links.blog" /></a>
         </div>
         {if @props.user
