@@ -18,7 +18,7 @@ module.exports = React.createClass
       <div className="about-section">
         <h2>Help Us Collect Data</h2>
         <img className="float-left" src="https://panoptes-uploads.zooniverse.org/production/project_attached_image/8ca550a3-dcd6-4372-9cbe-21c25106a77c.png" />
-        <p>We have collected hundreds of thousands of photos (and counting), and we need your help to identify all the animals in these photos! The identifications that you record will build a data set that scientists can use to better understand which animals exist in Gorongosa, where they are, how they behave, and how the ecosystem is responding to restoration actions. This information helps us monitor the park’s recovery and identify key challenges.</p>
+        <p>We have collected hundreds of thousands of photos (and counting), and we need your help to identify all the animals in these photos! The identifications that you record will build a data set that scientists can use to better understand which animals exist in Gorongosa, where they are, how they behave, and how the ecosystem is responding to restoration actions. This information helps us monitor the park’s recovery and identify key challenges. Ready to get started?</p>
       </div>
 
       <div className="call-to-action">
@@ -29,7 +29,7 @@ module.exports = React.createClass
       <div className="about-section">
         <h2>In the Classroom</h2>
         <img className="float-right" src="https://panoptes-uploads.zooniverse.org/production/project_attached_image/6f6deafb-fe09-4b3c-acca-f80591b6a508.png" />
-        <p>HHMI’s BioInteractive has developed free educational resources using Gorongosa National Park as a case study in conservation biology and ecology. Educators can use these multimedia interactive resources, which are aligned to national curriculum standards, to teach concepts in ecology, conservation, social science, and inquiry-based science practices.</p>
+        <p>HHMI BioInteractive has developed free educational resources using Gorongosa National Park as a case study in conservation biology and ecology. Educators can use these multimedia interactive resources, which are aligned to national curriculum standards, to teach concepts in ecology, conservation, social science, and inquiry-based science practices.</p>
         <a href="https://www.biointeractive.org/gorongosa"><button type="button">Explore Resources</button></a>
       </div>
 
