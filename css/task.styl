@@ -62,30 +62,29 @@ $survey-task-pill-button
 .survey-task-chooser-characteristic
   display: block
 
-.survey-task-chooser-characteristic-menu
+.survey-task-chooser-characteristic-menu    
   .dropdown-form
     background-color: #58ac82
     border-radius: 6px
     padding: 0.4em
     
+  .survey-task-chooser-characteristic-menu-container
+    display: flex
+        
   .survey-task-chooser-characteristic-clear-button
     @extends $reset-button
     background-color: transparent
     border-radius: 4px
+    font-size: 0.8em
     height: 48px
-    position: relative
     width: 48px
-
-    .survey-task-chooser-characteristic-clear-icon
-      left: 25%
-      position: absolute
-      top: 30%
 
 .survey-task-chooser-characteristic-value
   @extends $reset-button
   background-color: darken(#58ac82, 10%)
   border-radius: 4px
   cursor: pointer
+  font-size: 0.8em
   height: 48px
   margin: 0 0.2em 0.75em 0
   width: 48px
