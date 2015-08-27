@@ -1,61 +1,64 @@
 module.exports =
-  label: 'Nile Crocodile'
+  label: 'Lichtenstein\'s Hartebeest'
   description: '''
-    The Nile crocodile is a large, lizardlike animal with a streamlined body and a long, massive tail used for moving underwater. They have powerful jaws, conical teeth, and short legs with webbed toes and claws. Their dorsal skin is thick and covered with horny plates, while the skin on their underside is softer. The eyes, ears, and nostrils are located on top of their head, allowing them to lie low in the water, almost completely submerged and out of sight. Adult Nile crocodiles are gray to gray-olive in color, with a yellowish belly. Younger Nile crocodiles are greenish, with black marks on their dorsal side and legs. Like all true crocodiles, the Nile crocodile has an enlarged fourth tooth on the lower jaw that is clearly visible when its mouth is closed.
+    The Lichtenstein\'s hartebeest is a large, high-shouldered antelope with long legs, a short neck, long, narrow face, and long, elongated ears. A reddish-brown saddle extends down to the base of the tail, contrasting with their white buttocks, and grades into pale flanks and underparts. The chin, tail tip, and stripe down foreleg are black. Both males and females have horns that are close together at the base, curve slightly forward and outward, and then point inward. The lower two-thirds of the horns have distinctive rings, and those of the female are more slender.
   '''
 
-  scientificName: '(Crocodylus niloticus)'
-  mainImage: 'assets/fieldguide-content/reptiles/crocodile/crocodile-feature.jpg'
+  scientificName: '(Alcelaphus lichtensteinii)'
+  mainImage: 'assets/fieldguide-content/mammals/hartebeest/hartebeest-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 
   information: [{
     label: 'Length'
-    value: '3-3.6 m'
+    value: '1.6-2 m'
   }, {
+    label: 'Height'
+    value: '1.19-1.36 m'
+  },{
     label: 'Weight'
-    value: '1,000 kg'
+    value: '125-204 kg'
   }, {
     label: 'Lifespan'
-    value: '45 years'
+    value: '20 years'
   }, {
     label: 'Gestation'
-    value: '90 days'
+    value: '8 months'
   }, {
     label: 'Avg. number of offspring'
-    value: '40'
+    value: '1'
   }]
 
   sections: [{
     title: 'Habitat'
-    content: 'The Nile crocodile inhabits a wide range of aquatic habitats including freshwater rivers, lakes, and swamps as well as coastal estuaries and mangroves.'
+    content: 'Lichtenstein’s hartebeests inhabit woodlands, open savannas, wooded grasslands, and other more arid habitats after it rains.'
   }, {
     title: 'Diet'
-    content: 'Young individuals eat insects, amphibians, crustaceans, and small fish; larger individuals feed on vertebrates, including birds and mammals; fully grown individuals eat fish, larger mammals such as antelopes, buffalos, and zebras, birds, and other crocodiles.'
+    content: 'Depends almost exclusively on grasses; highly dependent on availability of surface water sources, needing to drink daily'
   }, {
     title: 'Predators'
-    content: 'Leopards'
+    content: 'Lions, leopards, wild dogs, jackals, hyenas'
   }, {
     title: 'Behavior'
     content: '''
-      Nile crocodiles spend most of their time in the water. Like other reptiles, Nile crocodiles regulate their body temperature by alternating between basking in the sun and retiring to the water or cooler areas. Crocodile males are territorial and will actively defend their territories.
+      <p>Male Lichtenstein\'s hartebeests defend sizable territories reaching some 2.5 square kilometers, within which herds of related females and young may reside semipermanently. Males use their dung to mark their territory and will fiercely defend it, with ensuing fights often resulting in one or both individuals wounded or even dead. As an antipredator mechanism, the territories may dissolve during the calving season, leading to larger herds and further protection. They are mostly active during the cooler periods of the day, in the morning, and late afternoon, but some nocturnal feeding is known to occur.</p>
     '''
   }, {
     title: 'Breeding'
     content: '''
-      Mating occurs in the water. When laying her eggs, females will travel a few meters from the water and dig a hole in a sandy bank with her hind legs to serve as a nest. After laying 16 to 90 eggs, she will cover the nest with sand and stand guard and defend it for the entire incubation period, which is roughly 90 days. The sex of Nile crocodiles is determined by the temperature at which the eggs are incubated, with males produced at above 31 to 34 degrees Celsius, and females below 31 degrees Celsius.
-
-      When the mother hears peeping from the nest, she will uncover the newly hatched young and collect them in her mouth. She takes them to the water nearby, where they will remain in a group for several months. The small crocs will live under their mother’s protection for up to two years.
+      <p>Female Lichtenstein\'s hartebeests become sexually mature between one and four years and will leave their parent herds to join the herd of a territorial male. Breeding is seasonal, with most births taking place during the dry season. After a gestation period of eight months, females give birth to a single calf.</p>
     '''
   }, {
     title: 'Fun Facts'
     style: 'focus-box'
     content: '''
       <ol>
-        <li>Egyptians considered the Nile crocodile the god of fertility, power, and protection. Mummified crocodiles and crocodile eggs have been discovered in Egyptian tombs.</li>
-        <li>Nile crocodiles have a special valve at the back of their throat, which allows them to open their mouth to catch and hold prey underwater without water entering the throat.</li>
-        <li>Nile crocodiles have sensory pits in the scales that run along the side of their jaw, which help them detect movement and vibrations in the water.</li>
-        <li>The Nile crocodile is Africa’s largest crocodilian species.</li>
+        <li>Lichtenstein\'s hartebeests are capable of reaching speeds of 70 kilometers per hour. </li>
       </ol>
     '''
-  }]
+  }, {
+    title: 'Distribution'
+    content: '''
+      <img src="assets/fieldguide-content/mammals/hartebeest/hartebeest-map.jpg"/>
+    '''
+    }]
