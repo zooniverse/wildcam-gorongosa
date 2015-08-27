@@ -92,8 +92,8 @@ module.exports = React.createClass
         <section className="task-container">
           {if @state.subject and @state.annotations and @state.workflow
             if @state.showingSummary
-              <div>
-                <Summary subject={@state.subject} />
+              <div className="task-summary-container">
+                <Summary annotations={@state.annotations} workflow={@state.workflow} subject={@state.subject} />
                 <div className="workflow-buttons-container">
                   <button type="button" className="action-button" onClick={@onClickNextImage}>Next Image</button>
                 </div>

@@ -55,7 +55,7 @@ module.exports = React.createClass
                 <span className="survey-task-chooser-characteristic-label">{selectedValue?.label ? characteristic.label}</span>
               </span>
             }>
-            <div>
+            <div className="survey-task-chooser-characteristic-menu-container">
               {for valueID in characteristic.valuesOrder
                 value = characteristic.values[valueID]
 
@@ -68,13 +68,16 @@ module.exports = React.createClass
 
                 <span key={valueID}>
                   <button type="submit" title={value.label} className="survey-task-chooser-characteristic-value" disabled={disabled} autoFocus={autoFocus} data-selected={selected} onClick={@handleFilter.bind this, characteristicID, valueID}>
-                    {if value.image?
-                      <img src={@props.task.images[value.image]} alt={value.label} className="survey-task-chooser-characteristic-value-icon" />}
+                    {if valueID is "THR"
+                      "Other"
+                    else
+                      if value.image?
+                        <img src={@props.task.images[value.image]} alt={value.label} className="survey-task-chooser-characteristic-value-icon" />}
                   </button>
                 </span>}
 
-              <button type="submit" title="Clear filters" className="survey-task-chooser-characteristic-clear-button" disabled={characteristicID not of @props.filters} autoFocus={not hasBeenAutoFocused} onClick={@handleFilter.bind this, characteristicID, undefined}>
-                <img className="survey-task-chooser-characteristic-clear-icon" src={@props.task.images["nothing-icon.svg"]} alt="Clear filters" />
+              <button type="submit" className="survey-task-chooser-characteristic-clear-button" disabled={characteristicID not of @props.filters} autoFocus={not hasBeenAutoFocused} onClick={@handleFilter.bind this, characteristicID, undefined}>
+                Clear
               </button>
             </div>
             <div className="survey-task-chooser-characteristic-value-label">
