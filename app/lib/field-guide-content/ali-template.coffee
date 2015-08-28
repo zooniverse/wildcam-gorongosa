@@ -10,7 +10,7 @@ module.exports =
 
   information: [{
     label: 'Length'
-    value: '50-79 cm'
+    value: ''
   }, {
     label: 'Height'
     value: ''
