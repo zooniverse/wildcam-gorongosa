@@ -18,6 +18,7 @@ counterpart.registerTranslations 'en',
     callToAction:
       header: '''Ready to get involved?'''
       button: '''Get Started'''
+    organizationCredit: 'WildCam Gorongosa was made in partnership with the Howard Hughes Medical Institute Biointeractive Initiative'
 
 module.exports = React.createClass
   displayName: "Home"
@@ -37,4 +38,10 @@ module.exports = React.createClass
         </div>
       </section>
       <ProjectMetadata />
+      <section className="home-organization-credit">
+        <div className="home-organization-credit-container">
+          <img className="hhmi-logo" src="./assets/hhmi-logo-long.png" alt="HHMI BioInteractive" />
+          <Translate className="hhmi-credit" component="p" content="homePage.organizationCredit" />
+        </div>
+      </section>
     </div>
