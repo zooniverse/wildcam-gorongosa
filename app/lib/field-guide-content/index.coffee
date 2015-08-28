@@ -43,8 +43,13 @@ module.exports =
   birds:
     crane: require './crane'
     ground_hornbill: require './ground_hornbill'
+    secretary_bird: require './secretary_bird'
+    vulture: require './vulture'
 
   reptiles:
-    reptile: require './reptile'
-    #crocodile: require './crocodile'
-    #tortoise: require './tortoise'
+    #reptile: require './reptile'
+    crocodile: require './crocodile'
+    monitor_lizard: require './monitor_lizard'
+    pygmy_chameleon: require './pygmy_chameleon'
+    rock_python: require './rock_python'
+    tortoise: require './tortoise'

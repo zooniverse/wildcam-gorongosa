@@ -5,7 +5,7 @@ module.exports =
   '''
 
   scientificName: '(Sagittarius serpentarius)'
-  mainImage: 'assets/fieldguide-content/mammals/'
+  mainImage: 'assets/fieldguide-content/birds/secretary_bird/secretarybird-feature.jpg'
 
   conservationStatus: 'Vulnerable' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 
@@ -59,5 +59,5 @@ module.exports =
     '''
   },{
     title: 'Distribution'
-    content: '<img src="assets/fieldguide-content/mammals/"/>'
+    content: '<img src="assets/fieldguide-content/birds/secretary_bird/secretarybird-map.jpg"/>'
   }]

@@ -4,7 +4,7 @@ module.exports =
   '''
 
   scientificName: ''
-  mainImage: 'assets/fieldguide-content/mammals/'
+  mainImage: 'assets/fieldguide-content/birds/vulture/vulture-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 
@@ -57,5 +57,5 @@ module.exports =
     '''
   },{
     title: 'Distribution'
-    content: '<img src="assets/fieldguide-content/mammals/"/>'
+    content: '<img src="assets/fieldguide-content/birds/vulture/vulture-map.jpg"/>'
   }]
