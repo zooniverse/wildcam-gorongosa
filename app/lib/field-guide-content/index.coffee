@@ -14,7 +14,7 @@ module.exports =
     hare: require './hare'
     hartebeest: require './hartebeest'
     hippopotamus: require './hippopotamus'
-    honeybadger: require './honey_badger'
+    honey_badger: require './honey_badger'
     hyena: require './hyena'
     impala: require './impala'
     jackal: require './jackal'

@@ -4,7 +4,7 @@ module.exports =
   '''
 
   scientificName: '(Hippotragus niger)'
-  mainImage: 'assets/fieldguide-content/mammals/sable_antelop/sable-feature.jpg'
+  mainImage: 'assets/fieldguide-content/mammals/sable_antelope/sable-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 

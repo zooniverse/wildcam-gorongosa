@@ -57,7 +57,7 @@ module.exports = React.createClass
                   backgroundImage: "url(#{ choice.mainImage })"
                 <Link key={key} to="field-guide-choice" params={{choice: key}} className="field-guide-choice">
                     <div className="field-guide-choice-background" style={backgroundStyle} />
-                    <div className="field-guide-choice-label">{_.capitalize key}</div>
+                    <div className="field-guide-choice-label">{key.replace(/[_]/g, ' ')}</div>
                 </Link>}
             </div>
           </div>}
