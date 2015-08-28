@@ -5,9 +5,9 @@ module.exports = React.createClass
   displayName: 'About'
 
   render: ->
-    <div>
+    <div className="about-default-page">
       <h1>Gorongosa National Park</h1>
-      <img src="https://panoptes-uploads.zooniverse.org/production/project_attached_image/f43274ed-3b7a-47ac-8003-4d80461e8f98.png" style={maxWidth: 500} />
+      <img className="map-image" src="https://panoptes-uploads.zooniverse.org/production/project_attached_image/f43274ed-3b7a-47ac-8003-4d80461e8f98.png" style={maxWidth: 500} />
 
       <p>Located at the southern end of the East African Rift Valley, Gorongosa National Park in Mozambique has an amazing diversity of ecosystems and wildlife. The park is home to large animals like lions, antelopes, and elephants, and small creatures like birds, reptiles, and insects. Two decades of war, ending in the 1992, decimated the populations of many of Gorongosa’s large animals, but thanks to a large-scale conservation effort, many are now rebounding. Our scientists are working to discover which animal species are still in Gorongosa and track their recovery.</p>
 
@@ -29,10 +29,8 @@ module.exports = React.createClass
         <a href="http://www.biointeractive.org/gorongosa" target="_blank"><button type="button">Explore Resources</button></a>
       </div>
 
-      <img src="https://panoptes-uploads.zooniverse.org/production/project_attached_image/e57ac0ee-211c-46b0-ae1f-7409d9bfa54b.png" />
 
       <h1>Lion Research</h1>
-      <img src="https://panoptes-uploads.zooniverse.org/production/project_attached_image/e57ac0ee-211c-46b0-ae1f-7409d9bfa54b.png" />
 
       <h2>Gorongosa Lion Project</h2>
       <iframe width="710" height="400" src="https://www.youtube.com/embed/VPP_COhvzn0" frameBorder="0" allowFullScreen></iframe>

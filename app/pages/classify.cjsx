@@ -84,8 +84,8 @@ module.exports = React.createClass
             </div>}
           <div className="subject-toolbar">
             <FavoritesButton user={@props.user} />
-            <button className="tutorial-button" type="button" onClick={@onClickTutorial}><i className="fa fa-question"></i></button>
-            <button className="metadata-button" type="button" onClick={@onClickMetadata}><i className="fa fa-info"></i></button>
+            <button className="tutorial-button" title="Tutorial" type="button" onClick={@onClickTutorial}><i className="fa fa-question"></i></button>
+            <button className="metadata-button" title="Metadata" type="button" onClick={@onClickMetadata}><i className="fa fa-info"></i></button>
           </div>
         </section>
 

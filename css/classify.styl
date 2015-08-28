@@ -62,26 +62,25 @@
           @extends $reset-button
           color: #f7f7f7
           
-        .favorite-button
+        .favorite-button, .tutorial-button
           margin: 0.5em
-
-        .tutorial-button
+          
+        .tutorial-button, .metadata-button
           background-color: transparent
           border: solid 2px #f7f7f7
           border-radius: 50%
           font-size: 0.75em
           height: 24px
-          margin: 0.5em
           width: 24px
           
+          &:hover
+            background-color: rgba(33, 33, 33, 0.5)
+          
         .metadata-button
-          background-color: transparent
-          border: solid 2px #f7f7f7
-          border-radius: 50%
-          font-size: 0.75em
-          height: 24px
           margin: 0.5em 1.75em 0.5em 0.5em
-          width: 24px
+          
+        .favorite-button:hover
+          color: darken(#f7f7f7, 15%)
 
       img
         border-top-left-radius: 6px
