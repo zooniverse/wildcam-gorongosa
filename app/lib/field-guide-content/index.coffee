@@ -20,7 +20,7 @@ module.exports =
     jackal: require './jackal'
     kudu: require './kudu'
     leopard: require './leopard'
-    lion: require './lion'
+    #lion: require './lion'
     mongoose: require './mongoose'
     nyala: require './nyala'
     oribi: require './oribi'
