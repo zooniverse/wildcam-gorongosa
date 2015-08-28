@@ -25,10 +25,12 @@
       border: solid 2px #8a9d56
 
       &:hover
-        background-color: darken(#8a9d56, 40%)
+        background-color: lighten(#8a9d56, 10%)
+        border-color: lighten(#8a9d56, 10%)
 
     &:hover
       background-color: lighten(#8a9d56, 10%)
+      border-color: lighten(#8a9d56, 10%)
 
   .home-hero
     background: #333
@@ -49,13 +51,15 @@
       color: white
       font-size: 48px
       font-weight: 300
-      margin: 0.8em 0
       line-height: 60px
+      margin: 0.8em 0
+      max-width: 730px
       text-align: center
 
     .overview
       line-height: 1.6em
       margin: 1em 0
+      max-width: 730px
 
   .home-hero-background
     background: url('assets/hhmi-home-background.jpg') no-repeat center center

@@ -5,6 +5,7 @@ module.exports = React.createClass
 
   render: ->
     <div className="secondary-page">
+    <h2 className="team-page-header">Our WildCam Team</h2>
     <div className="team-list">
       <div className="team-member">
         <img src="assets/about/team/paola.png" />

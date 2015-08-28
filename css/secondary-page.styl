@@ -5,7 +5,7 @@
 
 .secondary-page
   background: #efefef
-  color: #222
+  color: #304d4d
   min-height: 100vh
 
   a
@@ -35,7 +35,6 @@
     display: block
     margin: 0 auto
     max-width: 100%
-    width: 100%
 
   .secondary-page-hero
     background-image: url('assets/about/about-hero.jpg')
@@ -75,15 +74,24 @@
   .secondary-page-content
     padding: 3em 0
 
+  .team-page-header
+    color: #8a9d56
+    font-weight: 400
+    margin: 0 0 1em
+    
   .team-list
     display: flex
     flex-wrap: wrap
     justify-content: center
     text-align: center
+    max-width: 900px
 
     .team-member
       padding: 0 1em 2em 1em
       width: 25%
+      
+      @media screen and (max-width: 600px)
+        width: 100%
 
     .team-member-name
       font-size: 1.1em
@@ -96,21 +104,36 @@
   .organizations
     display: flex
     flex-wrap: wrap
+    max-width: 900px
 
     .organization
       margin: 2rem 0
       width: 100%
 
     .organization-content
+      align-items: center
       display: flex
+      flex-wrap: wrap
 
       p
         margin: 0
         width: 80%
+        
+        @media screen and (max-width: 768px)
+          margin: 1em 0 0
+          width: 100%
 
       .organization-logo
         padding: 0 3rem
         width: 20%
+        
+        @media screen and (max-width: 768px)
+          text-align: center
+          width: 100%
+          
+          img, svg
+            max-width: 150px
+            
 
   .about-section
     clearfix()
@@ -138,3 +161,20 @@
       
   .project-metadata
     background-color: #008790
+    
+  .about-default-page
+    width: 100%
+    
+    @media screen and (max-width: 768px)
+      .map-image
+        width: 100%
+        
+    @media screen and (max-width: 400px)
+      img
+        width: 100%
+      
+  .education-page
+    width: 100%
+    
+    p, img
+      max-width: 870px
