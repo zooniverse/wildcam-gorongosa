@@ -29,10 +29,11 @@ module.exports = React.createClass
         <div className="home-content-container">
           <img src="assets/logo-white.png" className="logo" alt="WildCam Gorongosa" />
           <Translate component="div" className="tagline" content="homePage.hero.tagline" />
-          <Translate component="div" className="overview" content="homePage.hero.overview" />
 
           <Link to="classify" className="home-call-to-action-button"><Translate content="homePage.getStarted" /></Link>
           <Link to="about" className="home-call-to-action-button ghost-button"><Translate content="homePage.learnMore" /></Link>
+
+          <Translate component="div" className="overview" content="homePage.hero.overview" />
         </div>
       </section>
       <ProjectMetadata />
