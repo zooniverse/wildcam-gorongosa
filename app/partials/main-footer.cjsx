@@ -13,7 +13,7 @@ counterpart.registerTranslations 'en',
   footer:
     info:
       content: '''
-        The Zooniverse is a collection of web-based Citizen Science projects that use the efforts of volunteers to help researchers deal with the flood of data that confronts them.
+        The Zooniverse is the world’s largest and most popular platform for people-powered research. This research is made possible by hundreds of thousands of volunteers around the world. Zooniverse research results in new discoveries, datasets useful to the wider research community, and many publications.
       '''
       callToAction: '''See the Zooniverse'''
     # change this to api fetch (either launch approved or featured?) when project categories exist
