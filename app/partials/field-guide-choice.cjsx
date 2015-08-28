@@ -4,11 +4,11 @@ _ = require 'lodash'
 classNames = require 'classnames'
 
 module.exports = React.createClass
-  displayName: 'FieldGuideEntry'
+  displayName: 'FieldGuideChoice'
 
   # Flakey
   getKeyFromUrlPath: (choice) ->
-    choice.replace(/[aeiouy]/g, '').toUpperCase()
+    choice.replace(/[aeiouy_]/g, '').toUpperCase()
 
   render: ->
     unless @props.workflow

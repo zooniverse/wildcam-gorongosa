@@ -5,7 +5,7 @@ module.exports =
   '''
 
   scientificName: '(Rhampholeon gorongosae)'
-  mainImage: 'assets/fieldguide-content/reptiles/pygmy-chameleon/pygymy-chameleon-feature.jpg'
+  mainImage: 'assets/fieldguide-content/reptiles/pygmy_chameleon/pygymy-chameleon-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 
