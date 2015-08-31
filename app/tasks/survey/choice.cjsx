@@ -81,6 +81,7 @@ module.exports = React.createClass
 
   render: ->
     choice = @props.task.choices[@props.choiceID]
+
     <div className="survey-task-choice">
       {unless choice.images.length is 0
         <ImageFlipper images={@props.task.images[filename] for filename in choice.images} />}
@@ -90,7 +91,7 @@ module.exports = React.createClass
         <div className="survey-task-choice-description">{choice.description}</div>
         <Link to="field-guide-choice" params={{choice: _.kebabCase choice.label}} target="_blank" onClick={(event) =>
           event.preventDefault();
-          window.open(@makeHref("field-guide-choice", choice: _.kebabCase choice.label));
+          window.open(@makeHref("field-guide-choice", choice: _.snakeCase choice.label));
         } className="survey-task-choice-field-guide-link">
             View Field Guide
         </Link>
