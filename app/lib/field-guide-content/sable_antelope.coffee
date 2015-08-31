@@ -58,5 +58,5 @@ module.exports =
     '''
   },{
     title: 'Distribution'
-    content: '<img src="assets/fieldguide-content/mammals/sable_antelope/sable/sable-map2.jpg"/>'
+    content: '<img src="assets/fieldguide-content/mammals/sable_antelope/sable/sable-map.png"/>'
   }]
