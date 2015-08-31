@@ -30,7 +30,7 @@ module.exports =
     pangolin: require './pangolin'
     porcupine: require './porcupine'
     reedbuck: require './reedbuck'
-    sable_antelope: require './sable'
+    sable_antelope: require './sable_antelope'
     samango_monkey: require './samango_monkey'
     serval: require './serval'
     vervet: require './vervet'
