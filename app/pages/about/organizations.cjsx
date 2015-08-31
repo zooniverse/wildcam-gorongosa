@@ -20,7 +20,7 @@ module.exports = React.createClass
           <h3>HHMI | BioInteractive</h3>
           <div className="organization-content">
             <div className="organization-logo"><img src="https://panoptes-uploads.zooniverse.org/production/project_attached_image/300e042a-aeb8-4610-a77c-ffb4f315c250.png" /></div>
-            <p>Howard Hughes Medical Institute is a nonprofit organization whose mission is to advance biomedical research and science education. HHMI’s BioInteractive website provides free multimedia resources to science educators and students. They include multimedia interactive resources, such as apps, animations, videos, click and learns, and virtual labs.<br/><a href="http://www.biointeractive.org" target="_blank">Visit Site</a></p>
+            <p>The Howard Hughes Medical Institute is a nonprofit organization whose mission is to advance biomedical research and science education. The HHMI BioInteractive website provides free multimedia resources to science educators and students. They include multimedia interactive resources, such as apps, animations, videos, click and learns, and virtual labs.<br/><a href="http://www.biointeractive.org" target="_blank">Visit Site</a></p>
           </div>
         </div>
         <div className="organization">

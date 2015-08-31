@@ -27,10 +27,10 @@ module.exports = React.createClass
       <p>You should make one identification for the species and mark all of the behaviors that you see in the whole group.</p>
 
       <h2>What if I see an animal that is not on your list?</h2>
-      <p>First double-check that your animal isn’t on the list. We have some broad categories like “bird (other),” “rodents,” and “reptiles” that may apply. Otherwise, if it really isn’t on the list, make a guess that is closest to that animal, then click “Talk” and tag the photo with the hashtag #new-animal and the species you think it is. We will search the talk area and our scientists will record the correct species.</p>
+      <p>First double-check that your animal isn’t on the list. We have some broad categories like “bird (other),” “rodents,” and “reptiles” that may apply. Otherwise, if it really isn’t on the list, make a guess that is closest to that animal, then click “Talk” and tag the photo with the hashtag #new-animal and the species you think it is. We regularly read the “Talk” section and our scientists will record the correct species when we see this hashtag.</p>
 
       <h2>I know the species in a photo, but the only choice is a broad category (like bird (other), or reptile). Is there a way to record the species name?</h2>
-      <p>Yes. Select the category that applies to the animal and when you finish with the classification, click the “Talk” button. Tag the photo with the hashtag #new-animal and the species that you think it is. We will search the talk area and our scientists will record the correct species.</p>
+      <p>Yes. Select the category that applies to the animal and when you finish with the classification, click the “Talk” button. Tag the photo with the hashtag #new-animal and the species that you think it is.  We regularly read the “Talk” section and our scientists will record the correct species when we see this hashtag.</p>
 
       <h2>What if I see something in a photo that I want to tell the scientists about?</h2>
       <p>Sometimes people see animals with radio collars, animals with injuries, or just interesting behaviors. We want to know about it! When you finish classifying the photo, click the “Talk” button and tell us about it. Be sure to add a hashtag if you can to make it easier for us to search by keyword.</p>
@@ -39,7 +39,7 @@ module.exports = React.createClass
       <p>Sometimes the wind will blow grass or tree branches in front of a camera. We know that this can be frustrating for you because you want to see the animals! But once enough people classify the image as “nothing here,” we can retire the image and we won’t have to show it to you again. Then you can get back to identifying animals!</p>
 
       <h2>How can I zoom in on a photo?</h2>
-      <p>Some of the photos will be blurry, or the animals are off in the distance. Our images are not high resolution because the website would be much too slow if we didn’t resize the images. However, some people still find that zooming in on the photo can be useful. You can do this in one of two ways:</p>
+      <p>Some of the photos will be blurry, or the animals are off in the distance. Our images are not high resolution because the website would be much too slow if we didn’t resize the images smaller. However, some people still find that zooming in on the photo can be useful. You can do this in one of two ways:</p>
 
       <p>
         <ol>
