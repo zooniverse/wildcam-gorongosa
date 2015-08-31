@@ -19,3 +19,4 @@ module.exports = {
     label: 'Avg. number of offspring'
     value: '1'
   }]
+}
