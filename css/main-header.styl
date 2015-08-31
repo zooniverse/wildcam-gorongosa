@@ -139,6 +139,7 @@
           max-width: 125px
           position: relative
           text-align: center
+          white-space: nowrap
           z-index: 2
 
         .login-bar, .account-bar
@@ -160,11 +161,16 @@
     align-items: center
     color: white
     display: flex
+    
+    @media screen and (min-width: 501px) and (max-width: 768px)
+      margin-bottom: 0.5em
+    
+    @media screen and (max-width: 500px)
+      margin-bottom: 4em
 
     @media screen and (max-width: 768px)
       display: none
       justify-content: space-between
-      margin-bottom: 4em
       order: 1
       width: 100%
 
@@ -192,7 +198,7 @@
     @media screen and (max-width: 768px)
       display: none
       max-width: 100px
-      padding: 1em
+      padding: 1em 1em 1em 0
       position: relative
       text-align: center
       z-index: 2
