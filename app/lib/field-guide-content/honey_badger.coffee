@@ -4,7 +4,7 @@ module.exports =
   '''
 
   scientificName: '(Mellivora capensis)'
-  mainImage: 'assets/fieldguide-content/mammals/honey_badger/honey-badger-feature.jpg'
+  mainImage: 'assets/fieldguide-content/mammals/honey_badger/badger.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 
