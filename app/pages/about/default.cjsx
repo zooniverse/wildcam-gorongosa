@@ -13,12 +13,12 @@ module.exports = React.createClass
 
       <h2>Using Trail Cameras to Study Wildlife</h2>
       <iframe width="710" height="400" src="https://www.youtube.com/embed/JAQE7f3QIqo" frameBorder="0" allowFullScreen></iframe>
-      <p>Our trail cameras are a window into the diversity of wildlife across Gorongosa National Park. We have deployed a growing array of trail cameras around the park that use motion sensors to snap photos when an animal moves in front of them. Our scientists use these photos to study which animals are present, where they live, how they interact with one another, and to locate and track rare species. Trail cameras are a new and important tool for use in both wildlife research and conservation.</p>
+      <p>Our trail cameras are a window into the diversity of wildlife across Gorongosa National Park. We have deployed a growing array of trail cameras around the park that use motion sensors to snap photos when an animal moves in front of them. Our scientists use these photos to study which animals are present, where they live, how they interact with one another, and to locate and track rare species. Trail cameras are an important tool for use in both wildlife research and conservation.</p>
 
       <div className="about-section">
         <h2>Help Us Collect Data</h2>
         <img className="float-left" src="https://panoptes-uploads.zooniverse.org/production/project_attached_image/8ca550a3-dcd6-4372-9cbe-21c25106a77c.png" />
-        <p>We have collected hundreds of thousands of photos (and counting), and we need your help to identify all the animals in these photos! The identifications that you record will build a data set that scientists can use to better understand which animals exist in Gorongosa, where they are, how they behave, and how the ecosystem is responding to restoration actions. This information helps us monitor the park’s recovery and identify key challenges. Ready to get started?</p>
+        <p>We have collected hundreds of thousands of photos (and counting), and we need your help to identify all the animals in these photos! The identifications that you record will build a data set that scientists can use to better understand which animals exist in Gorongosa, where they are, how they behave, and how the ecosystem is responding to restoration efforts. This information helps us monitor the park’s recovery and identify key challenges. Ready to get started?</p>
         <Link to="classify"><button type="button">Start Identifying</button></Link>
       </div>
 
