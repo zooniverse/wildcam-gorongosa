@@ -51,7 +51,4 @@ module.exports =
         <li>The number of feathers on a bird varies with size, sex, health, season, temperature, and habitat.</li>
       </ol>
     '''
-  },{
-    title: 'Distribution'
-    content: '<img src="assets/fieldguide-content/birds/raptor/raptor-map.jpg"/>'
   }]
