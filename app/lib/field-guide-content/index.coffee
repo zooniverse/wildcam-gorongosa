@@ -48,6 +48,7 @@ module.exports =
     ground_hornbill: require './ground_hornbill'
     secretary_bird: require './secretary_bird'
     vulture: require './vulture'
+    raptor_other: require './raptor_other'
     bird_other: require './bird_other'
 
   reptiles:
