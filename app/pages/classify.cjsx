@@ -73,7 +73,7 @@ module.exports = React.createClass
       {if @state.tutorialIsOpen and not @state.shownTutorial
         <SlideTutorial closeTutorial={@closeTutorial} tutorialIsOpen={@state.tutorialIsOpen} />}
 
-      <div className="classification" style={if @state.subject?.srcWidth <= 666 then maxWidth: "1200px"}>
+      <div className="classification">
         <section className="subject">
           <p className="classifier-tagline">You're now tracking the wildlife of Gorongosa National Park</p>
           {if @state.subject
@@ -82,7 +82,7 @@ module.exports = React.createClass
             <div className="loading-indicator-container">
               <LoadingIndicator />
             </div>}
-          <div ref="subjectToolBar" className="subject-toolbar" style={width: @state.subject?.srcWidth}>
+          <div className="subject-toolbar">
             <FavoritesButton user={@props.user} />
             <button className="tutorial-button" title="Tutorial" type="button" onClick={@onClickTutorial}><i className="fa fa-question"></i></button>
             <button className="metadata-button" title="Metadata" type="button" onClick={@onClickMetadata}><i className="fa fa-info"></i></button>

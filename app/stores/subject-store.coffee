@@ -25,10 +25,4 @@ module.exports = Reflux.createStore
         randomInt = Math.floor(Math.random() * subjects.length)
         @data = subjects[randomInt]
 
-      .then => 
-          image = new Image()
-          image.src = @data.locations[0]["image/jpeg"]
-          image.onload = =>
-            @data.srcWidth = image.naturalWidth
-            @trigger @data
-
+        @trigger @data
