@@ -6,15 +6,10 @@ favoritesStore = require '../stores/favorites-store'
 
 module.exports = React.createClass
   displayName: 'FavoritesButton'
-  mixins: [Reflux.connect(favoritesStore, 'favorites')]
-
-  getInitialState: ->
-    favorited: favoritesStore.favorited
+  mixins: [Reflux.connect(favoritesStore, 'favorited')]
 
   onClick: ->
-    @setState({favorited: !@state.favorited}, ->
-      favoritesStore.toggleFavorite()
-    )
+    favoritesStore.toggleFavorite()
 
   render: ->
     disabledCondition = !@props.user?

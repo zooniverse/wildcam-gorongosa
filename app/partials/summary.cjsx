@@ -13,7 +13,7 @@ module.exports = React.createClass
       <div className="task-summary-annotations">
         <h3 className="task-summary-header">Your Classification Summary</h3>
         <ul className="task-summary-annotations-list">
-          {for annotation in @props.annotations
+          {for annotation, i in @props.annotations
             species = task.choices[annotation.choice].label
             plural = 
               if annotation.answers["HWMN"] > 1
@@ -29,7 +29,7 @@ module.exports = React.createClass
                     "#{species}s"
               else
                 species
-            <li className="task-summary-annotations-list-item">
+            <li key={i} className="task-summary-annotations-list-item">
               <span className="item-species">{plural}</span><span className="item-number">{annotation.answers["HWMN"]}</span>
             </li>
         }</ul>
