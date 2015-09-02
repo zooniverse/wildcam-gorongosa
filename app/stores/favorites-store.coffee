@@ -1,11 +1,13 @@
 Reflux = require 'reflux'
 projectConfig = require '../lib/config'
 subjectStore = require '../stores/subject-store'
+classifierActions = require '../actions/classifier-actions'
 {api} = require '../api/client'
 
 module.exports = Reflux.createStore
   init: ->
     @listenTo subjectStore, @getFavorites
+    @listenTo classifierActions.moveToNextSubject, @getSubjectInCollection
 
   getInitialState: ->
     @favorited
@@ -24,8 +26,9 @@ module.exports = Reflux.createStore
     @subjectID = subjectStore.data.id
     if favorites?
       favorites.get('subjects', id: @subjectID)
-        .then ([subject]) ->
+        .then ([subject]) =>
           @favorited = subject?
+          @trigger @favorited
 
   createFavorites: ->
     project = projectConfig.projectId
