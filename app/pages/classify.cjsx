@@ -82,7 +82,7 @@ module.exports = React.createClass
             <div className="loading-indicator-container">
               <LoadingIndicator />
             </div>}
-          <div ref="subjectToolBar" className="subject-toolbar" style={width: @state.subject?.srcWidth}>
+          <div ref="subjectToolBar" className="subject-toolbar" style={maxWidth: @state.subject?.srcWidth}>
             <FavoritesButton user={@props.user} />
             <button className="tutorial-button" title="Tutorial" type="button" onClick={@onClickTutorial}><i className="fa fa-question"></i></button>
             <button className="metadata-button" title="Metadata" type="button" onClick={@onClickMetadata}><i className="fa fa-info"></i></button>
