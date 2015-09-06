@@ -13,7 +13,7 @@ module.exports = React.createClass
       <p>Gorongosa National Park is one of the most diverse ecosystems in the world and is undergoing a large-scale restoration effort following decades of war in Mozambique. Park managers and scientists are working together to better understand the ecology of the park and to protect the Gorongosa ecosystem and its wildlife. This ongoing effort is an ideal case study to teach concepts in ecology and conservation biology in the classroom.</p>
 
       <p>HHMI BioInteractive has developed free educational resources, which are aligned to national curriculum standards that educators can use to teach concepts in ecology, conservation, social science, and inquiry-based science practices. Visit the BioInteractive website to explore a variety of Gorongosa resources, including films, interactives, and hands on activities.</p>
-      <p><b><a href="http://www.biointeractive.org/gorongosa" target="_blank">Explore Resources</a></b></p>
+      <p><b><a href="http://www.biointeractive.org/gorongosa"  target="_blank">Explore Resources</a></b></p>
 
       <img src="https://panoptes-uploads.zooniverse.org/production/project_attached_image/3a2d0008-f612-4caf-a47f-c874eb1de69f.jpeg" alt="Resources grid" />
     </div>
