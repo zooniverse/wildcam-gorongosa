@@ -21,6 +21,6 @@ module.exports = [
 
   {image: 'assets/tutorial-content/slide5.jpg'
   title: '''Join the community and learn more!''',
-  content: '''That’s it! You’re ready to start exploring Gorongosa! If you’d like to learn more about the project, you can visit the About page or the WildCam Gorongosa blog. And if you have any more questions, or just want to chat about the project or share a cool image you found, please join us on WildCam Gorongosa Talk. Thank you for your help!''',
+  content: '''That’s it! You’re ready to start exploring Gorongosa! Make sure to sign in with your Zooniverse account (in the top right corner) so you can track your contributions, collect images, and discuss the project on the Talk pages. If you’d like to learn more about the project, you can visit the About page or the WildCam Gorongosa blog. And if you have any more questions, or just want to chat about the project or share a cool image you found, please join us on WildCam Gorongosa Talk. Thank you for your help!''',
   button: 'Finish'}
 ]
