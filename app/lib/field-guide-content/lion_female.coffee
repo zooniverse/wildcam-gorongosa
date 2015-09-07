@@ -1,4 +1,5 @@
 module.exports =
+  label: 'Lion'
   description: '''
     Lions are iconic African large cats, built to prey on animals many times their size. Their coat is a smooth tawny color with whitish underparts. They have a muscular build, heavy muzzle, strong jaws, large paws, and a long tail that ends in a black tassel. They are sexually dimorphic, with males being larger in size and having full manes that vary in color from blond to black. Cubs have spots that tend to fade by 3 months of age.
   '''

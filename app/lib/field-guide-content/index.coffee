@@ -30,6 +30,7 @@ module.exports =
     pangolin: require './pangolin'
     porcupine: require './porcupine'
     reedbuck: require './reedbuck'
+    rodent: require './rodent'
     sable_antelope: require './sable_antelope'
     samango_monkey: require './samango_monkey'
     serval: require './serval'
@@ -47,6 +48,8 @@ module.exports =
     ground_hornbill: require './ground_hornbill'
     secretary_bird: require './secretary_bird'
     vulture: require './vulture'
+    raptor_other: require './raptor_other'
+    bird_other: require './bird_other'
 
   reptiles:
     reptile: require './reptile'
