@@ -5,12 +5,12 @@ module.exports = React.createClass
 
   render: ->
     <div className="secondary-page">
-    <h2 className="team-page-header">Our WildCam Team</h2>
+    <h2 className="team-page-header">Lion Research Project Team</h2>
     <div className="team-list">
       <div className="team-member">
         <img src="assets/about/team/paola.png" />
         <div className="team-member-name">Paola Bouley</div>
-        <div className="team-member-title">Director & Co-founder</div>
+        <div className="team-member-title">Lion Project Director & Co-founder</div>
       </div>
       <div className="team-member">
         <img src="assets/about/team/rui.png" />
