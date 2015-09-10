@@ -4,7 +4,7 @@ module.exports =
     The cape porcupine is a large, stout rodent. The most recognizable feature is its rigid black and white banded quills that cover its back, flanks, and crown. Quill length varies on different parts of the body, ranging from 1 inch to 1 foot on the back. They have an inconspicuous tail and an area of shorter, all-white quills on their rump and on the mid-back. Generally the quills lie flat against the body, but if there is a threat, the porcupine raises and spreads them. The body that is not covered with spines and quills is covered with coarse blackish-brown hair. The head is roundish and rather domed, with a blunt muzzle and small eyes and ears.
   '''
 
-  scientificName: '(Hystrix africaeustralis)'
+  scientificName: 'Hystrix africaeustralis'
   mainImage: 'assets/fieldguide-content/mammals/porcupine/porcupine-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
