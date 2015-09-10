@@ -53,7 +53,7 @@ module.exports =
     style: 'focus-box'
     content: '''
       <ol>
-        <li>1.	A young reedbuck will remain among the dense grass cover in which it was born for the first two months of its life. During this period, the mother will not stay around but instead visit the young for just 10 to 30 minutes each day.</li>
+        <li>A young reedbuck will remain among the dense grass cover in which it was born for the first two months of its life. During this period, the mother will not stay around but instead visit the young for just 10 to 30 minutes each day.</li>
       </ol>
     '''
   },{
