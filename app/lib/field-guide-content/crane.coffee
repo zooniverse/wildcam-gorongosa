@@ -6,10 +6,10 @@ module.exports =
 
   '''
 
-  scientificName: 'Vulnerable (Wattled) and Endangered (Crowned)' # blerg- how to do when we have two options?
+  scientificName: '' # blerg- how to do when we have two options?
   mainImage: 'assets/fieldguide-content/birds/crane/crane-feature.jpg'
 
-  conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
+  conservationStatus: 'Vulnerable (Wattled) and Endangered (Crowned)' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 
   information: [{
     label: 'Length'
