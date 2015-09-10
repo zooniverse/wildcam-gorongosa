@@ -1,6 +1,6 @@
 module.exports =
   description: '''
-    There are three duiker species in Gorongosa: common duiker (Sylvicapra grimmia), blue duiker (Philantomba monticola), and red duiker (Cephalophus natalensis). Duikers have overdeveloped hindquarters, a long neck, and short legs that are well adapted for moving through forest undergrowth. Duikers also have erectile head crests, backward-tilting horns (both sexes), small ears, and bare nostrils. They are typically well-camouflaged against their habitat. Their mobile lips and long, pointed tongue allow them to easily eat from the forest floor.
+    There are three duiker species in Gorongosa: common duiker (<i>Sylvicapra grimmia</i>), blue duiker (<i>Philantomba monticola</i>), and red duiker (<i>Cephalophus natalensis</i>). Duikers have overdeveloped hindquarters, a long neck, and short legs that are well adapted for moving through forest undergrowth. Duikers also have erectile head crests, backward-tilting horns (both sexes), small ears, and bare nostrils. They are typically well-camouflaged against their habitat. Their mobile lips and long, pointed tongue allow them to easily eat from the forest floor.
   '''
 
   mainImage: 'assets/fieldguide-content/mammals/duiker/duiker-feature.jpg'
@@ -29,7 +29,7 @@ module.exports =
     content: 'Forest and bush – montane forests, riverine forests, rain forests, savannas.'
   }, {
     title: 'Diet'
-    content: 'Forest and bush – montane forests, riverine forests, rain forests, savannas.'
+    content: 'Omnivore, feeds on fruits, mushrooms, foliage from bushes and trees, insects, lizards, birds, and rodents'
   }, {
     title: 'Predators'
     content: 'Leopards, lions, eagles'
