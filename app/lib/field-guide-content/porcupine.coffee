@@ -31,7 +31,7 @@ module.exports =
     content: 'The cape porcupine is most common in hilly and rocky areas, but they can adapt to most habitats as long as they have daytime shelter.'
   }, {
     title: 'Diet'
-    content: 'Roots, bulbs, tubers, bark and fallen fruit'
+    content: 'Roots, bulbs, tubers, bark, and fallen fruit'
   }, {
     title: 'Predators'
     content: 'Pythons, leopards, large owls'
