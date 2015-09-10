@@ -58,7 +58,7 @@ counterpart.registerTranslations 'en',
           higgsHunters: 'Higgs Hunters'
     social:
       content: '''
-        [**Zooniverse.org**](https://www.zooniverse.org/) The universe is too big to explore without you. | [Privacy Policy](https://www.zooniverse.org/privacy) | [Source & Bugs](#)
+        [**Zooniverse.org**](https://www.zooniverse.org/) The universe is too big to explore without you. | [Privacy Policy](https://www.zooniverse.org/privacy) | [Source & Bugs](https://github.com/zooniverse/wildcam-gorongosa)
       '''
       callToAction: '''Share'''
 
