@@ -7,7 +7,7 @@ counterpart = require 'counterpart'
 
 counterpart.registerTranslations 'en',
   loginBar:
-    signIn: 'Sign in'
+    signIn: 'Sign in/Sign Up'
 
 module.exports = React.createClass
   displayName: 'LoginBar'
