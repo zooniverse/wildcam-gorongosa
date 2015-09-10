@@ -13,7 +13,9 @@ module.exports = Reflux.createStore
     @data
 
   getProject: ->
-    api.type('projects').get(projectConfig.projectId)
+    query = now: Date.now()
+
+    api.type('projects').get(projectConfig.projectId, query)
       .then (@data) =>
         @trigger @data
 
