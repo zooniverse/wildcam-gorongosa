@@ -11,7 +11,7 @@ module.exports =
     value: '1.1-1.45 m'
   }, {
     label: 'Height'
-    value: '365-100 cm'
+    value: '65-100 cm'
   }, {
     label: 'Weight'
     value: '25-80 kg'
