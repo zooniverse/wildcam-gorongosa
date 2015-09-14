@@ -7,6 +7,7 @@ counterpart = require 'counterpart'
 LoadingIndicator = require '../components/loading-indicator'
 
 ProjectStore = require '../stores/project-store'
+WorkflowStore = require '../stores/workflow-store'
 
 counterpart.registerTranslations 'en',
   projectMetadata:
@@ -19,7 +20,13 @@ counterpart.registerTranslations 'en',
 
 module.exports = React.createClass
   displayName: 'ProjectMetadata'
-  mixins: [Reflux.connect(ProjectStore, 'projectData')]
+  mixins: [Reflux.connect(ProjectStore, 'projectData'), Reflux.connect(WorkflowStore, 'workflowData')]
+
+  completion: ->
+    retired = @state.projectData.retired_subjects_count/@state.projectData.subjects_count
+    activeCount = @state.projectData.subjects_count - @state.projectData.retired_subjects_count
+    active = (@state.projectData.classifications_count / (activeCount * @state.workflowData.retirement.options.count))
+    ((retired + active) * 100).toFixed(0)
 
   render: ->
     <div className="project-metadata">
@@ -38,10 +45,11 @@ module.exports = React.createClass
             <p className="project-metadata-number">{@state.projectData.subjects_count}</p>
             <h4 className="project-metadata-section-header"><Translate content="projectMetadata.table.imagesTotal" /></h4>
           </section>
-          <section className="project-metadata-section">
-            <p className="project-metadata-number">{(@state.projectData.retired_subjects_count/@state.projectData.subjects_count) * 100}%</p>
-            <h4 className="project-metadata-section-header"><Translate content="projectMetadata.table.complete" /></h4>
-          </section>
+          {if @state.workflowData
+            <section className="project-metadata-section">
+              <p className="project-metadata-number">{@completion()}%</p>
+              <h4 className="project-metadata-section-header"><Translate content="projectMetadata.table.complete" /></h4>
+            </section>}
         </div>
       else
         <LoadingIndicator />}
