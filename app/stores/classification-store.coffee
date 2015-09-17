@@ -18,7 +18,7 @@ module.exports = Reflux.createStore
     @listenTo subjectStore, @onReceiveData
 
   onReceiveData: ->
-    if workflowStore.data and subjectStore.data
+    if workflowStore.data and subjectStore.subject
       @create()
 
   create: ->
@@ -32,7 +32,7 @@ module.exports = Reflux.createStore
       links:
         project: config.projectId
         workflow: config.workflowId
-        subjects: [subjectStore.data.id]
+        subjects: [subjectStore.subject.id]
 
     @trigger @data
 

@@ -4,31 +4,37 @@ config = require '../lib/config'
 classifierActions = require '../actions/classifier-actions'
 
 module.exports = Reflux.createStore
-  data: null
+  subjects: []
+  subject: null
 
   init: ->
     @next()
     @listenTo classifierActions.moveToNextSubject, @next
 
   getInitialState: ->
-    @data
+    @subjects
+    @subject
 
   next: ->
-    query =
-      workflow_id: config.workflowId
-      sort: 'queued'
+    if @subjects.length == 0
+      query =
+        workflow_id: config.workflowId
+        sort: 'queued'
 
-    api.type('subjects').get query
-      .then (subjects) =>
-        return unless subjects.length > 0
+      api.type('subjects').get query
+        .then (subjects) =>
+          return unless subjects.length > 0
+          @subjects = subjects
 
-        randomInt = Math.floor(Math.random() * subjects.length)
-        @data = subjects[randomInt]
+        .then =>
+          @loadSubjectImage()
+    else
+      @loadSubjectImage()
 
-      .then => 
-          image = new Image()
-          image.src = @data.locations[0]["image/jpeg"]
-          image.onload = =>
-            @data.srcWidth = image.naturalWidth
-            @trigger @data
-
+  loadSubjectImage: ->
+    @subject = @subjects.shift()
+    image = new Image()
+    image.src = @subject.locations[0]["image/jpeg"]
+    image.onload = =>
+      @subject.srcWidth = image.naturalWidth
+      @trigger @subject
