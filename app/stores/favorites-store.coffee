@@ -23,7 +23,7 @@ module.exports = Reflux.createStore
         @getSubjectInCollection(@favorites)
 
   getSubjectInCollection: (favorites) ->
-    @subjectID = subjectStore.data.id
+    @subjectID = subjectStore.subject.id
     if favorites?
       favorites.get('subjects', id: @subjectID)
         .then ([subject]) =>
