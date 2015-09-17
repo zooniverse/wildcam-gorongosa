@@ -34,7 +34,7 @@ module.exports =
     sable_antelope: require './sable_antelope'
     samango_monkey: require './samango_monkey'
     serval: require './serval'
-    vervet: require './vervet'
+    vervet_monkey: require './vervet_monkey'
     warthog: require './warthog'
     waterbuck: require './waterbuck'
     weasel: require './weasel'
