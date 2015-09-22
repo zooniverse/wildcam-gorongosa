@@ -1,6 +1,8 @@
 Reflux = require 'reflux'
 projectConfig = require '../lib/config'
-subjectStore = require '../stores/subject-store'
+subjectStore = require './subject-store'
+userStore = require './user-store'
+projectStore = require './project-store'
 classifierActions = require '../actions/classifier-actions'
 {api} = require '../api/client'
 
@@ -16,6 +18,7 @@ module.exports = Reflux.createStore
     query =
       project_id: projectConfig.projectId
       favorite: true
+      owner: userStore.userData.user.login
 
     api.type('collections').get(query)
       .then ([favorites]) =>
@@ -32,7 +35,7 @@ module.exports = Reflux.createStore
 
   createFavorites: ->
     project = projectConfig.projectId
-    display_name = "Favorites #{project}"
+    display_name = "Favorites (#{projectStore.data.slug})"
     subjects = [@subjectID]
     favorite = true
 
