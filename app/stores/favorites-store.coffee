@@ -18,7 +18,7 @@ module.exports = Reflux.createStore
     query =
       project_id: projectConfig.projectId
       favorite: true
-      owner: userStore.userData.user.login
+      owner: userStore.userData?.user.login
 
     api.type('collections').get(query)
       .then ([favorites]) =>
