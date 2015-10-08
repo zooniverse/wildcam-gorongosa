@@ -38,7 +38,7 @@ module.exports = React.createClass
         <p className="call-to-action">
           Want to discuss this with other volunteers?
         </p>
-        <a href="https://www.zooniverse.org/#/projects/#{@state.projectData.slug}/talk/subjects/#{@props.subject.id}" className="discuss-link" target="_blank">
+        <a href="https://www.zooniverse.org/projects/#{@state.projectData.slug}/talk/subjects/#{@props.subject.id}" className="discuss-link" target="_blank">
           Discuss on Talk
         </a>
       </div>
