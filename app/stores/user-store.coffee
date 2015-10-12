@@ -85,6 +85,14 @@ module.exports = Reflux.createStore
   onSignOut: ->
     @_removeToken()
     @getUser()
+    fetch(client.host + '/users/sign_out', {
+      credentials: 'include',
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
 
   _tokenExists: ->
     extractToken(window.location.hash) || localStorage.getItem('bearer_token')
