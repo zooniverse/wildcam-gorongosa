@@ -1,7 +1,7 @@
 DEFAULT_ENV = 'staging'
 
 API_HOSTS =
-  production: 'https://www.zooniverse.org'
+  production: 'https://panoptes.zooniverse.org'
   staging: 'https://panoptes-staging.zooniverse.org'
 
 API_APPLICATION_IDS =
