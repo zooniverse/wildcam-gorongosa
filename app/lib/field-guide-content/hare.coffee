@@ -10,22 +10,22 @@ module.exports =
 
   information: [{
     label: 'Length'
-    value: '50-79 cm'
+    value: '41-65 cm'
   }, {
     label: 'Height'
     value: ''
   }, {
     label: 'Weight'
-    value: ''
+    value: '1.5-4.5 kg'
   }, {
     label: 'Lifespan'
-    value: ''
+    value: '12 years'
   }, {
     label: 'Gestation'
-    value: '6 months'
+    value: 'About 42 days'
   }, {
     label: 'Avg. number of offspring'
-    value: '1'
+    value: '1-3'
   }]
 
   sections: [{
