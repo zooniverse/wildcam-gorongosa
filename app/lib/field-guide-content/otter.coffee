@@ -1,8 +1,8 @@
 module.exports =
   description: '''
-    There are two otter species in Gorongosa: spotted-necked otter (Hydrictis maculicollis) and cape clawless otter (Aonyx capensis). The spotted-necked otter is a medium-sized otter, varying in color but generally dark brown, with distinctive spots and streaks of paler color on the throat, neck, and in some cases the upper lip. More aquatic than other African otters, this species has fully webbed paws with sharp, well-developed claws. They have a broad head, blunt muzzle, short legs, and a long, flattened tail.
+    Two otter species live in Gorongosa: the spotted-necked otter (Hydrictis maculicollis) and the Cape clawless otter (Aonyx capensis). The spotted-necked otter is a medium-sized otter, varying in color but generally dark brown, with distinctive spots and streaks of paler color on the throat, neck, and in some cases the upper lip. More aquatic than other African otters, this species has fully webbed paws with sharp, well-developed claws. They have a broad head, blunt muzzle, short legs, and a long, flattened tail.
 
-    The Cape clawless otter is a large otter species with a big head, a wide, flat skull, and powerful jaws. They have a sleek coat that is tan to dark chocolate brown in color. Its underparts are lighter and they also have unspotted white or buff patches on the chin, throat, and chest extending onto their neck and face below the eyes. The Cape clawless otter has forefeet that resemble hands, with opposable thumbs, whereas their hind feet are webbed to their outer joints. The tail is long, bulky, and tapered toward the tip.
+    The Cape clawless otter is a large otter species with a big head, a wide, flat skull, and powerful jaws. They have a sleek coat that is tan to dark chocolate brown in color. Their underparts are lighter and they also have unspotted white or buff patches on the chin, throat, and chest extending onto their neck and face below the eyes. The Cape clawless otter has forefeet that resemble hands, with opposable thumbs, whereas their hind feet are webbed to their outer joints. The tail is long, bulky, and tapered toward the tip.
   '''
 
   scientificName: ''
@@ -32,10 +32,10 @@ module.exports =
 
   sections: [{
     title: 'Habitat'
-    content: 'Otter can be found occupying rivers, streams, reservoirs, lakes, streams, swamps, canals.'
+    content: 'Rivers, streams, reservoirs, lakes, swamps, and canals'
   }, {
     title: 'Diet'
-    content: 'Fish, amphibians, shellfish, insects and reptile'
+    content: 'Fish, amphibians, shellfish, insects, and reptiles'
   }, {
     title: 'Predators'
     content: 'Crocodiles, pythons, and eagles'
@@ -57,7 +57,7 @@ module.exports =
       <ol>
         <li>Spotted-necked otters can run 4 to 5 km per hour (2.5-3 mph).</li>
         Spotted-necked otters use 15 to 20 distinct vocalizations to communicate.</li>
-        Cape clawless otters can close its nose underwater.</li>
+        The Cape clawless otter can close its nose underwater.</li>
       </ol>
     '''
   },{
