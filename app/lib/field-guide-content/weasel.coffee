@@ -1,6 +1,6 @@
 module.exports =
   description: '''
-    There are two weasel species in Gorongosa: striped weasel (Poecilogale albinucha) and zorilla (Ictonyx striatus). The striped weasel is a small weasel with a long, sinuous body, very short limbs, and a long tail. They have black fur with a yellowish-white patch on the top of their head that splits into white stripes that run the length of their back and join again at their tail, which is all yellowish-white.
+    Two weasel species live in Gorongosa: the striped weasel (Poecilogale albinucha) and the zorilla (Ictonyx striatus). The striped weasel is a small weasel with a long, sinuous body, very short limbs, and a long tail. They have black fur with a yellowish-white patch on the top of their head that splits into white stripes that run the length of their back and join again at their tail, which is all yellowish-white.
 
     A skunklike mustelid, the zorilla has long, shaggy, jet-black hair, with four wide white stripes that run from nape to tail. Their head is broad but blunt with an individual pattern of white spots between the eyes and a stripe on each cheek. Their tail and the back of their ears are also mostly white. Like skunks, the zorilla may emit a strong-smelling liquid from its anal glands when threatened. However, the smell is less pungent than that of a skunk.
   '''
@@ -23,17 +23,17 @@ module.exports =
 
   sections: [{
     title: 'Habitat'
-    content: 'Grasslands, woodlands, montane grasslands, and within agricultural areas.'
+    content: 'Grasslands, woodlands, montane grasslands, and within agricultural areas'
   }, {
     title: 'Diet'
-    content: 'Invertebrates, reptiles, birds, eggs, and small mammals.'
+    content: 'Invertebrates, reptiles, birds, eggs, and small mammals'
   }, {
     title: 'Predators'
     content: 'Larger African carnivores'
   }, {
     title: 'Behavior'
     content: '''
-      <p> Zorillas and striped weasels are nocturnal and solitary. They are most active after dark and then return to their burrows, which are often just a pile of stones, before dawn. Much of their time is spent searching for food by digging or sniffing out concealed insects, reptiles, and small mammals.</p>
+      <p>Zorillas and striped weasels are nocturnal and solitary. They are most active after dark and then return to their burrows, which are often just a pile of stones, before dawn. Much of their time is spent searching for food by digging or sniffing out concealed insects, reptiles, and small mammals.</p>
     '''
   }, {
     title: 'Breeding'
@@ -46,7 +46,7 @@ module.exports =
     style: 'focus-box'
     content: '''
       <ol>
-        <li>Like skunks, the zorilla and striped weasels emits a strong-smelling liquid from its anal glands when threatened.</li>
+        <li>Like skunks, zorillas and striped weasels emit a strong-smelling liquid from their anal glands when threatened.</li>
         <li>When threatened, the zorilla will play dead until the threat has passed, sometimes for as long as half an hour.</li>
         <li>The striped weasel is one of the smallest carnivores in Africa.</li>
         <li>The striped weasel is regarded by some to be a good luck charm.</li>
