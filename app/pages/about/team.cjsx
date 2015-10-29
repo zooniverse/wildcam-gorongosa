@@ -35,7 +35,7 @@ module.exports = React.createClass
       <div className="team-member">
         <img src="assets/about/team/fernandinho.png" />
         <div className="team-member-name">Fernandinho Pedro</div>
-        <div className="team-member-title">Assisstant Researcher (Seasonal)</div>
+        <div className="team-member-title">Assistant Researcher (Seasonal)</div>
       </div>
       <div className="team-member">
         <img src="assets/about/team/isaquel_nginga.png" />
