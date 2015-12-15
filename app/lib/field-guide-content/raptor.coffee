@@ -1,7 +1,7 @@
 module.exports =
   description: '''
     <p>Raptors, also known as birds of prey, are divided into two main groups, the diurnal (day flying) species and the nocturnal (night flying) species, commonly known as owls. All raptors have clawed feet and sharply curved beaks, which are well-adapted for feeding on meat.</p>
-    <p>Diurnal raptors are further classified into the following groups: New World Vultures (Cathartidae); Falcons and Caracaras (Falconidae); Hawks and Eagles (Accipitridae); Osprey (Pandionidae); Secretary bird (Sagittariidae). Nocturnal raptors are further classified into the following groups: Barn Owls (Tytonidae); Eared Owls or Typical Owls (Strigidae).</p>
+    <p>Diurnal raptors are further classified into the following groups: New World Vultures (<i>Cathartidae</>); Falcons and Caracaras (<i>Falconidae</i>); Hawks and Eagles (<i>Accipitridae</i>); Osprey (<i>Pandionidae</i>); Secretary bird (<i>Sagittariidae</i>). Nocturnal raptors are further classified into the following groups: Barn Owls (<i>Tytonidae</i>); Eared Owls or Typical Owls (<i>Strigidae</i>).</p>
   '''
 
   scientificName: ''
@@ -12,9 +12,6 @@ module.exports =
   information: [{
     label: 'Length'
     value: '14 cm to 1.40 m, depending on species'
-  }, {
-    label: 'Height'
-    value: ''
   }, {
     label: 'Weight'
     value: '35 g to 12.25 kg, depending on species'
