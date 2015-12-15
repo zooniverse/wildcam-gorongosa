@@ -4,7 +4,7 @@ module.exports =
     The Bell’s hinged tortoise is a medium-sized tortoise with an elongated carapace and a movable rear hinge. This species is one of only four tortoises in the world to possess this unusual structure. They have tails with a clawlike tip and a small head with a nonprojecting snout. Their color and pattern varies, but they typically bear a pattern of yellow or reddish-brown scutes (thick, horny or bony plates) with dark brown or black edges. Males tend to be more faded in coloration and also possess a larger tail.
   '''
 
-  scientificName: '(Kinixys belliana)'
+  scientificName: 'Kinixys belliana'
   mainImage: 'assets/fieldguide-content/reptiles/tortoise/bells-tortoise-feature.jpg'
 
   information: [{
@@ -12,7 +12,7 @@ module.exports =
     value: ': 15-22 cm'
   }, {
     label: 'Weight'
-    value: '1 - 2 kg'
+    value: '1-2 kg'
   }, {
     label: 'Lifespan'
     value: 'Up to 22 years'
