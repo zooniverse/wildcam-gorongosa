@@ -3,7 +3,7 @@ module.exports =
     The sable antelope is a rotund, barrel-chested antelope with a short neck, long face, and dark mane. They are best known for their impressive ringed horns that rise vertically and curve backward. Sable antelopes have a short, glossy coat that appears black in males and sorrel to rich chestnut in females and young. As they grow older, sable antelopes change their coloration. Calves are born reddish-brown, with virtually no markings. As they age, white markings will appear and their coat darkens.
   '''
 
-  scientificName: '(Hippotragus niger)'
+  scientificName: 'Hippotragus niger'
   mainImage: 'assets/fieldguide-content/mammals/sable_antelope/sable-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
