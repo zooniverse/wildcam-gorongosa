@@ -4,7 +4,7 @@ module.exports =
     The side-striped jackal is easily distinguishable from its other jackal relatives. It has a slightly drabber light gray to tan coloration with a white tip on their otherwise black tail. The side-striped jackal is medium-sized and tends to have a white stripe that extends from the elbow to hip and black side stripes which are not always conspicuous. They have a relatively blunt muzzle and short, rounded ears. This species is sexually dimorphic in size, with males being larger than females.
   '''
 
-  scientificName: '(Canis adustus)'
+  scientificName: 'Canis adustus'
   mainImage: 'assets/fieldguide-content/mammals/jackal/jackal-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
