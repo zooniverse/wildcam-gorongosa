@@ -1,6 +1,6 @@
 module.exports =
   description: '''
-    There are two weasel species in Gorongosa: striped weasel (Poecilogale albinucha) and zorilla (Ictonyx striatus). The striped weasel is a small weasel with a long, sinuous body, very short limbs, and a long tail. They have black fur with a yellowish-white patch on the top of their head that splits into white stripes that run the length of their back and join again at their tail, which is all yellowish-white.
+    Two weasel species in live Gorongosa: the striped weasel (<i>Poecilogale albinucha</i>) and the zorilla (<i>Ictonyx striatus</i>). The striped weasel is a small weasel with a long, sinuous body, very short limbs, and a long tail. They have black fur with a yellowish-white patch on the top of their head that splits into white stripes that run the length of their back and join again at their tail, which is all yellowish-white.
 
     A skunklike mustelid, the zorilla has long, shaggy, jet-black hair, with four wide white stripes that run from nape to tail. Their head is broad but blunt with an individual pattern of white spots between the eyes and a stripe on each cheek. Their tail and the back of their ears are also mostly white. Like skunks, the zorilla may emit a strong-smelling liquid from its anal glands when threatened. However, the smell is less pungent than that of a skunk.
   '''
@@ -14,6 +14,12 @@ module.exports =
     label: 'Lifespan'
     value: '6-13 years'
   }, {
+    label: 'Length'
+    value: '43-70 cm'
+  }, {
+    label: 'Weight'
+    value: '.25-1.3 kg'
+  }, {
     label: 'Gestation'
     value: '32-36 days'
   }, {
@@ -23,10 +29,10 @@ module.exports =
 
   sections: [{
     title: 'Habitat'
-    content: 'Grasslands, woodlands, montane grasslands, and within agricultural areas.'
+    content: 'Grasslands, woodlands, montane grasslands, and within agricultural areas'
   }, {
     title: 'Diet'
-    content: 'Invertebrates, reptiles, birds, eggs, and small mammals.'
+    content: 'Invertebrates, reptiles, birds, eggs, and small mammals'
   }, {
     title: 'Predators'
     content: 'Larger African carnivores'
@@ -46,7 +52,7 @@ module.exports =
     style: 'focus-box'
     content: '''
       <ol>
-        <li>Like skunks, the zorilla and striped weasels emits a strong-smelling liquid from its anal glands when threatened.</li>
+        <li>Like skunks, zorillas and striped weasels emit a strong-smelling liquid from their anal glands when threatened.</li>
         <li>When threatened, the zorilla will play dead until the threat has passed, sometimes for as long as half an hour.</li>
         <li>The striped weasel is one of the smallest carnivores in Africa.</li>
         <li>The striped weasel is regarded by some to be a good luck charm.</li>
