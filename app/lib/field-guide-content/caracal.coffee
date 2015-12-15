@@ -3,7 +3,7 @@ module.exports =
     The caracal is a strongly built cat with a long, slender body covered in short hair that is reddish brown with white around the belly, chin, and throat. A ring of white surrounds the eyes, and a black line runs from each eye to the nose. The caracal has pointed ears with black tufts on the ends and legs that are long and powerful. They have short tails and small heads.
   '''
 
-  scientificName: '(Caracal caracal)'
+  scientificName: 'Caracal caracal'
   mainImage: 'assets/fieldguide-content/mammals/caracal/caracal-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
