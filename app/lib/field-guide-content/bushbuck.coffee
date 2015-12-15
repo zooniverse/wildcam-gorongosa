@@ -3,7 +3,7 @@ module.exports =
     Bushbucks are solitary antelopes that are yellowish or reddish-tan in color with a white underside and thin, white vertical stripes running from shoulder to rump. They have bushy tails and geometrically shaped white patches on their ears, chin, tail, legs, and necks. Males have horns that can grow up to 57 cm (or 23 inches) long.
   '''
 
-  scientificName: '(Tragelaphus scriptus)'
+  scientificName: 'Tragelaphus scriptus'
   mainImage: 'assets/fieldguide-content/mammals/bushbuck/bushbuck-feature.jpg'
 
   information: [{
