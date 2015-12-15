@@ -10,7 +10,7 @@ module.exports =
 
   information: [{
     label: 'Length'
-    value: '24 - 60 cm'
+    value: '24-60 cm'
   }, {
     label: 'Weight'
     value: '5 kg-340 g'
