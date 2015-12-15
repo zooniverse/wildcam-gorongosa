@@ -1,6 +1,6 @@
 module.exports =
   description: '''
-    There are two hare species in Gorongosa: savanna hare (Lepus microtis) and scrub hare (Lepus saxatilis). The savanna hare is usually darker in color than other hares, with a grayish-brown body, reddish-brown flanks and limbs, and white underparts. Scrub hares have thick, soft fur that is brown to gray in color with a black flecking, which gives their coat a grizzled appearance on their upper parts, contrasting with their under parts, which are white. Their head is whitish with a buff color on the sides of the face and around the eyes. Most individuals have a distinct white patch on the forehead just above the eyes.
+    There are two hare species in Gorongosa: savanna hare (<i>Lepus microtis</i>) and scrub hare (<i>Lepus saxatilis</i>). The savanna hare is usually darker in color than other hares, with a grayish-brown body, reddish-brown flanks and limbs, and white underparts. Scrub hares have thick, soft fur that is brown to gray in color with a black flecking, which gives their coat a grizzled appearance on their upper parts, contrasting with their under parts, which are white. Their head is whitish with a buff color on the sides of the face and around the eyes. Most individuals have a distinct white patch on the forehead just above the eyes.
   '''
 
   scientificName: ''
@@ -10,22 +10,19 @@ module.exports =
 
   information: [{
     label: 'Length'
-    value: '50-79 cm'
-  }, {
-    label: 'Height'
-    value: ''
+    value: '41-65 cm'
   }, {
     label: 'Weight'
-    value: ''
+    value: '1.5-4.5 kg'
   }, {
     label: 'Lifespan'
-    value: ''
+    value: '12 years'
   }, {
     label: 'Gestation'
-    value: '6 months'
+    value: '1-2 months'
   }, {
     label: 'Avg. number of offspring'
-    value: '1'
+    value: '1-3'
   }]
 
   sections: [{
