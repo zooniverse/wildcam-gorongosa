@@ -20,10 +20,10 @@ module.exports =
     value: '3,000-6,000 kg'
   }, {
     label: 'Lifespan'
-    value: ''
+    value: '60-70 years'
   }, {
     label: 'Gestation'
-    value: '60-70 years'
+    value: '22 months'
   }, {
     label: 'Avg. number of offspring'
     value: '1'
