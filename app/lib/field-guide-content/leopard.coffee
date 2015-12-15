@@ -3,7 +3,7 @@ module.exports =
     The leopard is a medium-sized wildcat that is easily distinguished by its beautiful black-spotted coat. Spots are grouped into rosettes on the torso and upper limbs and appear smaller and more scattered on the lower limbs and head. There is large variation in coat color, pattern and body size. The leopard has a long, well-muscled body, thick, short limbs, broad paws, and a long tail. Like other feline species, the leopard has retractable claws.
   '''
 
-  scientificName: '(Panthera pardus)'
+  scientificName: 'Panthera pardus'
   mainImage: 'assets/fieldguide-content/mammals/leopard/leopard-feature.jpg'
 
   conservationStatus: 'Near Threatened' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
