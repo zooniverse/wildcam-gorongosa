@@ -3,7 +3,7 @@ module.exports =
     The wildebeest is an unusual-looking antelope with high shoulders and a large, boxlike head with curving horns. The front end of the body is heavily built, while the hindquarters are slender with skinny legs. They have a blue-gray or brown coat that is lighter above and darker below, with black vertical stripes on their forequarters. They have a black mane and longer hair on their forequarters as well as a beard that can be white or black.
   '''
 
-  scientificName: '(Connochaetes taurinus)'
+  scientificName: 'Connochaetes taurinus'
   mainImage: 'assets/fieldguide-content/mammals/wildebeest/wildebeest-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
