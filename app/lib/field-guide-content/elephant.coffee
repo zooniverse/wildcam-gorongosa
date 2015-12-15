@@ -4,7 +4,7 @@ module.exports =
     African elephants are the largest land animals on earth. The trunk, a muscular extension of the upper lip and nose, contains the nostrils and has two opposing extensions at its end that are used for communication and handling objects including food. African elephants have huge ears, up to 2 x 1.5 m, which allow them to radiate excess heat. Both males and females have tusks—large, modified incisors that continuously grow throughout an elephant’s lifetime. Their skin is gray to brownish, wrinkled, and nearly hairless. Females are known as cows while males are known as bulls.
   '''
 
-  scientificName: '(Loxodonta africana)'
+  scientificName: 'Loxodonta africana'
   mainImage: 'assets/fieldguide-content/mammals/elephant/elephant-feature.jpg'
 
   conservationStatus: 'Vulnerable' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
