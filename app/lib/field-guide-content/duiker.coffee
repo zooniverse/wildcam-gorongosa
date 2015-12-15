@@ -12,7 +12,7 @@ module.exports =
     value: 'Dependent on species'
   }, {
     label: 'Weight'
-    value: 'Dependent on species'
+    value: '4-25 kg'
   }, {
     label: 'Lifespan'
     value: 'up to 12 years in captivity'
