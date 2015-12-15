@@ -4,7 +4,7 @@ module.exports =
     The common eland is the world’s largest antelope. It has a cowlike body with a massive neck and large shoulders. Common elands have a smooth coat that is yellowish-brown or tan in color and may h ave white vertical stripes running along the body. They have a long, thin tail that ends in a black tuft. Their ears are small and narrow and their horns are nearly straight, with one or two tight twists.
   '''
 
-  scientificName: '(Taurotragus oryx)'
+  scientificName: 'Taurotragus oryx'
   mainImage: 'assets/fieldguide-content/mammals/eland/eland-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
