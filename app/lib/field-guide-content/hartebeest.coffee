@@ -4,7 +4,7 @@ module.exports =
     The Lichtenstein\'s hartebeest is a large, high-shouldered antelope with long legs, a short neck, long, narrow face, and long, elongated ears. A reddish-brown saddle extends down to the base of the tail, contrasting with their white buttocks, and grades into pale flanks and underparts. The chin, tail tip, and stripe down foreleg are black. Both males and females have horns that are close together at the base, curve slightly forward and outward, and then point inward. The lower two-thirds of the horns have distinctive rings, and those of the female are more slender.
   '''
 
-  scientificName: '(Alcelaphus lichtensteinii)'
+  scientificName: 'Alcelaphus lichtensteinii'
   mainImage: 'assets/fieldguide-content/mammals/hartebeest/hartebeest-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
