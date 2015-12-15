@@ -1,6 +1,6 @@
 module.exports =
   description: '''
-    There are two crane species in Gorongosa: grey crowned crane (Balearica regulorum) and wattled crane (Bugeranus carunculatus). The grey crowned crane has a pale gray neck, which contrasts sharply with its black and white wings, crest of golden feathers on top of its head, and bright red pouch that hangs below its throat. Its head is black, with a large patch of bare white skin on the cheeks and a red spot above. Its legs and feet are black. Males tend to be slightly larger than females but are otherwise indistinguishable.
+    There are two crane species in Gorongosa: grey crowned crane (<i>Balearica regulorum</i>) and wattled crane (<i>Bugeranus carunculatus</i>). The grey crowned crane has a pale gray neck, which contrasts sharply with its black and white wings, crest of golden feathers on top of its head, and bright red pouch that hangs below its throat. Its head is black, with a large patch of bare white skin on the cheeks and a red spot above. Its legs and feet are black. Males tend to be slightly larger than females but are otherwise indistinguishable.
 
     The wattled crane is a large bird with a long white neck and breast. The underparts are black, while the body is gray. They have a black “cap” on top of their head, bare red facial skin, and long wattles that bear white feathers and give rise to their common name.
 
