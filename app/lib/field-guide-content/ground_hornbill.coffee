@@ -4,7 +4,7 @@ module.exports =
     The southern ground hornbill is the largest hornbill in the world. It is a large, black, turkeylike bird with striking red skin around its eyes and down its foreneck, forming a pouch. The female has a violet patch on the throat rather than just the pure red coloration of the male. The bill is long, thick, and downward-curving, with a small protuberance on the top. Their eyes are pale yellow and their legs and plumage are black, except for a few white wing feathers, which can only be seen when in flight. Juveniles are duller in coloration, appearing browner with yellowish facial skin and brown eyes.
   '''
 
-  scientificName: '(Bucorvus leadbeateri)'
+  scientificName: 'Bucorvus leadbeateri'
   mainImage: 'assets/fieldguide-content/birds/ground_hornbill/hornbill-feature.jpg'
 
   conservationStatus: 'Vulnerable' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
