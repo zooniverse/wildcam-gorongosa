@@ -3,7 +3,7 @@ module.exports =
     Nyala are medium-sized antelopes that exhibit extreme sexual dimorphism, with the two sexes appearing entirely different. Females and young are short-haired, bright rufous-chestnut in color, and have 12 or more vertical white stripes. They also have white spots on their face, throat, lower flanks, and thighs. Male coats are shaggy and turn dark-brown to gray with age. Males have fewer and less conspicuous stripes and spots. Both sexes have a white chevron between their eyes and a bushy tail that is black above and white underneath.
   '''
 
-  scientificName: '(Tragelaphus angasii)'
+  scientificName: 'Tragelaphus angasii'
   mainImage: 'assets/fieldguide-content/mammals/nyala/nyala-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
