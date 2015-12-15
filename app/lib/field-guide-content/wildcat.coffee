@@ -3,7 +3,7 @@ module.exports =
     The African wildcat is the wild ancestor of the domestic tabby cat and is similar in appearance, but it has longer legs and a more upright seated posture, and their nose coloring is more pink. The wildcat is variable in appearance but is generally gray to buff; in some cases it can also be black or orange.
   '''
 
-  scientificName: '(Felis silvestris)'
+  scientificName: 'Felis silvestris'
   mainImage: 'assets/fieldguide-content/mammals/wildcat/wildcat-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
