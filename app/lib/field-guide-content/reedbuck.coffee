@@ -4,7 +4,7 @@ module.exports =
     The common reedbuck is the largest reedbuck. They can be identified by the distinctive dark lines that run down the front of each foreleg and the lower hind legs. Their color varies, but they are generally unpatterned, with their face, head, torso, and outer sides of the legs a shade of gray-brown. They do have white around their eyes, inside of their ears, on their chin, throat, belly, and the underside of their bushy tail. Males can easily be distinguished from females by their forward-curving horns.
   '''
 
-  scientificName: '(Redunca arundinum)'
+  scientificName: 'Redunca arundinum'
   mainImage: 'assets/fieldguide-content/mammals/reedbuck/reedbuck-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
