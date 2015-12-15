@@ -4,7 +4,7 @@ module.exports =
     The common hippopotamus has a grayish-brown, round, bulky body that is set on short, stubby legs. Each foot has four toes and although they are webbed, the toes splay enough to distribute the weight of the animal when it is on land. Their eyes and nostrils are located high on their heads, allowing them to see and breathe while primarily submerged in the water. They produce an oily red substance, which moistens the skin and protects them against the sun.
   '''
 
-  scientificName: '(Hippopotamus amphibius) '
+  scientificName: 'Hippopotamus amphibius'
   mainImage: 'assets/fieldguide-content/mammals/hippopotamus/hippo-feature.jpg'
 
   conservationStatus: 'Vulnerable' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
