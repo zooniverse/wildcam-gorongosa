@@ -11,7 +11,7 @@ counterpart.registerTranslations 'en',
     hero:
       tagline: 'Take part in an amazing wildlife comeback story!'
       overview: '''
-      Gorongosa National Park in Mozambique was once among the most diverse places on earth, but decades of war decimated the park’s large animal populations. Now, an international conservation effort is working to restore the park’s wildlife — and we need you to help document this incredible recovery. Join us in identifying Gorongosa’s animals in trail camera photos and become part of our conservation team!
+      Gorongosa National Park in Mozambique was once among the most diverse places on Earth, but decades of war decimated the park’s large animal populations. Now, an international conservation effort is working to restore the park’s wildlife — and we need you to help document this incredible recovery. Join us in identifying Gorongosa’s animals in trail camera photos and become part of our conservation team!
       '''
     learnMore: 'Learn More'
     getStarted: 'Get Started!'

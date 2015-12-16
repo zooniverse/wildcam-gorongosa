@@ -6,7 +6,7 @@ module.exports = React.createClass
   render: ->
     <div className="education-page">
       <h2>Educator Portal</h2>
-      <p>In the spring of 2016, a new educator portal will launch as part of WildCam Gorongosa. The portal will allow educators and students to ask ecological questions and filter the trail camera data to answer these questions. The data can be saved as a spreadsheet to analyze and draw conclusions. Follow our <a href="http://blog.wildcamgorongosa.org" target="_blank">blog</a> to hear updates on the launch of the educator portal. In the meantime, you can explore the Gorongosa educational resources From HHMI BioInteractive (below).</p>
+      <p>In the spring of 2016, a new educator portal will launch as part of WildCam Gorongosa. The portal will allow educators and students to ask ecological questions and filter the trail camera data to answer these questions. The data can be saved as a spreadsheet to analyze and draw conclusions. Follow our <a href="http://blog.wildcamgorongosa.org" target="_blank">blog</a> to hear updates on the launch of the educator portal. In the meantime, you can explore the Gorongosa educational resources from HHMI BioInteractive (below).</p>
 
       <h2>Gorongosa as a Case Study</h2>
 
