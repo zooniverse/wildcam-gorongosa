@@ -3,7 +3,7 @@ module.exports =
     Similar in appearance to a small gazelle, the oribi has a slender build, long neck and limbs, and a short tail. The coat is short, sleek, and tan to bright reddish or yellowish with contrasting white underparts, rump, and throat. The inside of the ears are also white, and the oribi has a white line over its eyes.
   '''
 
-  scientificName: '(Ourebia ourebi)'
+  scientificName: 'Ourebia ourebi'
   mainImage: 'assets/fieldguide-content/mammals/oribi/oribi-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

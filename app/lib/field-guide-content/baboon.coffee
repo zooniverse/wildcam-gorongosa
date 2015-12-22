@@ -13,11 +13,8 @@ module.exports =
     label: 'Tail Length'
     value: '35-75 cm'
   }, {
-    label: 'Mail Weight'
-    value: '21-26 kg'
-  }, {
-    label: 'Female Weight'
-    value: '12-14 kg'
+    label: 'Weight'
+    value: '12-26 kg'
   }, {
     label: 'Lifespan'
     value: '20-30 years'

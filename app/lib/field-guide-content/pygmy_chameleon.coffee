@@ -4,7 +4,7 @@ module.exports =
     Fully grown female Mount Gorongosa pygmy chameleons are about as long as a person’s pinky finger and the males are even smaller. They lack prehensile tails. They are able to alter their body color and pattern to camouflage themselves with their surroundings.
   '''
 
-  scientificName: '(Rhampholeon gorongosae)'
+  scientificName: 'Rhampholeon gorongosae'
   mainImage: 'assets/fieldguide-content/reptiles/pygmy_chameleon/pygymy-chameleon-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

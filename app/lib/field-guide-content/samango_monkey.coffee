@@ -3,7 +3,7 @@ module.exports =
     The samango monkey is an Old World monkey that is unique in appearance with an unusually long tail. Despite its common name, the monkey does not appear blue in color, though some individual’s may have a blue hue to their face. Their body is covered with a thick coat that varies in color depending on location and subspecies. Samango monkeys (C. m. labiatus), which range from east Zimbabwe and Mozambique to east Cape Province, have a dark-brown face, with white limited to their lips and chin. The fur on their upperparts is grizzled gray-brown, whereas their underparts are white and their legs, shoulders, and outer two-thirds of their tail are black.
   '''
 
-  scientificName: '(Ceropithecus mitis)'
+  scientificName: 'Ceropithecus mitis'
   mainImage: 'assets/fieldguide-content/mammals/samango_monkey/samango-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

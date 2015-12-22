@@ -14,6 +14,12 @@ module.exports =
     label: 'Lifespan'
     value: '6-13 years'
   }, {
+    label: 'Length'
+    value: '43-70 cm'
+  }, {
+    label: 'Weight'
+    value: '.25-1.3 kg'
+  }, {
     label: 'Gestation'
     value: '32-36 days'
   }, {

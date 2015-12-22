@@ -3,7 +3,7 @@ module.exports =
     The waterbuck is a large, robust antelope. They have a shaggy, coarse, reddish-brown to brown-gray coat, which emits an oily secretion thought to be for waterproofing. They have large, rounded ears and white patches above the eyes, around the nose and mouth, and on the throat. A conspicuous feature of this antelope is the large white ring that in certain subspecies surrounds the base of the tail on the rump.
   '''
 
-  scientificName: '(Kobus ellipsiprymnus)'
+  scientificName: 'Kobus ellipsiprymnus'
   mainImage: 'assets/fieldguide-content/mammals/waterbuck/waterbuck-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

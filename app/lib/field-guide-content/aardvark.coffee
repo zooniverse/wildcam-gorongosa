@@ -3,7 +3,7 @@ module.exports =
     Aardvarks are the last survivors of a group of primitive ungulates. They have a stocky body with thick skin that ranges in color from yellowish to pinkish and is sparsely covered with bristly hair. Aardvarks have short, powerful legs with sharp claws (four on the forefeet and five on each hind foot), a prominently arched back, a short neck, long pointed ears, and a long muscular tail that tapers to a point. Their head is elongated with a long snout. They are well adapted to feed on termites and ants with nostrils that can be sealed and a protractile tongue.
   '''
 
-  scientificName: '(Orycteropus afer)'
+  scientificName: 'Orycteropus afer'
   mainImage: 'assets/fieldguide-content/mammals/aardvark/aardvark-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

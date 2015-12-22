@@ -4,7 +4,7 @@ module.exports =
     The African rock python is Africa’s largest snake. Their long, stout body is covered in small, smooth scales that form patterned blotches that vary in color between brown, olive, chestnut, and yellow, and often join up in a broad, irregular stripe. Their triangular head contains many sharp, backwardly curved teeth. The top of their head has a distinctive dark brown “spearhead” outlined in a buff yellow, and they have triangular markings under their eyes.
   '''
 
-  scientificName: '(Python sebae)'
+  scientificName: 'Python sebae'
   mainImage: 'assets/fieldguide-content/reptiles/rock_python/python-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

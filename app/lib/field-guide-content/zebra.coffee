@@ -4,7 +4,7 @@ module.exports =
     The plains zebra is the most common and widespread of the zebra species found in Africa. Zebras are horselike ungulates with distinctive black and white striped coats that make them one of the most recognizable animals. The stripes on the neck to the forelimbs are vertical and continue in the mane, which is short and erect. Stripes on the limbs are narrower and horizontal, if present. The tails are short and end in a tuft of black hair.  Crawshay’s zebra is a subspecies of the plains zebra that is found across a very limited range, including Gorongosa. You can tell Crawshay’s zebras apart from other zebras by their thinner and denser black stripes, which extend all across their underbelly and all the way down to the hooves; there are never shadow-stripes (thin, light-brown stripes between the black ones). They also appear to have slightly different teeth than other zebras.
   '''
 
-  scientificName: '(Equus burchellii crawshayi)'
+  scientificName: 'Equus burchellii crawshayi'
   mainImage: 'assets/fieldguide-content/mammals/zebra/zebra-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

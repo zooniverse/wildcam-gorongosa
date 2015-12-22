@@ -3,7 +3,7 @@ module.exports =
     The African wild dog, also called the African painted dog, has a colorful coat with patches of red, black, brown, white, and yellow fur; large, batlike ears; and a bushy tail. Their face is primarily black, with a tan forehead. While African wild dogs resemble domestic dogs, these long-legged canines have only four toes per foot, unlike other dogs, which have five toes on their forefeet.
   '''
 
-  scientificName: '(Lycaon pictus)'
+  scientificName: 'Lycaon pictus'
   mainImage: 'assets/fieldguide-content/mammals/wild_dog/wild-dog-feature.jpg'
 
   conservationStatus: 'Endangered' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

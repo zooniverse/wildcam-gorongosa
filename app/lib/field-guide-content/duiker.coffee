@@ -12,7 +12,7 @@ module.exports =
     value: 'Dependent on species'
   }, {
     label: 'Weight'
-    value: 'Dependent on species'
+    value: '4-25 kg'
   }, {
     label: 'Lifespan'
     value: 'up to 12 years in captivity'
@@ -29,7 +29,7 @@ module.exports =
     content: 'Forest and bush – montane forests, riverine forests, rain forests, savannas.'
   }, {
     title: 'Diet'
-    content: 'Forest and bush – montane forests, riverine forests, rain forests, savannas.'
+    content: 'Omnivore, feeds on fruits, mushrooms, foliage from bushes and trees, insects, lizards, birds, and rodents'
   }, {
     title: 'Predators'
     content: 'Leopards, lions, eagles'

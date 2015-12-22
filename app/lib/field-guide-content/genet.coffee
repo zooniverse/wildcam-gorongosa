@@ -4,7 +4,7 @@ module.exports =
     The large-spotted genet is a small carnivore that is catlike in appearance with soft, short fur. Their base color varies geographically but ranges from yellowish to gray with brown and black spots covering their body. They have a banded tail, a brown-black spinal stripe, and an indistinct dark patch on their face between the inner corner of the eye and the outer corner of the mouth, bordered by a whitish patch under the eyes and next to the nose.
   '''
 
-  scientificName: '(Genetta tigrina)'
+  scientificName: 'Genetta tigrina'
   mainImage: 'assets/fieldguide-content/mammals/genet/genet-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

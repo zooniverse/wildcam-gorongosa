@@ -3,7 +3,7 @@ module.exports =
     The honey badger is part of the weasel family, related to skunks, otters, ferrets, and other badgers. Honey badgers are muscular and compact, with a thick skull, well-developed neck and shoulders, and strong forelegs armed with bearlike claws. The honey badger’s coloration is striking with coarse jet-black fur covering its lower body and contrasting white or gray fur covering the upper body. They have powerful jaws and loose skin that is nearly a quarter of an inch thick. They have internal ears that can be closed, allowing them to keep out the dirt.
   '''
 
-  scientificName: '(Mellivora capensis)'
+  scientificName: 'Mellivora capensis'
   mainImage: 'assets/fieldguide-content/mammals/honey_badger/badger-feature.png'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
