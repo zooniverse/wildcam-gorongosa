@@ -3,7 +3,7 @@ module.exports =
     The African civet has a raccoonlike appearance with a black streak across its face and white on the forehead surrounding its muzzle. Its coarse coat is dirty white in color, heavily spotted, and barred with black. They have a prominent erectile crest of black-tipped hair that runs from the head to the tail, and a wide head with a pointy muzzle, small eyes, and small, rounded ears. The African civet is the largest African member of the Viverridae family, which includes genets, civets, and linsangs.
   '''
 
-  scientificName: '(Civettictis civetta)'
+  scientificName: 'Civettictis civetta'
   mainImage: 'assets/fieldguide-content/mammals/civet/civet-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
@@ -36,7 +36,7 @@ module.exports =
     content: 'Omnivore, eats animal and plant matter '
   }, {
     title: 'Predators'
-    content: 'Lions, Leopards, Snakes '
+    content: 'Lions, leopards, snakes '
   }, {
     title: 'Behavior'
     content: '''

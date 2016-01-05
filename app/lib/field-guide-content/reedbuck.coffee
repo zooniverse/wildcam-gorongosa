@@ -4,7 +4,7 @@ module.exports =
     The common reedbuck is the largest reedbuck. They can be identified by the distinctive dark lines that run down the front of each foreleg and the lower hind legs. Their color varies, but they are generally unpatterned, with their face, head, torso, and outer sides of the legs a shade of gray-brown. They do have white around their eyes, inside of their ears, on their chin, throat, belly, and the underside of their bushy tail. Males can easily be distinguished from females by their forward-curving horns.
   '''
 
-  scientificName: '(Redunca arundinum)'
+  scientificName: 'Redunca arundinum'
   mainImage: 'assets/fieldguide-content/mammals/reedbuck/reedbuck-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
@@ -53,7 +53,7 @@ module.exports =
     style: 'focus-box'
     content: '''
       <ol>
-        <li>1.	A young reedbuck will remain among the dense grass cover in which it was born for the first two months of its life. During this period, the mother will not stay around but instead visit the young for just 10 to 30 minutes each day.</li>
+        <li>A young reedbuck will remain among the dense grass cover in which it was born for the first two months of its life. During this period, the mother will not stay around but instead visit the young for just 10 to 30 minutes each day.</li>
       </ol>
     '''
   },{

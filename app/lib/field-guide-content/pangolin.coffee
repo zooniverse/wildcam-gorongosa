@@ -3,7 +3,7 @@ module.exports =
     The pangolin is distinguished from other mammals by its protective layer of brown horny scales that overlap like roof shingles on the upper body, tail, and outer limbs. It has a tubular head and short, powerful legs with strong curved claws well-adapted for uncovering ants and termites. Other adaptations that make them experts at eating ants and termites are their acute sense of smell that helps them sniff out most of their prey, thick eyelids that protect their eyes from insect bites, and a long, tapering tongue used to lap up prey.
   '''
 
-  scientificName: '(Smutsia temminckii)'
+  scientificName: 'Smutsia temminckii'
   mainImage: 'assets/fieldguide-content/mammals/pangolin/pangolin-feature.jpg'
 
   conservationStatus: 'Vulnerable' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

@@ -4,26 +4,26 @@ module.exports =
     The Nile crocodile is a large, lizardlike animal with a streamlined body and a long, massive tail used for moving underwater. They have powerful jaws, conical teeth, and short legs with webbed toes and claws. Their dorsal skin is thick and covered with horny plates, while the skin on their underside is softer. The eyes, ears, and nostrils are located on top of their head, allowing them to lie low in the water, almost completely submerged and out of sight. Adult Nile crocodiles are gray to gray-olive in color, with a yellowish belly. Younger Nile crocodiles are greenish, with black marks on their dorsal side and legs. Like all true crocodiles, the Nile crocodile has an enlarged fourth tooth on the lower jaw that is clearly visible when its mouth is closed.
   '''
 
-  scientificName: '(Crocodylus niloticus)'
+  scientificName: 'Crocodylus niloticus'
   mainImage: 'assets/fieldguide-content/reptiles/crocodile/crocodile-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 
   information: [{
     label: 'Length'
-    value: '3-3.6 m'
+    value: '2.8-6.1 m'
   }, {
     label: 'Weight'
-    value: '1,000 kg'
+    value: '70-900 kg'
   }, {
     label: 'Lifespan'
-    value: '45 years'
+    value: '70-100 years'
   }, {
     label: 'Gestation'
-    value: '90 days'
+    value: '1-2 months'
   }, {
     label: 'Avg. number of offspring'
-    value: '40'
+    value: '35-95 eggs (approx. 10% hatch)'
   }]
 
   sections: [{

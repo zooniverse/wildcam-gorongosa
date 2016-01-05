@@ -4,7 +4,7 @@ module.exports =
     Lions are iconic African large cats, built to prey on animals many times their size. Their coat is a smooth tawny color with whitish underparts. They have a muscular build, heavy muzzle, strong jaws, large paws, and a long tail that ends in a black tassel. They are sexually dimorphic, with males being larger in size and having full manes that vary in color from blond to black. Cubs have spots that tend to fade by 3 months of age.
   '''
 
-  scientificName: '(Panthera leo)'
+  scientificName: 'Panthera leo'
   mainImage: 'assets/fieldguide-content/mammals/lion/lion-feature.jpg'#
   conservationStatus: 'Near Threatened' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.#
 
@@ -16,7 +16,7 @@ module.exports =
     value: '1.1-1.2 m'
   }, {
     label: 'Weight'
-    value: '260 kg'
+    value: '120-200 kg'
   }, {
     label: 'Lifespan'
     value: '10-14 years in the wild; up to 20 years in captivity'

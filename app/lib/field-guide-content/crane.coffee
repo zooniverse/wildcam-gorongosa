@@ -1,15 +1,14 @@
 module.exports =
   description: '''
-    Two crane species live in Gorongosa: tje grey crowned crane (Balearica regulorum) and the wattled crane (Bugeranus carunculatus). The grey crowned crane has a pale gray neck, which contrasts sharply with its black and white wings, crest of golden feathers on top of its head, and bright red pouch that hangs below its throat. Its head is black, with a large patch of bare white skin on the cheeks and a red spot above. Its legs and feet are black. Males tend to be slightly larger than females but are otherwise indistinguishable.
+    Two crane species live in Gorongosa: the grey crowned crane (Balearica regulorum) and the wattled crane (Bugeranus carunculatus). The grey crowned crane has a pale gray neck, which contrasts sharply with its black and white wings, crest of golden feathers on top of its head, and bright red pouch that hangs below its throat. Its head is black, with a large patch of bare white skin on the cheeks and a red spot above. Its legs and feet are black. Males tend to be slightly larger than females but are otherwise indistinguishable.
 
     The wattled crane is a large bird with a long white neck and breast. The underparts are black, while the body is gray. They have a black “cap” on top of their head, bare red facial skin, and long wattles that bear white feathers and give rise to their common name.
-
   '''
 
-  scientificName: 'Vulnerable (Wattled) and Endangered (Crowned)' # blerg- how to do when we have two options?
+  scientificName: '' # blerg- how to do when we have two options?
   mainImage: 'assets/fieldguide-content/birds/crane/crane-feature.jpg'
 
-  conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
+  conservationStatus: 'Vulnerable (Wattled) and Endangered (Crowned)' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
 
   information: [{
     label: 'Length'

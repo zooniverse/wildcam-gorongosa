@@ -3,7 +3,7 @@ module.exports =
     Warthogs are members of the same family as domestic pigs but are much different in appearance. The warthog is a tough, sturdy gray hog with a broad face and white cheek whiskers. Its body appears hairless, though sparse bristles cover its figure, except for a dark erectile mane and a tail tuft. The warthog characteristically carries its long tail upright when it runs. Both sexes have curved upper tusks; males have tusks that are much larger. Both sexes also have “warts,” or thick protective pads, that appear on both sides of their head.
   '''
 
-  scientificName: '(Phacochoerus africanus)'
+  scientificName: 'Phacochoerus africanus'
   mainImage: 'assets/fieldguide-content/mammals/warthog/warthog-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

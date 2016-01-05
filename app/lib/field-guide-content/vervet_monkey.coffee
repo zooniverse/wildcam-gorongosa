@@ -3,7 +3,7 @@ module.exports =
     Vervet monkeys are medium-sized monkeys with yellowish or reddish-green light fur, and a bare, black face framed by white cheeks, long white whiskers, and a white band across the forehead. The upperparts of the body appear grizzled, while the underparts and limbs are whitish. Their ears, hands, feet, and calluses are generally black. Males are slightly more colorful and larger in size.
   '''
 
-  scientificName: '(Chlorocebus pygerythrus)'
+  scientificName: 'Chlorocebus pygerythrus'
   mainImage: 'assets/fieldguide-content/mammals/vervet_monkey/vervet-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

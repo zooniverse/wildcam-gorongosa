@@ -4,7 +4,7 @@ module.exports =
     The greater kudu is a large antelope that can be identified by the 6 to 10 thin, pale stripes against its tan to gray-brown body. They have a distinct white band across their face between the eyes. Males have long, spiral horns that can reach over a meter in length. Both sexes have a crest of hair that runs along the middle of the back and forms a mane. Females are noticeably smaller than the males.
   '''
 
-  scientificName: '(Tragelaphus strepsiceros)'
+  scientificName: 'Tragelaphus strepsiceros'
   mainImage: 'assets/fieldguide-content/mammals/kudu/kudu-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

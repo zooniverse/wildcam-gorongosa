@@ -3,7 +3,7 @@ module.exports =
     A small cat species, servals have many characteristics of domestic cats. They are strongly built with long legs, long necks, and tall, pointed ears. Their coat is tawny with black spots, which sometimes causes people to misidentify them as young leopards or cheetahs. Their tail is short, reaching a total length of about one-third the head-body size.
   '''
 
-  scientificName: '(Leptailurus serval)'
+  scientificName: 'Leptailurus serval'
   mainImage: 'assets/fieldguide-content/mammals/serval/serval-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.

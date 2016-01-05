@@ -3,7 +3,7 @@ module.exports =
     Bushpigs resemble the domestic pig, with a blunt, muscular snout, small eyes, and pointed, tufted ears. Their fur is reddish-brown to dark brown and becomes darker with age. They have a silver-colored mane, which bristles when they become agitated. Their sharp tusks are fairly short and inconspicuous. Males are normally larger than females.
   '''
 
-  scientificName: '(Potamochoerus larvatus)'
+  scientificName: 'Potamochoerus larvatus'
   mainImage: 'assets/fieldguide-content/mammals/bushpig/bushpig-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
@@ -33,7 +33,7 @@ module.exports =
     content: '<p>Savanna, woodland, forests, and riverine vegetation</p>'
   }, {
     title: 'Diet'
-    content: 'Roots, rhizomes, bulbs, tubers, fruits, insect larvae, crops and carrion'
+    content: 'Roots, rhizomes, bulbs, tubers, fruits, insect larvae, crops, and carrion'
   }, {
     title: 'Predators'
     content: 'Lions, leopards, hyenas, pythons, and humans'

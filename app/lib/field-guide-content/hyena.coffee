@@ -4,7 +4,7 @@ module.exports =
     Spotted hyenas are the largest of the three hyena species. They are similar in appearance to dogs (though they are more closely related to cats), with a large build, high shoulders, and a sloping back with lower hindquarters. They are tan to reddish with solid black spots that tend to fade with age. They have a short mane that ends just behind the shoulders, and their tail is short with a black, brushy end. Their ears are rounded and their muzzle is heavy. Spotted hyenas have excellent night vision and hearing.
   '''
 
-  scientificName: '(Crocuta crocuta) '
+  scientificName: 'Crocuta crocuta'
   mainImage: 'assets/fieldguide-content/mammals/hyena/hyena-feature.jpg'
 
   conservationStatus: 'Least Concern' # Options are Least Concern, Near Threatened, Vulnerable, and Endangered; all have their own little icons as well.
