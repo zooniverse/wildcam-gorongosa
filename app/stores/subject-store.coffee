@@ -34,7 +34,7 @@ module.exports = Reflux.createStore
   loadSubjectImage: ->
     @subject = @subjects.shift()
     image = new Image()
-    image.src = @subject.locations[0]["image/jpeg"]
+    image.src = @subject.locations[0]["image/jpeg"].replace("http://zooniverse-export.s3-website-us-east-1.amazonaws.com", "https://zooniverse-export.s3.amazonaws.com")
     image.onload = =>
       @subject.srcWidth = image.naturalWidth
       @trigger @subject
