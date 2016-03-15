@@ -33,8 +33,16 @@ module.exports = Reflux.createStore
 
   loadSubjectImage: ->
     @subject = @subjects.shift()
+    @generateHttpsUrl()
     image = new Image()
-    image.src = @subject.locations[0]["image/jpeg"].replace("http://zooniverse-export.s3-website-us-east-1.amazonaws.com", "https://zooniverse-export.s3.amazonaws.com")
+    image.src = @subject.locations[0]['image/jpeg']
     image.onload = =>
       @subject.srcWidth = image.naturalWidth
       @trigger @subject
+
+  generateHttpsUrl: ->
+    # If it's not an https url, we replace the s3 domain name with a secure one
+    url = @subject.locations[0]['image/jpeg']
+    if url.substr(0, 5) != 'https'
+      filename = url.replace /https?:\/\/[^\/]+/i, ''
+      @subject.locations[0]['image/jpeg'] = 'https://zooniverse-export.s3.amazonaws.com' + filename
