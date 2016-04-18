@@ -88,6 +88,7 @@
       min-width: 70px
       outline: none
       padding: 0.5em 1em 0.6em
+      position: relative
       text-align: center
       text-decoration: none
 
@@ -102,6 +103,14 @@
 
       &:last-of-type
         margin-right: 0
+        
+      .subtext
+        color: #c63
+        position: absolute
+        font-size: 0.6em
+        bottom: 0.2em
+        right: 0.4em
+        text-shadow: 1px 1px #ccc, -1px 1px #ccc, 1px -1px #ccc, -1px -1px #ccc
 
       @media screen and (max-width: 768px)
         color: white
