@@ -15,6 +15,8 @@ counterpart.registerTranslations 'en',
       fieldGuide: 'Field Guide'
       talk: 'Talk'
       blog: 'Blog'
+      lab: 'Lab'
+      beta: 'Beta'
 
 module.exports = React.createClass
   displayName: 'MainHeader'
@@ -62,6 +64,7 @@ module.exports = React.createClass
           <Link to="field-guide" className="main-header-link"><Translate content="mainHeader.links.fieldGuide" /></Link>
           <a className="main-header-link" href="https://www.zooniverse.org/projects/zooniverse/wildcam-gorongosa/talk" target="_blank"><Translate content="mainHeader.links.talk" /></a>
           <a className="main-header-link" href="http://blog.wildcamgorongosa.org" target="_blank"><Translate content="mainHeader.links.blog" /></a>
+          <a className="main-header-link" href="https://learn.wildcamgorongosa.org" target="_blank"><Translate content="mainHeader.links.lab" /><span className="subtext"><Translate content="mainHeader.links.beta" /></span></a>
         </div>
         {if @props.user
           <AccountBar user={@props.user} />
