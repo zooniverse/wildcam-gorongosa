@@ -23,10 +23,7 @@ module.exports = React.createClass
   mixins: [Reflux.connect(ProjectStore, 'projectData'), Reflux.connect(WorkflowStore, 'workflowData')]
 
   completion: ->
-    retired = @state.projectData.retired_subjects_count/@state.projectData.subjects_count
-    activeCount = @state.projectData.subjects_count - @state.projectData.retired_subjects_count
-    active = (@state.projectData.classifications_count / (activeCount * @state.workflowData.retirement.options.count))
-    ((retired + active) * 100).toFixed(0)
+    (@state.projectData.completeness * 100).toFixed(0)
 
   render: ->
     <div className="project-metadata">
