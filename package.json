@@ -34,7 +34,7 @@
     "run-sequence": "^1.1.2",
     "stylus": "~0.51.1",
     "through2": "^2.0.0",
-    "webpack": "~1.10.1"
+    "webpack": "~1.13.1"
   },
   "dependencies": {
     "babelify": "^6.1.3",
