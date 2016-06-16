@@ -87,6 +87,17 @@ module.exports = React.createClass
             <button className="tutorial-button" title="Tutorial" type="button" onClick={@onClickTutorial}><i className="fa fa-question"></i></button>
             <button className="metadata-button" title="Metadata" type="button" onClick={@onClickMetadata}><i className="fa fa-info"></i></button>
           </div>
+          
+          <div className="educationApiPanel">
+            <div>Education API Panel</div>
+            <select>
+              <option>No assignment selected</option>
+              <option>Working on Assignment Apple</option>
+              <option selected>Working on Assignment Banana</option>
+              <option>Working on Assignment Cherry</option>
+            </select>
+            <div>Completed <b>27</b> Classifications out of <b>100</b></div>
+          </div>
         </section>
 
         <section className="task-container">
