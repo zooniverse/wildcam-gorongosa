@@ -21,6 +21,16 @@ classifierActions = require '../actions/classifier-actions'
 Task = require '../tasks/survey'
 Summary = require '../partials/summary'
 
+fetch = require 'isomorphic-fetch'
+auth = require 'panoptes-client/lib/auth'
+apiClient = require 'panoptes-client/lib/api-client'
+#panoptesClient = require '../api/client'
+#panoptesAuth = require 'panoptes-client-0.1.2/lib/auth'
+#apiClient = panoptesClient.client
+#auth = new panoptesAuth(apiClient)
+#console.log auth
+
+
 module.exports = React.createClass
   displayName: "Classify"
   mixins: [
@@ -69,6 +79,32 @@ module.exports = React.createClass
     classifierActions.reviewTutorial()
 
   render: ->
+  
+    #TODO DEBUG
+    #--------------------------------
+    console.log '-'.repeat(80), '\nRENDER'
+    auth.checkCurrent(apiClient)
+    .then (user) ->
+      console.log 'CHECK CURRENT'
+    
+      fetch 'https://education.staging.zooniverse.org/students/classrooms/', {
+        method: 'GET',
+        mode: 'cors',
+        headers: new Headers({
+            'Authorization': apiClient.headers.Authorization,
+            'Content-Type': 'application/json'
+          })
+        }
+      .then (response) ->
+        response.json()
+      .then (json) ->
+        console.log('BING BING BING')
+        console.log(json)
+      .catch (err) ->
+        console.log 'ERROR'
+        console.log err
+    #--------------------------------
+    
     <div className="classify-page">
       {if @state.tutorialIsOpen and not @state.shownTutorial
         <SlideTutorial closeTutorial={@closeTutorial} tutorialIsOpen={@state.tutorialIsOpen} />}
@@ -89,7 +125,6 @@ module.exports = React.createClass
           </div>
           
           <div className="educationApiPanel">
-            <div>Education API Panel</div>
             <select>
               <option>No assignment selected</option>
               <option>Working on Assignment Apple</option>

@@ -14,5 +14,5 @@ module.exports = React.createClass
 
   render: ->
     <div className="login-bar">
-      <a className="main-header-link" href={UserStore.signInUrl()}><Translate content="loginBar.signIn" /></a>
+      <a className="main-header-link" onClick={UserStore.doSignIn}><Translate content="loginBar.signIn" /></a>
     </div>

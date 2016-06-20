@@ -1,5 +1,7 @@
 Reflux = require 'reflux'
-{client, api} = client = require '../api/client'
+#{client, api} = client = require '../api/client'
+{client, api} = require '../api/client'
+oauth = require 'panoptes-client/lib/oauth'
 projectConfig = require '../lib/config'
 userActions = require '../actions/user-actions'
 
@@ -73,26 +75,17 @@ module.exports = Reflux.createStore
       user: if user? then user else null
       projectPreferences: if projectPreferences? then projectPreferences else null
     @trigger @userData
-
-  signInUrl: (location = null) ->
-    location ?= window.location
-
-    client.host + '/oauth/authorize' +
-      "?response_type=token" +
-      "&client_id=#{ client.appID }" +
-      "&redirect_uri=#{ location }"
+    
+  doSignIn: (e) ->
+    return oauth.signIn(projectConfig.panoptesReturnUrl)
 
   onSignOut: ->
     @_removeToken()
     @getUser()
-    fetch(client.host + '/users/sign_out', {
-      credentials: 'include',
-      method: 'DELETE',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-    })
+    
+    oauth.signOut()
+      .then (user) ->
+        console.log("TESTING: User has signed out. ")
 
   _tokenExists: ->
     extractToken(window.location.hash) || localStorage.getItem('bearer_token')

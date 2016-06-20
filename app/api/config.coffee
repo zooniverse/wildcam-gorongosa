@@ -1,3 +1,5 @@
+#As of 20160620, I'm not sure if this needs to exist anymore. (-Shaun)
+
 DEFAULT_ENV = 'staging'
 
 API_HOSTS =
