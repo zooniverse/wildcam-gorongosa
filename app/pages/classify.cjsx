@@ -83,26 +83,25 @@ module.exports = React.createClass
     #TODO DEBUG
     #--------------------------------
     console.log '-'.repeat(80), '\nRENDER'
-    auth.checkCurrent(apiClient)
-    .then (user) ->
-      console.log 'CHECK CURRENT'
-    
-      fetch 'https://education.staging.zooniverse.org/students/classrooms/', {
-        method: 'GET',
-        mode: 'cors',
-        headers: new Headers({
-            'Authorization': apiClient.headers.Authorization,
-            'Content-Type': 'application/json'
-          })
-        }
-      .then (response) ->
-        response.json()
-      .then (json) ->
-        console.log('BING BING BING')
-        console.log(json)
-      .catch (err) ->
-        console.log 'ERROR'
-        console.log err
+    #auth.checkCurrent(apiClient)
+    #.then (user) ->
+    #  console.log 'CHECK CURRENT'
+    #  fetch 'https://education.staging.zooniverse.org/students/classrooms/', {
+    #    method: 'GET',
+    #    mode: 'cors',
+    #    headers: new Headers({
+    #        'Authorization': apiClient.headers.Authorization,
+    #        'Content-Type': 'application/json'
+    #      })
+    #    }
+    #  .then (response) ->
+    #    response.json()
+    #  .then (json) ->
+    #    console.log('BING BING BING')
+    #    console.log(json)
+    #  .catch (err) ->
+    #    console.log 'ERROR'
+    #    console.log err
     #--------------------------------
     
     <div className="classify-page">

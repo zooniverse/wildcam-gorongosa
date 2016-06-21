@@ -1,5 +1,4 @@
 Reflux = require 'reflux'
-#{client, api} = client = require '../api/client'
 {client, api} = require '../api/client'
 oauth = require 'panoptes-client/lib/oauth'
 projectConfig = require '../lib/config'
@@ -36,8 +35,8 @@ module.exports = Reflux.createStore
     @userData
 
   getUser: ->
+    #Original implementation in PJC 0.1.2, functional in PJC 2.5.1
     token = @_getToken()
-
     fetch(api.root + '/me', {
       method: 'GET'
       headers:
