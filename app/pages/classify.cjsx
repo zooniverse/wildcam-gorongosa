@@ -24,12 +24,6 @@ Summary = require '../partials/summary'
 fetch = require 'isomorphic-fetch'
 auth = require 'panoptes-client/lib/auth'
 apiClient = require 'panoptes-client/lib/api-client'
-#panoptesClient = require '../api/client'
-#panoptesAuth = require 'panoptes-client-0.1.2/lib/auth'
-#apiClient = panoptesClient.client
-#auth = new panoptesAuth(apiClient)
-#console.log auth
-
 
 module.exports = React.createClass
   displayName: "Classify"
@@ -83,25 +77,30 @@ module.exports = React.createClass
     #TODO DEBUG
     #--------------------------------
     console.log '-'.repeat(80), '\nRENDER'
-    #auth.checkCurrent(apiClient)
-    #.then (user) ->
-    #  console.log 'CHECK CURRENT'
-    #  fetch 'https://education.staging.zooniverse.org/students/classrooms/', {
-    #    method: 'GET',
-    #    mode: 'cors',
-    #    headers: new Headers({
-    #        'Authorization': apiClient.headers.Authorization,
-    #        'Content-Type': 'application/json'
-    #      })
-    #    }
-    #  .then (response) ->
-    #    response.json()
-    #  .then (json) ->
-    #    console.log('BING BING BING')
-    #    console.log(json)
-    #  .catch (err) ->
-    #    console.log 'ERROR'
-    #    console.log err
+    user = unless @state.userData is null then @state.userData?.user else null
+    data = null
+    
+    if @props.user
+      console.log apiClient.headers.Authorization
+      fetch 'https://education-api.zooniverse.org/students/classrooms/', {
+        method: 'GET',
+        mode: 'cors',
+        headers: new Headers({
+            'Authorization': apiClient.headers.Authorization,
+            'Content-Type': 'application/json'
+          })
+        }
+      .then (response) ->
+        response.json()
+      .then (json) ->
+        data = json
+        console.log 'DATA'
+        console.log data
+      .catch (err) ->
+        console.log 'ERROR'
+        console.log err
+    else
+      console.log 'NOT LOGGED IN'
     #--------------------------------
     
     <div className="classify-page">
