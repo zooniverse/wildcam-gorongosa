@@ -38,7 +38,7 @@ module.exports = Reflux.createStore
 
   finish: ->
     annotations = _.map annotationsStore.data, (annotation) ->
-      task: 'T1'
+      task: workflowStore.data.first_task
       value: [annotation]
 
     upsert =
