@@ -38,8 +38,8 @@ module.exports = Reflux.createStore
 
   finish: ->
     annotations = _.map annotationsStore.data, (annotation) ->
-      task: 'survey'
-      value: annotation
+      task: 'T1'
+      value: [annotation]
 
     upsert =
       annotations: annotations
