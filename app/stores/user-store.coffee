@@ -15,7 +15,7 @@ parseJson = (response) ->
   response.json()
 
 extractToken = (hash) ->
-  match = hash.match(/access_token=(\w+)/)
+  match = hash.match(/access_token=([\w\-\.]+)/)
   if !!match && match[1]
     match[1]
   else
