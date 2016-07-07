@@ -1,11 +1,14 @@
 React = require 'react'
 Reflux = require 'reflux'
+RefluxPromise = require 'reflux-promise'
 {RouteHandler} = require 'react-router'
 
 userStore = require './stores/user-store'
 
 MainHeader = require './partials/main-header'
 MainFooter = require './partials/main-footer'
+
+Reflux.use(RefluxPromise(window.Promise))
 
 module.exports = React.createClass
   displayName: "Main"
