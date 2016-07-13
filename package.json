@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "gulp",
-    "deploy-to-staging": "gulp clean && gulp build && publisssh ./public/build demo.zooniverse.org/wildcam-gorongosa && gulp clean",
+    "deploy-to-staging": "gulp clean && gulp build && publisssh ./public/build zooniverse-static/preview.zooniverse.org/wildcam-gorongosa && gulp clean",
     "deploy-to-production": "gulp clean && gulp build && publisssh ./public/build zooniverse-static/www.wildcamgorongosa.org && gulp clean"
   },
   "author": "",
@@ -30,7 +30,7 @@
     "jsx-loader": "~0.13.2",
     "nib": "~1.1.0",
     "node-libs-browser": "~0.5.2",
-    "publisssh": "~1.0.0",
+    "publisssh": "^1.0.0",
     "run-sequence": "~1.1.2",
     "stylus": "~0.51.1",
     "through2": "~2.0.0",
