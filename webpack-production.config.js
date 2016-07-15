@@ -1,12 +1,10 @@
-var path = require("path");
-var webpack = require("webpack");
+var path = require('path');
+var webpack = require('webpack');
+var config = require('./webpack.config');
 
-module.exports = {
+module.exports = Object.assign(config, {
   watch: false,
-  context: __dirname + '/app',
-  entry: {
-    app: './app.cjsx'
-  },
+  watchDelay: 0,
   output: {
     path: path.join(__dirname, '/public/build'),
     publicPath: '',
@@ -16,31 +14,14 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', 'jsx', '.cjsx', '.coffee']
   },
-  module: {
-    loaders: [
-      { test: /\.cjsx$/, loaders: ['coffee-loader', 'cjsx-loader'] },
-      { test: /\.jsx$/, loader: 'jsx-loader'},
-      { test: /\.coffee$/, loader: 'coffee-loader' },
-      { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.js?$/, loader: 'babel' }
-    ],
-    noParse: [
-      /^react$/
-    ]
-  },
-  node: {
-    fs: 'empty'
-  },
-  watchDelay: 0,
-  devtool: 'eval-source-map',
   plugins: [
     function() {
-      this.plugin("done", function(stats) {
-        require("fs").writeFileSync(
-          path.join(__dirname, "public/build", "stats.json"),
+      this.plugin('done', function(stats) {
+        require('fs').writeFileSync(
+          path.join(__dirname, 'public/build', 'stats.json'),
           JSON.stringify(stats.toJson())
         );
       });
     }
   ]
-};
+});
