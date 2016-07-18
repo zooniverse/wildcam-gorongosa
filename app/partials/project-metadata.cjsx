@@ -20,7 +20,10 @@ counterpart.registerTranslations 'en',
 
 module.exports = React.createClass
   displayName: 'ProjectMetadata'
-  mixins: [Reflux.connect(ProjectStore, 'projectData'), Reflux.connect(WorkflowStore, 'workflowData')]
+  mixins: [
+    Reflux.connect ProjectStore, 'projectData'
+    Reflux.connect WorkflowStore, 'workflowData'
+  ]
 
   completion: ->
     (@state.projectData.completeness * 100).toFixed(0)

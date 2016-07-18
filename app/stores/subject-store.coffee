@@ -1,14 +1,14 @@
 Reflux = require 'reflux'
 {api} = require '../api/client'
-config = require '../lib/config'
 classifierActions = require '../actions/classifier-actions'
+workflowStore = require './workflow-store'
 
 module.exports = Reflux.createStore
   subjects: []
   subject: null
 
   init: ->
-    @next()
+    @listenTo workflowStore, @changeWorkflow
     @listenTo classifierActions.moveToNextSubject, @next
 
   getInitialState: ->
@@ -18,14 +18,13 @@ module.exports = Reflux.createStore
   next: ->
     if @subjects.length == 0
       query =
-        workflow_id: config.workflowId
+        workflow_id: workflowStore.data.id
         sort: 'queued'
 
       api.type('subjects').get query
         .then (subjects) =>
           return unless subjects.length > 0
           @subjects = subjects
-
         .then =>
           @loadSubjectImage()
     else
@@ -46,3 +45,7 @@ module.exports = Reflux.createStore
     if url.substr(0, 5) != 'https'
       filename = url.replace /https?:\/\/[^\/]+/i, ''
       @subject.locations[0]['image/jpeg'] = 'https://zooniverse-export.s3.amazonaws.com' + filename
+
+  changeWorkflow: ->
+    @subjects.length = 0
+    @next()

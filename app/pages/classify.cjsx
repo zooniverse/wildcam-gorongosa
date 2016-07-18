@@ -9,6 +9,7 @@ ProjectMetadata = require '../partials/project-metadata'
 LoadingIndicator = require '../components/loading-indicator'
 SlideTutorial = require '../components/slide-tutorial'
 FavoritesButton = require '../components/favorites-button'
+EducationBar = require '../partials/education-bar'
 
 annotationsStore = require '../stores/annotations-store'
 classifierStore = require '../stores/classifier-store'
@@ -74,7 +75,10 @@ module.exports = React.createClass
         <SlideTutorial closeTutorial={@closeTutorial} tutorialIsOpen={@state.tutorialIsOpen} />}
 
       <div className="classification" style={if @state.subject?.srcWidth <= 666 then maxWidth: "1200px"}>
+
         <section className="subject">
+          <EducationBar />
+
           <p className="classifier-tagline">You're now tracking the wildlife of Gorongosa National Park</p>
           {if @state.subject
             <img src={@state.subject.locations[0]['image/jpeg']} />

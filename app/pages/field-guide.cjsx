@@ -13,7 +13,9 @@ CATEGORIES = ['all'].concat _.keys fieldGuideContent
 
 module.exports = React.createClass
   displayName: 'FieldGuide'
-  mixins: [Reflux.connect(workflowStore, 'workflow')]
+  mixins: [
+    Reflux.connect workflowStore, 'workflow'
+  ]
 
   render: ->
     <div className="secondary-page">
