@@ -59,19 +59,36 @@ module.exports = React.createClass
       </div>
       <nav ref="mainHeaderNav" className="main-header-nav">
         <div className="main-header-nav-link-container">
-          <Link to="classify" className="main-header-link"><Translate content="mainHeader.links.classify" /></Link>
-          <Link to="about" className="main-header-link"><Translate content="mainHeader.links.about" /></Link>
-          <Link to="field-guide" className="main-header-link"><Translate content="mainHeader.links.fieldGuide" /></Link>
-          <a className="main-header-link" href="https://www.zooniverse.org/projects/zooniverse/wildcam-gorongosa/talk" target="_blank"><Translate content="mainHeader.links.talk" /></a>
-          <a className="main-header-link" href="http://blog.wildcamgorongosa.org" target="_blank"><Translate content="mainHeader.links.blog" /></a>
-          <a className="main-header-link" href="https://lab.wildcamgorongosa.org" target="_blank"><Translate content="mainHeader.links.lab" /><span className="subtext"><Translate content="mainHeader.links.beta" /></span></a>
+          <Link to="classify" className="main-header-link">
+            <Translate content="mainHeader.links.classify" />
+          </Link>
+          <Link to="about" className="main-header-link">
+            <Translate content="mainHeader.links.about" />
+          </Link>
+          <Link to="field-guide" className="main-header-link">
+            <Translate content="mainHeader.links.fieldGuide" />
+          </Link>
+          <a className="main-header-link" href="https://www.zooniverse.org/projects/zooniverse/wildcam-gorongosa/talk" target="_blank">
+            <Translate content="mainHeader.links.talk" />
+          </a>
+          <a className="main-header-link" href="http://blog.wildcamgorongosa.org" target="_blank">
+            <Translate content="mainHeader.links.blog" />
+          </a>
+          <a className="main-header-link" href="https://lab.wildcamgorongosa.org" target="_blank">
+            <Translate content="mainHeader.links.lab" />
+            <span className="subtext">
+              <Translate content="mainHeader.links.beta" />
+            </span>
+          </a>
         </div>
         {if @props.user
           <AccountBar user={@props.user} />
         else
           <LoginBar project={@props.project} />}
       </nav>
-      <span ref="closeButtonTitle" className="close-button-title"><Translate content="accountMenu.close"/></span>
+      <span ref="closeButtonTitle" className="close-button-title">
+        <Translate content="accountMenu.close"/>
+      </span>
       <button ref="mobileMenuButton" className="mobile-menu-button" type="button" onClick={@toggleMenu}>
         <img ref="mobileButtonIcon" className="menu-icon" src="./assets/mobile-menu.svg" alt="menu" />
       </button>

@@ -26,12 +26,13 @@ module.exports = Reflux.createStore
         @getSubjectInCollection(@favorites)
 
   getSubjectInCollection: (favorites) ->
-    @subjectID = subjectStore.subject.id
-    if favorites?
-      favorites.get('subjects', id: @subjectID)
-        .then ([subject]) =>
-          @favorited = subject?
-          @trigger @favorited
+    if subjectStore.subject
+      @subjectID = subjectStore.subject.id
+      if favorites?
+        favorites.get('subjects', id: @subjectID)
+          .then ([subject]) =>
+            @favorited = subject?
+            @trigger @favorited
 
   createFavorites: ->
     project = projectConfig.projectId

@@ -1,19 +1,23 @@
 Reflux = require 'reflux'
 {api} = require '../api/client'
-config = require '../lib/config'
 workflowActions = require '../actions/workflow-actions'
+assignmentStore = require './assignments-store'
 
 module.exports = Reflux.createStore
   listenables: workflowActions
   data: null
 
   init: ->
-    @onSetWorkflow()
+    assignmentStore.listen (assignmentData) =>
+      if assignmentData.activeAssignment
+        @setWorkflow assignmentData.activeAssignment.workflowId
 
   getInitialState: ->
     @data
 
-  onSetWorkflow: (workflowId = config.workflowId) ->
-    api.type('workflows').get workflowId
-      .then (@data) =>
-        @trigger @data
+  setWorkflow: (newWorkflowId) ->
+    if !@data or @data.id isnt newWorkflowId
+      api.type('workflows').get newWorkflowId
+        .then (@data) =>
+          console.warn "Workflow set to #{newWorkflowId}"
+          @trigger @data
