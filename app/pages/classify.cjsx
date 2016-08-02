@@ -4,6 +4,7 @@ counterpart = require 'counterpart'
 Translate = require 'react-translate-component'
 {Markdown} = require 'markdownz'
 alert = require '../lib/alert'
+{Navigation} = require 'react-router'
 
 ProjectMetadata = require '../partials/project-metadata'
 LoadingIndicator = require '../components/loading-indicator'
@@ -12,11 +13,13 @@ FavoritesButton = require '../components/favorites-button'
 EducationBar = require '../partials/education-bar'
 
 annotationsStore = require '../stores/annotations-store'
+assignmentsStore = require '../stores/assignments-store'
 classifierStore = require '../stores/classifier-store'
 subjectStore = require '../stores/subject-store'
 workflowStore = require '../stores/workflow-store'
 taskStore = require '../stores/task-store'
 
+assignmentActions = require '../actions/assignment-actions'
 classifierActions = require '../actions/classifier-actions'
 
 Task = require '../tasks/survey'
@@ -25,7 +28,9 @@ Summary = require '../partials/summary'
 module.exports = React.createClass
   displayName: "Classify"
   mixins: [
+    Navigation
     Reflux.connect annotationsStore, 'annotations'
+    Reflux.connect assignmentsStore, 'assignments'
     Reflux.connect classifierStore
     Reflux.connect taskStore
     Reflux.connect subjectStore, 'subject'
@@ -33,16 +38,60 @@ module.exports = React.createClass
   ]
 
   componentDidMount: ->
-    # Check specifically for null because setting prop as null if no user is returned. Avoids loading tutorial for the split second the props are undefined.
+    # Check specifically for null because setting prop as null if no user is returned.
+    # Avoids loading tutorial for the split second the props are undefined.
     # For logged in users with zero classifications, they will have null userPrefs
     if @props.user is null || @props.userPreferences is null
       classifierActions.displayTutorial()
+
+    # Set assignment earlier if not logged in, or is default
+    if @props.user is null or !@props.params.assignmentId
+      if !@state.assignments.activeAssignment or @state.assignments.activeAssignment.id isnt '0'
+        assignmentActions.setAssignment()
 
   componentWillReceiveProps: (nextProps) ->
     if nextProps.userPreferences?.activity_count is 0 or nextProps.userPreferences is null
       classifierActions.displayTutorial()
     else if nextProps.user is null
       classifierActions.displayTutorial()
+
+  componentWillUpdate: (nextProps, nextState) ->
+
+    # Helper references
+    currentUrl = @props.params.assignmentId
+    currentActiveAssignment = @state.assignments.activeAssignment
+    nextActive = nextState.assignments.active
+    nextActiveAssignment = nextState.assignments.activeAssignment
+    nextUrl = nextProps.params.assignmentId
+
+    getIdFromUrl = (url) ->
+      if url and url.match /assignment-(\d)/ then url.slice 11 else '0'
+
+    # If we're logged out, it should always be the default workflow
+    if nextProps.user is null
+      if !nextActiveAssignment or nextActiveAssignment.id isnt '0'
+        assignmentActions.setAssignment()
+      if nextProps.params.assignmentId
+        @context.router.transitionTo '/classify'
+
+    else if nextProps.user
+
+      # Set the initial assignment
+      if nextActiveAssignment is false and nextActive is true
+        assignmentActions.setAssignment getIdFromUrl nextUrl
+
+      # The URL has changed, so update the assignment
+      else if nextUrl isnt currentUrl
+        newAssignmentId = getIdFromUrl nextUrl
+        if nextActiveAssignment.id isnt newAssignmentId
+          assignmentActions.setAssignment newAssignmentId
+
+      # The assignment has changed, so update the URL
+      else if nextActiveAssignment.id isnt currentActiveAssignment.id
+        if nextActiveAssignment.id is '0'
+          @context.router.transitionTo '/classify'
+        else
+          @context.router.transitionTo "/classify/assignment-#{nextState.assignments.activeAssignment.id}"
 
   closeTutorial: ->
     classifierActions.closeTutorial()

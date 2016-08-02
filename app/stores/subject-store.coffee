@@ -47,5 +47,7 @@ module.exports = Reflux.createStore
       @subject.locations[0]['image/jpeg'] = 'https://zooniverse-export.s3.amazonaws.com' + filename
 
   changeWorkflow: ->
+    @subject = null
     @subjects.length = 0
+    @trigger @subject
     @next()
