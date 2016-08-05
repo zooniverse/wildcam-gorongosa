@@ -31,7 +31,7 @@ module.exports = Reflux.createStore
         utc_offset: ((new Date).getTimezoneOffset() * 60).toString()
       links:
         project: config.projectId
-        workflow: config.workflowId
+        workflow: workflowStore.data.id
         subjects: [subjectStore.subject.id]
 
     @trigger @data
