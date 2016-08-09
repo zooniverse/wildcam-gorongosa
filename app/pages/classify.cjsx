@@ -130,7 +130,13 @@ module.exports = React.createClass
 
           <p className="classifier-tagline">You're now tracking the wildlife of Gorongosa National Park</p>
           {if @state.subject
-            <img src={@state.subject.locations[0]['image/jpeg']} />
+            if @state.subject.already_seen
+              <div className="subject-image-container">
+                <img src={@state.subject.locations[0]['image/jpeg']} />
+                <span className="already-seen-notice">Already seen</span>
+              </div>
+            else
+              <img src={@state.subject.locations[0]['image/jpeg']} />
           else
             <div className="loading-indicator-container">
               <LoadingIndicator />
