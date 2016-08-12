@@ -56,5 +56,5 @@ module.exports =
     '''
   },{
     title: 'Distribution'
-    content: '<img src="assets/fieldguide-content/mammals/ground_hornbill/hornbill-map.jpg"/>'
+    content: '<img src="assets/fieldguide-content/birds/ground_hornbill/hornbill-map.jpg"/>'
   }]
