@@ -76,9 +76,6 @@ module.exports = React.createClass
           </a>
           <a className="main-header-link" href="https://lab.wildcamgorongosa.org" target="_blank">
             <Translate content="mainHeader.links.lab" />
-            <span className="subtext">
-              <Translate content="mainHeader.links.beta" />
-            </span>
           </a>
         </div>
         {if @props.user
