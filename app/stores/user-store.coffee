@@ -14,14 +14,12 @@ checkStatus = (response) ->
 parseJson = (response) ->
   response.json()
 
-assignmentPath = ''
-  
 extractToken = (hash) -> 
   if hash.indexOf('assignment') > -1
     match = hash.match(/classify\/assignment-(\d+)\/access_token=([\w\-\.]+)/)
-    console.log 'match: ', match
     if !!match && match[2] 
-      assignmentPath = 'classify/assignment-' + match[1]
+      assignmentPath = '/classify/assignment-' + match[1]
+      window.location.hash = assignmentPath
       match[2]
     else
       null
@@ -88,7 +86,6 @@ module.exports = Reflux.createStore
 
   signInUrl: (location = null) ->
     location ?= window.location
-    location.hash = assignmentPath
     client.host + '/oauth/authorize' +
       "?response_type=token" +
       "&client_id=#{ client.appID }" +
