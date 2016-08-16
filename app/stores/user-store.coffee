@@ -14,12 +14,22 @@ checkStatus = (response) ->
 parseJson = (response) ->
   response.json()
 
-extractToken = (hash) ->
-  match = hash.match(/access_token=([\w\-\.]+)/)
-  if !!match && match[1]
-    match[1]
+extractToken = (hash) -> 
+  if hash.indexOf('assignment') > -1
+    match = hash.match(/classify\/assignment-(\d+)\/access_token=([\w\-\.]+)/)
+    if !!match && match[2] 
+      assignmentPath = '/classify/assignment-' + match[1]
+      window.location.hash = assignmentPath
+      match[2]
+    else
+      null
   else
-    null
+    match = hash.match(/access_token=([\w\-\.]+)/) 
+    if !!match && match[1]
+      match[1]
+    else
+      null
+  
 
 module.exports = Reflux.createStore
   listenables: userActions
@@ -76,7 +86,6 @@ module.exports = Reflux.createStore
 
   signInUrl: (location = null) ->
     location ?= window.location
-
     client.host + '/oauth/authorize' +
       "?response_type=token" +
       "&client_id=#{ client.appID }" +
