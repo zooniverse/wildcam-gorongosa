@@ -6,7 +6,9 @@ _ = require 'lodash'
 
 ProjectMetadata = require '../partials/project-metadata'
 
-workflowStore = require '../stores/workflow-store'
+# Uses default-workflow-store to ensure the default workshop is always set,
+# without interfering with assignments workflows
+workflowStore = require '../stores/default-workflow-store'
 
 fieldGuideContent = require '../lib/field-guide-content'
 CATEGORIES = ['all'].concat _.keys fieldGuideContent
