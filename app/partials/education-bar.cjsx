@@ -45,7 +45,7 @@ module.exports = React.createClass
       
       htmlCounter =
         <div className="my-classifications">
-          <label>My Classifications:</label>
+          <label>Progress:</label>
           <span>{myClassificationCount}{classificationTarget}</span>
         </div>
     
