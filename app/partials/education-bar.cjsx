@@ -24,6 +24,7 @@ module.exports = React.createClass
           </option>
         }
       </select>
+      {@renderMyClassificationsCount()}
     </div>
 
   render: ->
@@ -31,3 +32,21 @@ module.exports = React.createClass
       @renderEducationBar()
     else
       null
+
+  renderMyClassificationsCount: ->
+    htmlCounter = null
+    if @state.assignments.activeAssignment && @state.assignments.activeAssignment.id != '0'
+      classificationTarget = parseInt(@state.assignments.activeAssignment.classificationTarget)
+      if isNaN(classificationTarget)
+        classificationTarget = ''
+      else
+        classificationTarget = ' / ' + classificationTarget
+      myClassificationCount = @state.assignments.activeAssignment.myClassificationCount
+      
+      htmlCounter =
+        <div className="my-classifications">
+          <label>My Classifications:</label>
+          <span>{myClassificationCount}{classificationTarget}</span>
+        </div>
+    
+    return htmlCounter

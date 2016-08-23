@@ -15,6 +15,8 @@ module.exports = Reflux.createStore
       id: '0',
       name: 'No assignment'
       workflowId: config.workflowId
+      classificationTarget: ''
+      myClassificationCount: 0
     ]
     activeAssignment: false
     active: undefined
@@ -55,10 +57,21 @@ module.exports = Reflux.createStore
       if json.data.length
         newState = _.assign {}, @data
         newState.active = true
+        
+        console.log('-'.repeat(80))
+        console.log(json)
+        
+        x = json.included.find (student) ->
+          student.attributes.student_user_id == 716 && student.id == '34'
+        console.log x
+        
         newState.assignments = newState.assignments.concat json.data.map (assignment) ->
           id: assignment.id
           workflowId: assignment.attributes.workflow_id
           name: assignment.attributes.name
+          classificationTarget: assignment.attributes.metadata.classifications_target ? ''
+          myClassificationCount: 999
+          
         @data = newState
         @trigger @data
         console.info 'assignments', @data
