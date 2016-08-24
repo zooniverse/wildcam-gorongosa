@@ -48,7 +48,23 @@ module.exports = Reflux.createStore
     newState = _.assign {}, @data
     if newState.activeAssignment
       newState.activeAssignment.myClassificationCount++
-
+  
+  _getClassificationCount: (assignment, state) ->
+    studentAssignments = assignment.relationships.student_assignments.data
+    studentData = state.assignments.student_data
+    studentUsers = assignment.relationships.student_users.data
+    classifications = 0
+    studentAssignments.forEach (studentAssignmentsItem) ->
+      studentDataByAssignment = studentData.find((item) ->
+        item.id == studentAssignmentsItem.id
+      )
+      studentUsers.forEach (studentUsersItem) ->
+        if studentUsersItem.id == studentDataByAssignment.attributes.student_user_id.toString()
+          classifications = studentDataByAssignment.attributes.classifications_count
+        return
+      return
+    classifications
+  
   _fetchAssignments: (user) ->
     fetch 'https://education-api.zooniverse.org/assignments/',
       method: 'GET',
@@ -68,7 +84,7 @@ module.exports = Reflux.createStore
           workflowId: assignment.attributes.workflow_id
           name: assignment.attributes.name
           classificationTarget: assignment.attributes.metadata.classifications_target ? ''
-          myClassificationCount: 999999 #TODO: determine my initial Classification Count
+          myClassificationCount: @_getClassificationCount(assignment, newState)
           
         @data = newState
         @trigger @data
