@@ -49,9 +49,8 @@ module.exports = Reflux.createStore
     if newState.activeAssignment
       newState.activeAssignment.myClassificationCount++
   
-  _getClassificationCount: (assignment, state) ->
+  _getClassificationCount: (assignment, studentData) ->
     studentAssignments = assignment.relationships.student_assignments.data
-    studentData = state.assignments.student_data
     studentUsers = assignment.relationships.student_users.data
     classifications = 0
     studentAssignments.forEach (studentAssignmentsItem) ->
@@ -78,14 +77,12 @@ module.exports = Reflux.createStore
       if json.data.length
         newState = _.assign {}, @data
         newState.active = true
-        
-        newState.assignments = newState.assignments.concat json.data.map (assignment) ->
+        newState.assignments = newState.assignments.concat json.data.map (assignment) =>
           id: assignment.id
           workflowId: assignment.attributes.workflow_id
           name: assignment.attributes.name
           classificationTarget: assignment.attributes.metadata.classifications_target ? ''
-          myClassificationCount: @_getClassificationCount(assignment, newState)
-          
+          myClassificationCount: @_getClassificationCount(assignment, json.included)  
         @data = newState
         @trigger @data
         console.info 'assignments', @data
