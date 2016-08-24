@@ -37,16 +37,17 @@ module.exports = React.createClass
     htmlCounter = null
     if @state.assignments.activeAssignment && @state.assignments.activeAssignment.id != '0'
       classificationTarget = parseInt(@state.assignments.activeAssignment.classificationTarget)
-      if isNaN(classificationTarget)
-        classificationTarget = ''
-      else
-        classificationTarget = ' / ' + classificationTarget
+      classificationTarget = 0 if isNaN(classificationTarget)
       myClassificationCount = @state.assignments.activeAssignment.myClassificationCount
       
-      htmlCounter =
-        <div className="my-classifications">
-          <label>Progress:</label>
-          <span>{myClassificationCount}{classificationTarget}</span>
-        </div>
+      if classificationTarget isnt 0 and myClassificationCount < classificationTarget
+        htmlCounter =
+          <div className="my-classifications">
+            <label>Progress:</label>
+            <span>{myClassificationCount} / {classificationTarget}</span>
+          </div>
+      else
+        htmlCounter =
+          <div className="my-classifications done">You're done!</div>
     
     return htmlCounter
