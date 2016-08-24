@@ -6,9 +6,10 @@ config = require '../lib/config'
 classifierActions = require '../actions/classifier-actions'
 
 annotationsStore = require './annotations-store'
-projectStore = require './project-store'
+#projectStore = require './project-store'
 subjectStore = require './subject-store'
 workflowStore = require './workflow-store'
+assignmentActions = require '../actions/assignment-actions'
 
 module.exports = Reflux.createStore
   data: null
@@ -37,6 +38,7 @@ module.exports = Reflux.createStore
     @trigger @data
 
   finish: ->
+    assignmentActions.incrementClassificationProgress()    
     annotations = _.map annotationsStore.data, (annotation) ->
       task: workflowStore.data.first_task
       value: [annotation]

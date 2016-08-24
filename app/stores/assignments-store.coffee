@@ -15,6 +15,8 @@ module.exports = Reflux.createStore
       id: '0',
       name: 'No assignment'
       workflowId: config.workflowId
+      classificationTarget: ''
+      myClassificationCount: 0
     ]
     activeAssignment: false
     active: undefined
@@ -41,7 +43,27 @@ module.exports = Reflux.createStore
         console.warn "Setting assignment to #{newAssignmentId}"
         @data = newState
         @trigger @data
-
+        
+  onIncrementClassificationProgress: () ->
+    newState = _.assign {}, @data
+    if newState.activeAssignment
+      newState.activeAssignment.myClassificationCount++
+  
+  _getClassificationCount: (assignment, studentData) ->
+    studentAssignments = assignment.relationships.student_assignments.data
+    studentUsers = assignment.relationships.student_users.data
+    classifications = 0
+    studentAssignments.forEach (studentAssignmentsItem) ->
+      studentDataByAssignment = studentData.find((item) ->
+        item.id == studentAssignmentsItem.id
+      )
+      studentUsers.forEach (studentUsersItem) ->
+        if studentUsersItem.id == studentDataByAssignment.attributes.student_user_id.toString()
+          classifications = studentDataByAssignment.attributes.classifications_count
+        return
+      return
+    classifications
+  
   _fetchAssignments: (user) ->
     fetch 'https://education-api.zooniverse.org/assignments/',
       method: 'GET',
@@ -55,10 +77,12 @@ module.exports = Reflux.createStore
       if json.data.length
         newState = _.assign {}, @data
         newState.active = true
-        newState.assignments = newState.assignments.concat json.data.map (assignment) ->
+        newState.assignments = newState.assignments.concat json.data.map (assignment) =>
           id: assignment.id
           workflowId: assignment.attributes.workflow_id
           name: assignment.attributes.name
+          classificationTarget: assignment.attributes.metadata.classifications_target ? ''
+          myClassificationCount: @_getClassificationCount(assignment, json.included)  
         @data = newState
         @trigger @data
         console.info 'assignments', @data
