@@ -15,15 +15,18 @@ module.exports = Reflux.createStore
     @favorited
 
   getFavorites: ->
-    query =
-      project_id: projectConfig.projectId
-      favorite: true
-      owner: userStore.userData?.user.login
+    if not userStore.userData?
+      @favorites = null
+    else
+      query =
+        project_id: projectConfig.projectId
+        favorite: true
+        owner: userStore.userData.user.login
 
-    api.type('collections').get(query)
-      .then ([favorites]) =>
-        @favorites = if favorites? then favorites else null
-        @getSubjectInCollection(@favorites)
+      api.type('collections').get(query)
+        .then ([favorites]) =>
+          @favorites = if favorites? then favorites else null
+          @getSubjectInCollection(@favorites)
 
   getSubjectInCollection: (favorites) ->
     if subjectStore.subject
