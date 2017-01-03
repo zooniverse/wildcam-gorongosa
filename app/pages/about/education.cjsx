@@ -6,12 +6,10 @@ module.exports = React.createClass
   render: ->
     <div className="education-page">
       <h2>Wildcam Labs</h2>
-      <p>In the spring of 2016, a new educator portal will launch as part of WildCam Gorongosa. The portal will allow educators and students to ask ecological questions and filter the trail camera data to answer these questions. The data can be saved as a spreadsheet to analyze and draw conclusions. Follow our <a href="http://blog.wildcamgorongosa.org" target="_blank">blog</a> to hear updates on the launch of the educator portal. In the meantime, you can explore the Gorongosa educational resources from HHMI BioInteractive (below).</p>
+      <p>WildCam Labs is a new feature of the WildCam Gorongosa platform, which allows educators and students to ask ecological questions and filter the trail camera data to answer these questions. The data can be downloaded as a spreadsheet to analyze and draw conclusions. You can access the lab <a href="https://lab.wildcamgorongosa.org/">here</a> to start exploring. Additional educational resources focused on Gorongosa National Park are available from HHMI BioInteractive (below).</p>
 
       <h2>Gorongosa as a Case Study</h2>
-
       <p>Gorongosa National Park is one of the most diverse ecosystems in the world and is undergoing a large-scale restoration effort following decades of war in Mozambique. Park managers and scientists are working together to better understand the ecology of the park and to protect the Gorongosa ecosystem and its wildlife. This ongoing effort is an ideal case study to teach concepts in ecology and conservation biology in the classroom.</p>
-
       <p>HHMI BioInteractive has developed free educational resources, which are aligned to national curriculum standards, that educators can use to teach concepts in ecology, conservation, social science, and inquiry-based science practices. Visit the BioInteractive website to explore a variety of Gorongosa resources, including films, interactives, and hands-on activities.</p>
       <p><b><a href="http://www.biointeractive.org/gorongosa"  target="_blank">Explore Resources</a></b></p>
 
