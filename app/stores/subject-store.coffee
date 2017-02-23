@@ -19,9 +19,8 @@ module.exports = Reflux.createStore
     if @subjects.length == 0
       query =
         workflow_id: workflowStore.data.id
-        sort: 'queued'
 
-      api.type('subjects').get query
+      api.get('/subjects/queued', query)
         .then (subjects) =>
           return unless subjects.length > 0
           @subjects = subjects
