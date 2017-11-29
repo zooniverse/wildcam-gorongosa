@@ -135,6 +135,11 @@ module.exports = React.createClass
                 <img src={@state.subject.locations[0]['image/jpeg']} />
                 <span className="already-seen-notice">Already seen</span>
               </div>
+            else if @state.subject.retired
+              <div className="subject-image-container">
+                <img src={@state.subject.locations[0]['image/jpeg']} />
+                <span className="already-seen-notice">Finished</span>
+              </div>
             else
               <img src={@state.subject.locations[0]['image/jpeg']} />
           else
