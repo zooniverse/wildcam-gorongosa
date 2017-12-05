@@ -31,6 +31,11 @@ module.exports = Reflux.createStore
 
   loadSubjectImage: ->
     @subject = @subjects.shift()
+    
+    #Fix: some image locations are erroneously tagged as images/png; this workaround ensures standardisation. (-shaun 20171205)
+    if @subject.locations[0]['image/png']? and not @subject.locations[0]['image/jpeg']?
+      @subject.locations[0]['image/jpeg'] = @subject.locations[0]['image/png']
+    
     @generateHttpsUrl()
     image = new Image()
     image.src = @subject.locations[0]['image/jpeg']
