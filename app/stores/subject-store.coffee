@@ -27,7 +27,8 @@ module.exports = Reflux.createStore
         #default 10 subjects when the workflow is fully classified/retired. By
         #increasing the number of subjects to 100 (order is randomised), we
         #mask the repetition of subjects for classroom users.
-        #This workaround is requested by HHMI themselves. (@shaun 20180214)
+        #This workaround is requested by HHMI themselves.
+        #(@shaun 20180214)
 
       api.get('/subjects/queued', query)
         .then (subjects) =>
