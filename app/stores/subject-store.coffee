@@ -19,6 +19,15 @@ module.exports = Reflux.createStore
     if @subjects.length == 0
       query =
         workflow_id: workflowStore.data.id
+        page_size: 100  #Increases subjects in queue, so users will have a larger variety of photos when workflow is fully classified/retired.
+
+        #Context: in Feb 2018, HHMI-aligned teachers attempted to use WildCam
+        #Gorongosa for their classrooms but found that the app kept serving the
+        #same 10 images; this is the result of Panoptes (by design) serving the
+        #default 10 subjects when the workflow is fully classified/retired. By
+        #increasing the number of subjects to 100 (order is randomised), we
+        #mask the repetition of subjects for classroom users.
+        #This workaround is requested by HHMI themselves. (@shaun 20180214)
 
       api.get('/subjects/queued', query)
         .then (subjects) =>
