@@ -1,6 +1,6 @@
 Reflux = require 'reflux'
 counterpart = require 'counterpart'
-{api} = require '../api/client'
+api = require 'panoptes-client/lib/api-client'
 config = require '../lib/config'
 
 classifierActions = require '../actions/classifier-actions'

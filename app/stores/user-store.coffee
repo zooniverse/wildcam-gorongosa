@@ -1,18 +1,18 @@
 Reflux = require 'reflux'
-{api, oauth} = require '../api/client'
+oauth = require 'panoptes-client/lib/oauth'
 projectConfig = require '../lib/config'
 userActions = require '../actions/user-actions'
 
-checkStatus = (response) ->
-  if response.status >= 200 && response.status < 300
-    return response
-  else
-    error = new Error response.statusText
-    error.response = response
-    throw error
+# checkStatus = (response) ->
+#   if response.status >= 200 && response.status < 300
+#     return response
+#   else
+#     error = new Error response.statusText
+#     error.response = response
+#     throw error
 
-parseJson = (response) ->
-  response.json()
+# parseJson = (response) ->
+#   response.json()
 
 extractToken = (hash) -> 
   if hash.indexOf('assignment') > -1
@@ -35,8 +35,8 @@ module.exports = Reflux.createStore
   listenables: userActions
 
   init: ->
-    if token = @_tokenExists()
-      @_setToken token
+    # if token = @_tokenExists()
+    #   @_setToken token
 
     @getUser()
 
@@ -44,21 +44,28 @@ module.exports = Reflux.createStore
     @userData
 
   getUser: ->
-    token = @_getToken()
+    # token = @_getToken()
 
-    fetch(api.root + '/me', {
-      method: 'GET'
-      headers:
-        'Authorization': 'Bearer ' + token
-        'Accept': 'Accept: application/vnd.api+json; version=1'
-      })
-      .then checkStatus
-      .then parseJson
-      .then (data) =>
-        @getUserClassificationCount(data.users[0])
+    oauth.checkCurrent()
+      .then (user) =>
+        @getUserClassificationCount(user)
       .catch (error) =>
         @userData = null
         @trigger @userData
+
+    # fetch(api.root + '/me', {
+    #   method: 'GET'
+    #   headers:
+    #     'Authorization': 'Bearer ' + token
+    #     'Accept': 'Accept: application/vnd.api+json; version=1'
+    #   })
+    #   .then checkStatus
+    #   .then parseJson
+    #   .then (data) =>
+    #     @getUserClassificationCount(data.users[0])
+    #   .catch (error) =>
+    #     @userData = null
+    #     @trigger @userData
 
   getUserClassificationCount: (user, _page = 1) ->
     query =
@@ -85,27 +92,31 @@ module.exports = Reflux.createStore
     @trigger @userData
 
   doSignIn: (location = null) ->
-    oauth.signIn(window.location.origin)
+    oauth.signIn(@_computeRedirectURL(window))
+    # oauth.signIn(window.location.origin)
 
   onSignOut: ->
-    @_removeToken()
-    @getUser()
-    oauth.signOut()
+    # @_removeToken()
+    # @getUser()
+    oauth.signOut().then(() -> @getUser())
 
-  _tokenExists: ->
-    extractToken(window.location.hash) || localStorage.getItem('bearer_token')
+  _computeRedirectURL: (window) ->
+    { location } = window;
+    location.origin || "#{location.protocol}//#{location.hostname}:#{location.port}"
+  # _tokenExists: ->
+  #   extractToken(window.location.hash) || localStorage.getItem('bearer_token')
 
-  _getToken: ->
-    token = null
-    token ?= localStorage.getItem 'bearer_token'
-    token ?= extractToken window.location.hash
+  # _getToken: ->
+  #   token = null
+  #   token ?= localStorage.getItem 'bearer_token'
+  #   token ?= extractToken window.location.hash
 
-    token
+  #   token
 
-  _setToken: (token) ->
-    api.headers['Authorization'] = 'Bearer ' + token
-    localStorage.setItem 'bearer_token', token
+  # _setToken: (token) ->
+  #   api.headers['Authorization'] = 'Bearer ' + token
+  #   localStorage.setItem 'bearer_token', token
 
-  _removeToken: ->
-    api.headers['Authorization'] = null
-    localStorage.removeItem 'bearer_token'
+  # _removeToken: ->
+  #   api.headers['Authorization'] = null
+  #   localStorage.removeItem 'bearer_token'

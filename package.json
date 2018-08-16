@@ -54,5 +54,5 @@
     "tether": "HubSpot/tether#df8cd44",
     "underscore": "~1.8.3"
   },
-  "engine": "node 0.12.x"
+  "engine": ">=8.x.x"
 }

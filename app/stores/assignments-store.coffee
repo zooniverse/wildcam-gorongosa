@@ -5,7 +5,7 @@ workflowActions = require '../actions/workflow-actions'
 userActions = require '../actions/user-actions'
 assignmentActions = require '../actions/assignment-actions'
 userStore = require './user-store'
-{api} = require '../api/client'
+api = require 'panoptes-client/lib/api-client'
 config = require '../lib/config'
 
 module.exports = Reflux.createStore
