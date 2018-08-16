@@ -1,4 +1,5 @@
 React = require 'react/addons'
+
 UserStore = require '../stores/user-store'
 ZooniverseLogo = require './zooniverse-logo'
 
@@ -14,5 +15,5 @@ module.exports = React.createClass
 
   render: ->
     <div className="login-bar">
-      <a className="main-header-link" href={UserStore.signInUrl()}><Translate content="loginBar.signIn" /></a>
+      <a className="main-header-link" href="#" onClick={UserStore.doSignIn}><Translate content="loginBar.signIn" /></a>
     </div>
