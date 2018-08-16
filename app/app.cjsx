@@ -1,10 +1,8 @@
 React = require 'react/addons'
 Router = require 'react-router'
-{ config } = require './api/config'
+{ config, env } = require './api/config'
 
 oauth = require 'panoptes-client/lib/oauth'
-# client = require 'panoptes-client/lib/api-client'
-# {api, oauth, PANOPTES_APP_ID} = client = require './api/client'
 
 Main = require './main'
 routes = require './routes'
@@ -19,4 +17,3 @@ oauth.init(config.panoptesAppId)
       React.render <Root />, document.getElementById('app')
 
 window.React = React
-# window.api = client

@@ -2,6 +2,7 @@ Reflux = require 'reflux'
 oauth = require 'panoptes-client/lib/oauth'
 projectConfig = require '../lib/config'
 userActions = require '../actions/user-actions'
+{ env } = require '../api/config'
 
 # checkStatus = (response) ->
 #   if response.status >= 200 && response.status < 300
@@ -98,11 +99,14 @@ module.exports = Reflux.createStore
   onSignOut: ->
     # @_removeToken()
     # @getUser()
-    oauth.signOut().then(() -> @getUser())
+    oauth.signOut().then(() -> @createStore(null, null))
 
   _computeRedirectURL: (window) ->
-    { location } = window;
-    location.origin || "#{location.protocol}//#{location.hostname}:#{location.port}"
+    { location } = window
+    if env is 'staging' or env is 'development'
+      "#{location.protocol}//#{location.hostname}:#{location.port}?env=production"
+    else
+      location.origin
   # _tokenExists: ->
   #   extractToken(window.location.hash) || localStorage.getItem('bearer_token')
 

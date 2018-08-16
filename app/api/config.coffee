@@ -16,7 +16,7 @@ locationMatch = (regex) =>
 
   if match and match[1] then match[1] else undefined
 
-DEFAULT_ENV = 'development'
+DEFAULT_ENV = 'production'
 envFromBrowser = locationMatch(/\W?env=(\w+)/)
 envFromShell = process.env.NODE_ENV
 env = envFromBrowser or envFromShell or DEFAULT_ENV
