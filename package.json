@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "gulp",
+    "start": "NODE_ENV=staging gulp",
     "deploy-to-staging": "gulp clean && gulp build && publisssh ./public/build zooniverse-static/preview.zooniverse.org/wildcam-gorongosa && gulp clean",
     "deploy-to-production": "gulp clean && gulp build && publisssh ./public/build zooniverse-static/www.wildcamgorongosa.org && gulp clean"
   },
