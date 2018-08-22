@@ -1,5 +1,5 @@
 Reflux = require 'reflux'
-{api} = require '../api/client'
+api = require 'panoptes-client/lib/api-client'
 workflowActions = require '../actions/workflow-actions'
 assignmentStore = require './assignments-store'
 

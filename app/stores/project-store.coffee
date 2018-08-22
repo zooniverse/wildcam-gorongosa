@@ -1,7 +1,7 @@
 Reflux = require 'reflux'
 projectConfig = require '../lib/config'
 userStore = require '../stores/user-store'
-{api} = require '../api/client'
+api = require 'panoptes-client/lib/api-client'
 
 module.exports = Reflux.createStore
   data: null

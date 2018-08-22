@@ -4,7 +4,7 @@ subjectStore = require './subject-store'
 userStore = require './user-store'
 projectStore = require './project-store'
 classifierActions = require '../actions/classifier-actions'
-{api} = require '../api/client'
+api = require 'panoptes-client/lib/api-client'
 
 module.exports = Reflux.createStore
   init: ->

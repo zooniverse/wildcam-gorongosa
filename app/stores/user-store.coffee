@@ -1,18 +1,9 @@
 Reflux = require 'reflux'
-{client, api} = client = require '../api/client'
+api = require 'panoptes-client/lib/api-client'
+oauth = require 'panoptes-client/lib/oauth'
 projectConfig = require '../lib/config'
 userActions = require '../actions/user-actions'
-
-checkStatus = (response) ->
-  if response.status >= 200 && response.status < 300
-    return response
-  else
-    error = new Error response.statusText
-    error.response = response
-    throw error
-
-parseJson = (response) ->
-  response.json()
+{ env } = require '../api/config'
 
 extractToken = (hash) -> 
   if hash.indexOf('assignment') > -1
@@ -35,27 +26,15 @@ module.exports = Reflux.createStore
   listenables: userActions
 
   init: ->
-    if token = @_tokenExists()
-      @_setToken token
-
     @getUser()
 
   getInitialState: ->
     @userData
 
   getUser: ->
-    token = @_getToken()
-
-    fetch(api.root + '/me', {
-      method: 'GET'
-      headers:
-        'Authorization': 'Bearer ' + token
-        'Accept': 'Accept: application/vnd.api+json; version=1'
-      })
-      .then checkStatus
-      .then parseJson
-      .then (data) =>
-        @getUserClassificationCount(data.users[0])
+    oauth.checkCurrent()
+      .then (user) =>
+        @getUserClassificationCount(user)
       .catch (error) =>
         @userData = null
         @trigger @userData
@@ -84,39 +63,18 @@ module.exports = Reflux.createStore
       projectPreferences: if projectPreferences? then projectPreferences else null
     @trigger @userData
 
-  signInUrl: (location = null) ->
-    location ?= window.location
-    client.host + '/oauth/authorize' +
-      "?response_type=token" +
-      "&client_id=#{ client.appID }" +
-      "&redirect_uri=#{ location }"
+  doSignIn: (location = null) ->
+    oauth.signIn(@_computeRedirectURL(window))
 
   onSignOut: ->
-    @_removeToken()
-    @getUser()
-    fetch(client.host + '/users/sign_out', {
-      credentials: 'include',
-      method: 'DELETE',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-    })
+    oauth.signOut().then(() => @createStore(null, null))
 
-  _tokenExists: ->
-    extractToken(window.location.hash) || localStorage.getItem('bearer_token')
+  _computeRedirectURL: (window) ->
+    { location } = window
 
-  _getToken: ->
-    token = null
-    token ?= localStorage.getItem 'bearer_token'
-    token ?= extractToken window.location.hash
-
-    token
-
-  _setToken: (token) ->
-    api.headers['Authorization'] = 'Bearer ' + token
-    localStorage.setItem 'bearer_token', token
-
-  _removeToken: ->
-    api.headers['Authorization'] = null
-    localStorage.removeItem 'bearer_token'
+    if env is 'staging' or env is 'development'
+      "#{location.protocol}//#{location.hostname}:#{location.port}"
+    else if env is 'production' and location.origin.indexOf('local.zooniverse.org') > -1
+      "#{location.protocol}//#{location.hostname}:#{location.port}?env=production"
+    else
+      location.origin
