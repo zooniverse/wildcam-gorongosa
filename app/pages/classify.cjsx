@@ -119,6 +119,13 @@ module.exports = React.createClass
     classifierActions.reviewTutorial()
 
   render: ->
+    #Due to potential human error, we cannot always be certain that the uploaded
+    #Subjects will have the expected MIME type of 'image/jpeg', so we have to
+    #compensate. (@shaun 20180918)
+    mimeType = 'image/jpeg'
+    if @state?.subject?.locations?[0]?
+      mimeType = Object.keys(@state.subject.locations[0])[0]
+    
     <div className="classify-page">
       {if @state.tutorialIsOpen and not @state.shownTutorial
         <SlideTutorial closeTutorial={@closeTutorial} tutorialIsOpen={@state.tutorialIsOpen} />}
@@ -132,16 +139,16 @@ module.exports = React.createClass
           {if @state.subject
             if @state.subject.already_seen
               <div className="subject-image-container">
-                <img src={@state.subject.locations[0]['image/jpeg']} />
+                <img src={@state.subject.locations[0][mimeType]} />
                 <span className="already-seen-notice">Already seen</span>
               </div>
             else if @state.subject.retired
               <div className="subject-image-container">
-                <img src={@state.subject.locations[0]['image/jpeg']} />
+                <img src={@state.subject.locations[0][mimeType]} />
                 <span className="already-seen-notice">Finished</span>
               </div>
             else
-              <img src={@state.subject.locations[0]['image/jpeg']} />
+              <img src={@state.subject.locations[0][mimeType]} />
           else
             <div className="loading-indicator-container">
               <LoadingIndicator />

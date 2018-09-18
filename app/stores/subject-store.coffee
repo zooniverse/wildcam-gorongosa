@@ -41,24 +41,27 @@ module.exports = Reflux.createStore
 
   loadSubjectImage: ->
     @subject = @subjects.shift()
+      
+    #Due to potential human error, we cannot always be certain that the uploaded
+    #Subjects will have the expected MIME type of 'image/jpeg', so we have to
+    #compensate. (@shaun 20180918)
+    mimeType = 'image/jpeg'
+    if @state?.subject?.locations?[0]?
+      mimeType = Object.keys(@state.subject.locations[0])[0]
     
-    #Fix: some image locations are erroneously tagged as images/png; this workaround ensures standardisation. (-shaun 20171205)
-    if @subject.locations[0]['image/png']? and not @subject.locations[0]['image/jpeg']?
-      @subject.locations[0]['image/jpeg'] = @subject.locations[0]['image/png']
-    
-    @generateHttpsUrl()
+    @generateHttpsUrl(mimeType)
     image = new Image()
-    image.src = @subject.locations[0]['image/jpeg']
+    image.src = @subject.locations[0][mimeType]
     image.onload = =>
       @subject.srcWidth = image.naturalWidth
       @trigger @subject
 
-  generateHttpsUrl: ->
+  generateHttpsUrl: (mimeType) ->
     # If it's not an https url, we replace the s3 domain name with a secure one
-    url = @subject.locations[0]['image/jpeg']
+    url = @subject.locations[0][mimeType]
     if url.substr(0, 5) != 'https'
       filename = url.replace /https?:\/\/[^\/]+/i, ''
-      @subject.locations[0]['image/jpeg'] = 'https://zooniverse-export.s3.amazonaws.com' + filename
+      @subject.locations[0][mimeType] = 'https://zooniverse-export.s3.amazonaws.com' + filename
 
   changeWorkflow: ->
     @subject = null
