@@ -43,7 +43,7 @@
     "lodash": "~3.10.1",
     "markdownz": "2.4.0",
     "modal-form": "0.0.1",
-    "panoptes-client": "~2.11.2",
+    "panoptes-client": "~3.0.0-rc.0",
     "react": "0.13.3",
     "react-interpolate-component": "~0.7.1",
     "react-router": "0.13.3",
